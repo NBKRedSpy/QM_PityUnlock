@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace QM_PityUnlock
 {
     /// <summary>
-    /// The pitty state for each of the game modes.
+    /// The pity state for each of the game modes.
     /// </summary>
     public class GameModesPityState
     {

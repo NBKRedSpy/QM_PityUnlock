@@ -13,11 +13,11 @@ namespace QM_PityUnlock
     [HarmonyPatch(typeof(ItemFactory), nameof(ItemFactory.CreateComponent))]
     internal class ItemFactory_CreateComponent__Patch
     {
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator iLGenerator)
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
 
             
-            //Goal: Change random item selection to a call to the pitty version.
+            //Goal: Change random item selection to a call to the pity version.
 
             List<CodeInstruction> original = instructions.ToList();
 
