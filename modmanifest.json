@@ -1,0 +1,7 @@
+{
+  "UniqueModName": "NBKRedSpy_QM_PityUnlock",
+  "Assemblies": [
+    "QM_PityUnlock.dll"
+  ],
+  "Dependencies": []
+}
