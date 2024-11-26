@@ -18,7 +18,7 @@ namespace QM_PityUnlock
 
         public static void Postfix() 
         {
-            PityRollManager.IsCreatingDungeon = true;
+            PityRollManager.IsCreatingDungeon = false;
         }
 
     }
