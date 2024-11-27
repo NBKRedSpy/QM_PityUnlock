@@ -1,4 +1,4 @@
-[h1]Quasimorph QM_PityUnlock[/h1]
+[h1]Quasimorph Pity Unlock[/h1]
 
 
 Tired of only getting chips for mercenaries and classes that have already been unlocked?

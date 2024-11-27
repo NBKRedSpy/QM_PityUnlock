@@ -1,4 +1,4 @@
-# Quasimorph QM_PityUnlock
+# Quasimorph Pity Unlock
 
 ![thumbnail icon](media/thumbnail.png)
 
