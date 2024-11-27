@@ -1,23 +1,31 @@
 [h1]Quasimorph QM_PityUnlock[/h1]
 
 
-Tired of only getting chips for mercenaries and class that have already been unlocked?
+Tired of only getting chips for mercenaries and classes that have already been unlocked?
 
-This mod adds a "pity" system which increases the chances of getting a class/merc that has not been unlocked.
-It also has a mode to always drop merc/class chips that the player has not unlocked.
+This mod adds a "pity" system which increases the chances of getting a class/merc that has not been unlocked.  The game's random class and merc spawn is still used for non "pity" rolls.
 
-By default, the mod guarantees that if an already unlocked class/merc is spawned, the next spawn will be one that is not unlocked.
-Use the "Always" mode in the configuration file to ensure every spawn is not unlocked.
+[b]Terms:[/b] For simplicity, this doc may refer to "unlocked" mercs and classes as "discovered", and class and merc chips as "chips"
+
+[h2]Defaults[/h2]
+
+By default, the mod guarantees that if a chip that is already discovered is spawned, the next spawn will be one that is not discovered.
+
+Use the "Always" mode in the configuration file to change the rolls to always spawn a chip that is not discovered.
 
 See the configuration section below.
 
 [h1]Credits[/h1]
 
-The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift".
+The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod.  The ability to change the outcome of spawn rolls is his idea and replicated with permission.
 
 [h1]Spawning vs Finding[/h1]
 
-A pity roll only guarantees that an item that is not unlocked will spawn.  The user must still find the chip just like any chip.
+A chip spawned by a pity roll only guarantees that an undiscovered chip will spawn.  The player must still find the chip in the mission.
+
+The pity roll only checks if the player [i]currently[/i] has discovered the chip.  Therefore, it is possible to get the same undiscovered chips for mission spawns and station rewards.  Even if the player has the chip in inventory and is locked.
+
+Anytime an undiscovered chip is spawned, the pity roll counter is reset.
 
 [h1]Configuration[/h1]
 
@@ -36,7 +44,7 @@ The configuration file will be created on the first game run and can be found at
 [/td]
 [td]Hard
 [/td]
-[td]Determines the pity algorithm to use. See the Pity Modes section below
+[td]Determines the pity algorithm to use. See the Pity Modes section below.
 [/td]
 [/tr]
 [tr]
@@ -44,7 +52,7 @@ The configuration file will be created on the first game run and can be found at
 [/td]
 [td]1
 [/td]
-[td]Hard mode setting.  The number of "failed" rolls before a roll is guaranteed to not be unlocked
+[td]Hard mode only setting.  The number of "failed" rolls before next roll is guaranteed to be undiscovered.
 [/td]
 [/tr]
 [tr]
@@ -52,14 +60,14 @@ The configuration file will be created on the first game run and can be found at
 [/td]
 [td].1
 [/td]
-[td]Percentage mode setting.  The increased chance for a pity roll for each dupe roll.
+[td]Percentage mode only setting.  The multiplier for the increased chance of a pity roll, per duplicate roll. Ex: .1 is +10% per duplicate roll.
 [/td]
 [/tr]
 [/table]
 
 [h2]Pity Modes[/h2]
 
-There are several options for how the "pity" system works.
+There are multiple modes for how the "pity" system works.
 [table]
 [tr]
 [td]Mode
@@ -70,19 +78,19 @@ There are several options for how the "pity" system works.
 [tr]
 [td]Always
 [/td]
-[td]Every spawned merc/class chip will types that have not been unlocked.
+[td]Every spawned chip will be types that have not been discovered.
 [/td]
 [/tr]
 [tr]
 [td]Hard
 [/td]
-[td]Every X times an already unlocked item is spawned, the spawn is guaranteed to not be unlocked
+[td]Every X times an already discovered item is spawned, the next spawn is guaranteed to be undiscovered.
 [/td]
 [/tr]
 [tr]
 [td]Percentage
 [/td]
-[td]Increases chance of not unlocked spawn based on how many dupes have been rolled. For example, if set to .10, three duplicate rolls would cause the next roll to have a 30% chance to spawn item that is not unlocked
+[td]Increases chance of an undiscovered chip to spawn based on how many duplicates have been rolled. For example, if set to .10, three duplicate rolls would cause the next roll to have a 30% chance to spawn an item that is not discovered.
 [/td]
 [/tr]
 [/table]
