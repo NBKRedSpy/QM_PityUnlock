@@ -41,7 +41,7 @@ namespace QM_PityUnlock
                     Utils.MatchVariable(OpCodes.Stloc_S, 5, typeof(DatadiskRecord)),
                     Utils.MatchVariable(OpCodes.Ldloc_S, 5, typeof(DatadiskRecord)),
 
-                    new CodeMatch(OpCodes.Brfalse)
+                    new CodeMatch(OpCodes.Brfalse_S)
                 )
                 .ThrowIfNotMatch("Did not find 'if (itemRecord is DatadiskRecord datadiskRecord)'")
                 .Advance(1)
