@@ -8,8 +8,15 @@ This mod adds a "pity" system which increases the chances of getting a class/mer
 
 **Terms:** For simplicity, this doc may refer to "unlocked" mercs and classes as "discovered", and class and merc chips as "chips"
 
-## Defaults
+## Defaults and Options
 By default, the mod guarantees that if a chip that is already discovered is spawned, the next spawn will be one that is not discovered.
+
+There are several ways a to specify when a "pity" roll should occur.
+
+Examples:
+* Every roll guarantees a non dupe.
+* Every X dupes.  For example, 5 means that after 5 dupes, a non dupe is guaranteed.
+* For every dupe, adds an X% increased chance of a non dupe.  For example, .1 means that after three dupes, there is a 30% chance of a non dupe.
 
 Use the "Always" mode in the configuration file to change the rolls to always spawn a chip that is not discovered.
 
