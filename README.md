@@ -4,53 +4,52 @@
 
 Tired of only getting chips for mercenaries and classes that have already been unlocked?
 
-This mod adds a "pity" system which increases the chances of getting a class/merc that has not been unlocked.  The game's random class and merc spawn is still used for non "pity" rolls.
+This mod adds a "pity" system which increases the chances of getting a class/merc that has not been unlocked.  The game's existing random class/merc chip spawn is still used for non "pity" rolls.
 
-**Terms:** For simplicity, this doc may refer to "unlocked" mercs and classes as "discovered", and class and merc chips as "chips"
+By default, this mod is configured to guarantee a non unlocked class/merc chip after every already unlocked class/merc chip found.
 
-## Defaults and Options
-By default, the mod guarantees that if a chip that is already discovered is spawned, the next spawn will be one that is not discovered.
-
-There are several ways a to specify when a "pity" roll should occur.
-
-Examples:
-* Every roll guarantees a non dupe.
-* Every X dupes.  For example, 5 means that after 5 dupes, a non dupe is guaranteed.
-* For every dupe, adds an X% increased chance of a non dupe.  For example, .1 means that after three dupes, there is a 30% chance of a non dupe.
-
-Use the "Always" mode in the configuration file to change the rolls to always spawn a chip that is not discovered.
-
-See the [configuration](#configuration) section below.
+There are multiple pity algorithms and settings available such as "always locked", a "hard cap", and "increasing chance".  See the [Configuration](#configuration) section below for more info.
 
 # Credits
-The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod.  The ability to change the outcome of spawn rolls is his idea and replicated with permission.
+The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
 
-# Spawning vs Finding
-A chip spawned by a pity roll only guarantees that an undiscovered chip will spawn.  The player must still find the chip in the mission.
+# Glossary
+|Term|Description|
+|--|--|
+|Pity Roll|A 100% chance of spawning an undiscovered item.  Replaces a single, random spawn chance every time the pity threshold is reached.|
+|Chip|Class and merc chips. Does not include "production item" chips.|
+|Discovered|Chips that have already been unlocked.|
 
-The pity roll only checks if the player *currently* has discovered the chip.  Therefore, it is possible to get the same undiscovered chips for mission spawns and station rewards.  Even if the player has the chip in inventory and is locked.
+# Spawning and Finding
+The pity rolls occur at the time of a chip spawn, and the chips are chosen from the list of undiscovered chips at that point in time.  Therefore, it is possible for chips from pity rolls to occur multiple times in a mission or from station rewards.  
+
+The player must still find chips from pity rolls as normal.
 
 Anytime an undiscovered chip is spawned, the pity roll counter is reset.
 
 # Configuration
 
+## Example Configurations:
+* Every roll guarantees an undiscovered chip.
+* After X discovered chip rolls in a row.  Ex: 5 means that after 5 discovered rolls in a row, a pity roll will occur.
+* For every discovered chip roll, adds an X% increased chance of a pity roll.  Ex: .1 means that after three discovered rolls, there is a 30% chance of a pity roll.
+
+## Pity Options
 The configuration file will be created on the first game run and can be found at `%AppData%\..\LocalLow\Magnum Scriptum Ltd\Quasimorph\QM_PityUnlock\config.json`.
 
-|Name|Default|Description|
+|Name|Default Value|Description|
 |--|--|--|
 |Mode|Hard|Determines the pity algorithm to use. See the [Pity Modes](#pity-modes) section below.|
-|HardPityCount|1|Hard mode only setting.  The number of "failed" rolls before next roll is guaranteed to be undiscovered.|
-|PercentageMultiplier|.1|Percentage mode only setting.  The multiplier for the increased chance of a pity roll, per duplicate roll. Ex: .1 is +10% per duplicate roll.|
+|HardPityCount|1|Hard mode only setting.  The number of discovered rolls in a row before next roll is a pity roll.|
+|PercentageMultiplier|.1|Percentage mode only setting.  The multiplier for the increased chance of a pity roll.  Ex: .1 is +10% per discovered roll.|
 
 ## Pity Modes
 
-There are multiple modes for how the "pity" system works.
-
 |Mode|Description|
 |--|--|
-|Always|Every spawned chip will be types that have not been discovered.|
-|Hard|Every X times an already discovered item is spawned, the next spawn is guaranteed to be undiscovered.|
-|Percentage|Increases chance of an undiscovered chip to spawn based on how many duplicates have been rolled. For example, if set to .10, three duplicate rolls would cause the next roll to have a 30% chance to spawn an item that is not discovered.|
+|Always|Every spawned chip will be undiscovered.|
+|Hard|Every X times in a row that an already discovered item is spawned, the next spawn is guaranteed to be undiscovered.|
+|Percentage|An increasing chance of a pity roll per discovered chip roll.  For example, if set to .10, three discovered chip rolls in a row would cause the next roll to have a 30% chance to spawn an item that is not discovered.|
 
 # Support
 If you enjoy my mods and want to buy me a coffee, check out my [Ko-Fi](https://ko-fi.com/nbkredspy71915) page.
