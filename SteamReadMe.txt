@@ -1,13 +1,13 @@
 [h1]Quasimorph Pity Unlock[/h1]
 
 
-Tired of only getting chips for mercenaries and classes that have already been unlocked?
+Tired of only getting chips for mercenaries, classes, or production items that have already been unlocked?
 
-This mod adds a "pity" system which increases the chances of getting a class/merc that has not been unlocked.  The game's existing random class/merc chip spawn is still used for non "pity" rolls.
+This mod adds a "pity" system which increases the chances of getting a chip that has not been unlocked.  The game's existing random chip spawn is still used for non "pity" rolls.
 
-By default, this mod is configured to guarantee a non unlocked class/merc chip after every already unlocked class/merc chip found.
+By default, this mod is configured to guarantee a chip that is not already unlocked after every unlocked chip found.
 
-There are multiple pity algorithms and settings available such as "always locked", a "hard cap", and "increasing chance".  See the Configuration section below for more info.
+There are multiple pity algorithms and settings available such as "always locked", a "hard cap", and "increasing chance".  See the Configuration section below for more information.
 
 [h1]Credits[/h1]
 
@@ -30,7 +30,7 @@ The "Always" mode is similar to functionality that is part of WarStalkeR's "Figh
 [tr]
 [td]Chip
 [/td]
-[td]Class and merc chips. Does not include "production item" chips.
+[td]Class, merc, or production item chips
 [/td]
 [/tr]
 [tr]
@@ -132,3 +132,9 @@ Thanks!
 [h1]Source Code[/h1]
 
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
+
+[h1]Change Log[/h1]
+
+[h2]1.1.0[/h2]
+
+Added production item chips.

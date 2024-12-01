@@ -46,36 +46,38 @@ namespace QM_PityUnlock
                 .ThrowIfNotMatch("Did not find 'if (itemRecord is DatadiskRecord datadiskRecord)'")
                 .Advance(1)
 
-                //Target:  The random item code.
-                //Source C#:
-                //  DatadiskComponent datadiskComponent = new DatadiskComponent();
-                //  datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)]);
-                // IL: -----
-                //IL_0292: newobj instance void MGSC.DatadiskComponent::.ctor()
-                //IL_0297: stloc.s 16
-                //// datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)]);
-                //IL_0299: ldloc.s 16
-                //IL_029b: ldloc.s 5
-                //IL_029d: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
-                //IL_02a2: ldc.i4.0
-                //IL_02a3: ldloc.s 5
-                //IL_02a5: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
-                //IL_02aa: callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<string>::get_Count()
-                //IL_02af: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
-                //IL_02b4: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
-                //IL_02b9: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
+                 //Target:  The random item code.
+                 //Source C#:
+                 //  DatadiskComponent datadiskComponent = new DatadiskComponent();
+                 //  datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)]);
+                 // IL: -----
+                 //IL_0292: newobj instance void MGSC.DatadiskComponent::.ctor()
+                 //IL_0297: stloc.s 16
+                 //// datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)]);
+                 //IL_0299: ldloc.s 16
+                 //IL_029b: ldloc.s 5
+                 //IL_029d: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
+                 //IL_02a2: ldc.i4.0
+                 //IL_02a3: ldloc.s 5
+                 //IL_02a5: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
+                 //IL_02aa: callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<string>::get_Count()
+                 //IL_02af: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
+                 //IL_02b4: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+                 //IL_02b9: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
 
-                .ThrowIfNotMatchForward("Did not find original unlock random code",
+
+                 .ThrowIfNotMatchForward("Did not find original unlock random code",
                     new CodeMatch(OpCodes.Newobj),
                     Utils.MatchVariable(OpCodes.Stloc_S, 16, typeof(DatadiskComponent)),
                     Utils.MatchVariable(OpCodes.Ldloc_S, 16, typeof(DatadiskComponent)),
                     Utils.MatchVariable(OpCodes.Ldloc_S, 5, typeof(DatadiskRecord)),
-                    new CodeMatch(OpCodes.Callvirt),
+                    new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(DatadiskRecord), nameof(DatadiskRecord.UnlockIds))),
                     new CodeMatch(OpCodes.Ldc_I4_0),
                     new CodeMatch(OpCodes.Ldloc_S),
+                    new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(DatadiskRecord), nameof(DatadiskRecord.UnlockIds))),
                     new CodeMatch(OpCodes.Callvirt),
-                    new CodeMatch(OpCodes.Callvirt),
-                    new CodeMatch(OpCodes.Call),
+                    new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(UnityEngine.Random), nameof(UnityEngine.Random.Range),
+                        new Type[] { typeof(Int32), typeof(Int32)})),
                     new CodeMatch(OpCodes.Callvirt),
                     new CodeMatch(OpCodes.Callvirt)
                 )

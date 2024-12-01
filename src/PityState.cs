@@ -6,29 +6,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 
 namespace QM_PityUnlock
 {
     /// <summary>
-    /// Handles the state and processing the DataRecord unlock by type.
-    /// For example, how many misses have already occurred.
+    /// Handles the pity processing for every datadisk type.
     /// </summary>
     public class PityState
     {
-        public const string MercenaryItemId = "merkUSB";
-        public const string ClassItemId = "classUSB";
 
-        public PityTracker MercTracker { get; set; } = new PityTracker();
-
-        public PityTracker ClassTracker { get; set; } = new PityTracker();
+        /// <summary>
+        /// 
+        /// The pity state trackers for each data record type.
+        /// Key is Record id
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, PityItemTracker> DiskTrackers { get; set; } = new Dictionary<string, PityItemTracker>();
 
         [JsonIgnore]
         public PitySettings Settings { get; set; }
 
         /// <summary>
-        /// The state of the game.  Always the same object, but the Mercenaries info changes on 
-        /// save creation/load.
+        /// The state of the game. Required since the list objects of unlocked items are recreated on game load/save.
+        /// 
         /// </summary>
         [JsonIgnore]
         public State GameState { get; set; }
@@ -43,31 +45,78 @@ namespace QM_PityUnlock
             Settings = settings;
             GameState = gameState;
 
-            MercTracker.Init(() => GameState.Get<Mercenaries>().UnlockedMercenaries, settings);
-            ClassTracker.Init(() => GameState.Get<Mercenaries>().UnlockedClasses, settings);
+            InitItemTrackers(settings);
+        }
+
+        private void InitItemTrackers(PitySettings settings)
+        {
+            //The delegate for all production item types.
+            //The list of all productions that are unlocked come from the same list.
+            //There are no collisions since every item ids are unique.
+            Func<List<string>> productionItemGetUnlockedList =
+                () => GameState.Get<MagnumCargo>().UnlockedProductionItems;
+
+            //This code is based on the game's UnlockAllDatadisksCommand::Execute function
+            foreach (BasePickupItemRecord pickupItemRecord in Data.Items.Records)
+            {
+                if (!(pickupItemRecord is CompositeItemRecord compositeItemRecord)) continue;
+
+                DatadiskRecord record = compositeItemRecord.GetRecord<DatadiskRecord>();
+
+                if (record == null) continue;
+
+
+                //This is called post deserialization.  Records may already exist.
+                PityItemTracker tracker;
+                
+                if (!DiskTrackers.TryGetValue(record.Id, out tracker))
+                {
+                    tracker = new PityItemTracker();
+                }
+
+                switch (record.UnlockType)
+                {
+                    case DatadiskUnlockType.ProductionItem:
+                        tracker.Init(productionItemGetUnlockedList, settings);
+                        break;
+                    case DatadiskUnlockType.Mercenary:
+                        tracker.Init(() => GameState.Get<Mercenaries>().UnlockedMercenaries, settings);
+                        break;
+                    case DatadiskUnlockType.MercenaryClass:
+                        tracker.Init(() => GameState.Get<Mercenaries>().UnlockedClasses, settings);
+                        break;
+                    default:
+                        //Unknown.  Ignore
+                        continue;
+                }
+
+                //Since all the data disks have unique ids, it is not necessary to indicate the unlock type.
+                DiskTrackers[record.Id] = tracker;
+            }
         }
 
         /// <summary>
-        /// The ItemSpawnCommand Version
+        /// Returns the random item to unlock, based on the data disk type and the pity rules.
         /// </summary>
         /// <param name="datadiskRecord"></param>
         /// <param name="datadiskComponent"></param>
         /// <returns></returns>
         public string GetUnlockId(DatadiskRecord datadiskRecord, DatadiskComponent datadiskComponent)
         {
-            string unlockId = "";
-            switch (datadiskRecord.Id)
+            PityItemTracker tracker = null;
+
+            DiskTrackers.TryGetValue(datadiskRecord.Id, out tracker);
+
+            string unlockId;
+
+            if (tracker == null)
             {
-                case MercenaryItemId:
-                    unlockId = MercTracker.GetUnlockId(datadiskRecord);
-                    break;
-                case ClassItemId:
-                    unlockId = ClassTracker.GetUnlockId(datadiskRecord);
-                    break;
-                default:
-                    //Ex: itemChip
-                    unlockId = datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)];
-                    break;
+                //Unknown.  Use the game's default logic.
+                unlockId = datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)];
+            }
+            else 
+            {
+                unlockId = tracker.GetUnlockId(datadiskRecord);
             }
 
             return unlockId;

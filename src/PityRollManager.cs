@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace QM_PityUnlock
 {
     /// <summary>
-    /// Handles rolling the chips with the pity algorithm. 
-    /// Keeps the dungeon items and the overworld items as different pity counts.
+    /// Handles rolling the chips with the pity algorithm and uses the different item tracker based
+    /// on if in a mission (dungeon) or otherwise (station rewards, etc.).
     /// </summary>
     public static class PityRollManager
     {
@@ -21,6 +21,9 @@ namespace QM_PityUnlock
 
         public static DatadiskComponent UnlockDataDisk(DatadiskRecord datadiskRecord)
         {
+            //Note:  Dungeon and Overworld are separate since the overworld will roll for bartering and such.
+            //  This would mean that there would be pity rolls that the player never has a chance to take advantage of.
+            //  With the dungeon separate, all the items from pity rolls in a mission can be obtained.
             PityState pityState = IsCreatingDungeon ? 
                 Plugin.PityStateDb.PityStates.DungeonMode :
                 Plugin.PityStateDb.PityStates.OverworldMode;
@@ -30,7 +33,6 @@ namespace QM_PityUnlock
             string unlockId = pityState.GetUnlockId(datadiskRecord, component);
 
             Plugin.PityStateDb.Save();
-
             component.SetUnlockId(unlockId);
 
             return component;

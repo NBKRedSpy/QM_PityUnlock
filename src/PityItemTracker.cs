@@ -15,7 +15,7 @@ namespace QM_PityUnlock
     /// <summary>
     /// Handles the pity pull logic for a single DataRecord type.  Ex:  classUSB
     /// </summary>
-    public class PityTracker
+    public class PityItemTracker
     {
 
         [JsonIgnore]
@@ -111,7 +111,7 @@ namespace QM_PityUnlock
             }
             else
             {
-                if (Plugin.Config.VerboseDebug) Plugin.Log($"Pity Roll:  Not Unlocked: {String.Join(",",notUnlockedIds)}");
+                if (Plugin.Config.VerboseDebug) Plugin.LogWarning($"Pity Roll:  Not Unlocked: {String.Join(",",notUnlockedIds)}");
 
                 MissCount = 0;
                 unlockedId = GetRandomItem(notUnlockedIds);

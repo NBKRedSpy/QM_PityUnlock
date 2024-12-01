@@ -2,13 +2,13 @@
 
 ![thumbnail icon](media/thumbnail.png)
 
-Tired of only getting chips for mercenaries and classes that have already been unlocked?
+Tired of only getting chips for mercenaries, classes, or production items that have already been unlocked?
 
-This mod adds a "pity" system which increases the chances of getting a class/merc that has not been unlocked.  The game's existing random class/merc chip spawn is still used for non "pity" rolls.
+This mod adds a "pity" system which increases the chances of getting a chip that has not been unlocked.  The game's existing random chip spawn is still used for non "pity" rolls.
 
-By default, this mod is configured to guarantee a non unlocked class/merc chip after every already unlocked class/merc chip found.
+By default, this mod is configured to guarantee a chip that is not already unlocked after every unlocked chip found.
 
-There are multiple pity algorithms and settings available such as "always locked", a "hard cap", and "increasing chance".  See the [Configuration](#configuration) section below for more info.
+There are multiple pity algorithms and settings available such as "always locked", a "hard cap", and "increasing chance".  See the [Configuration](#configuration) section below for more information.
 
 # Credits
 The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
@@ -17,7 +17,7 @@ The "Always" mode is similar to functionality that is part of WarStalkeR's "Figh
 |Term|Description|
 |--|--|
 |Pity Roll|A 100% chance of spawning an undiscovered item.  Replaces a single, random spawn chance every time the pity threshold is reached.|
-|Chip|Class and merc chips. Does not include "production item" chips.|
+|Chip|Class, merc, or production item chips|
 |Discovered|Chips that have already been unlocked.|
 
 # Spawning and Finding
@@ -57,3 +57,8 @@ Thanks!
 
 # Source Code
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
+
+# Change Log
+
+## 1.1.0
+Added production item chips.
