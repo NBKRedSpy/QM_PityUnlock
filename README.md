@@ -35,7 +35,7 @@ Anytime an undiscovered chip is spawned, the pity roll counter is reset.
 * For every discovered chip roll, adds an X% increased chance of a pity roll.  Ex: .1 means that after three discovered rolls, there is a 30% chance of a pity roll.
 
 ## Pity Options
-The configuration file will be created on the first game run and can be found at `%AppData%\..\LocalLow\Magnum Scriptum Ltd\Quasimorph\QM_PityUnlock\config.json`.
+The configuration file will be created on the first game run and can be found at `%AppData%\..\LocalLow\Magnum Scriptum Ltd\Quasimorph_ModConfigs\QM_PityUnlock\config.json`.
 
 |Name|Default Value|Description|
 |--|--|--|
@@ -59,6 +59,8 @@ Thanks!
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 # Change Log
+## 1.2.0
+* Moved config file directory.
 
 ## 1.1.0
 Added production item chips.

@@ -15,8 +15,8 @@ namespace QM_PityUnlock
     {
         public static string ModAssemblyName => Assembly.GetExecutingAssembly().GetName().Name;
 
-        public static string ConfigPath => Path.Combine(Application.persistentDataPath, ModAssemblyName, "config.json");
-        public static string ModPersistenceFolder => Path.Combine(Application.persistentDataPath, ModAssemblyName);
+        public static ConfigDirectories ConfigDirectories = new ConfigDirectories();
+
         public static ModConfig Config { get; private set; }
 
         public static State GameState { get; private set; }
@@ -28,10 +28,14 @@ namespace QM_PityUnlock
         {
             GameState = context.State;
 
-            Directory.CreateDirectory(ModPersistenceFolder);
-            Config = new ModConfig(ConfigPath).LoadConfig();
+            Directory.CreateDirectory(ConfigDirectories.AllModsConfigFolder);
+            ConfigDirectories = new ConfigDirectories();
+            ConfigDirectories.UpgradeModDirectory();
+            Directory.CreateDirectory(ConfigDirectories.ModPersistenceFolder);
 
-            string pityStateFilePath = Path.Combine(Application.persistentDataPath, ModAssemblyName, "PityState.json");
+            Config = new ModConfig(ConfigDirectories.ConfigPath).LoadConfig();
+
+            string pityStateFilePath = Path.Combine(ConfigDirectories.ModPersistenceFolder, "PityState.json");
 
             PityStateDb = new PityStateRepository(pityStateFilePath).LoadConfig();
             PityStateDb.PityStates.Init(Config.PitySettings, GameState);
