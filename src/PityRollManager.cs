@@ -25,8 +25,8 @@ namespace QM_PityUnlock
             //  This would mean that there would be pity rolls that the player never has a chance to take advantage of.
             //  With the dungeon separate, all the items from pity rolls in a mission can be obtained.
             PityState pityState = IsCreatingDungeon ? 
-                Plugin.PityStateDb.PityStates.DungeonMode :
-                Plugin.PityStateDb.PityStates.OverworldMode;
+                Plugin.PityStateDb.CurrentPityState.DungeonMode :
+                Plugin.PityStateDb.CurrentPityState.OverworldMode;
 
             DatadiskComponent component = new DatadiskComponent();
 

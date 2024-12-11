@@ -38,7 +38,7 @@ namespace QM_PityUnlock
             string pityStateFilePath = Path.Combine(ConfigDirectories.ModPersistenceFolder, "PityState.json");
 
             PityStateDb = new PityStateRepository(pityStateFilePath).LoadConfig();
-            PityStateDb.PityStates.Init(Config.PitySettings, GameState);
+            PityStateDb.Init(Config.PitySettings, GameState);
             PityStateDb.Save();
 
             new Harmony("NBKRedSpy_" + ModAssemblyName).PatchAll();

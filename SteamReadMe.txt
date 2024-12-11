@@ -135,6 +135,11 @@ Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 [h1]Change Log[/h1]
 
+[h2]2.0.0[/h2]
+[list]
+[*]Data is now saved per save slot.
+[/list]
+
 [h2]1.2.0[/h2]
 [list]
 [*]Moved config file directory.
