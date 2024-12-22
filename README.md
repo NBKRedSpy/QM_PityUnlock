@@ -59,7 +59,7 @@ Thanks!
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 # Change Log
-## 2.0.0
+## 2.1.0
 * Changed debug log to be a config setting.
 * Changed debug log text to a count instead of an "unlocked" list
 
