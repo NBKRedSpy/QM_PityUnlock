@@ -1,49 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="QM_PityUnlock.PityRollManager" Collapsed="true">
-    <Position X="13.25" Y="2" Width="1.5" />
+  <Class Name="QM_PityUnlock.PityRollManager">
+    <Position X="9" Y="6.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PityRollManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="QM_PityUnlock.PitySettings">
-    <Position X="7.75" Y="3.25" Width="1.5" />
+    <Position X="7" Y="4" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACIAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PitySettings.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="QM_PityUnlock.PityState">
-    <Position X="6" Y="6.75" Width="2.75" />
+    <Position X="3.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAEAQAAAIAAAAAAAAAAAABAgAACAAAAIAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAABAAAAAAAAAgAACAAAAIAg=</HashCode>
       <FileName>PityState.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="MercTracker" />
-      <Property Name="ClassTracker" />
-    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DiskTrackers" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="QM_PityUnlock.PityStateRepository">
-    <Position X="5.5" Y="1.75" Width="1.5" />
+    <Position X="3.5" Y="1" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAQAAABCAAAAIQA=</HashCode>
       <FileName>PityStateRepository.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="PityStates" />
-    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="SaveSlotPityStates" />
+    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="QM_PityUnlock.PityTracker">
-    <Position X="10.75" Y="6.75" Width="2.25" />
+  <Class Name="QM_PityUnlock.PityItemTracker">
+    <Position X="6.25" Y="6.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAEAAAAAAAAIAAgAAAARAQAIAACAAAAAAA=</HashCode>
-      <FileName>PityTracker.cs</FileName>
+      <FileName>PityItemTracker.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="QM_PityUnlock.ModConfig">
-    <Position X="9" Y="1" Width="1.5" />
+    <Position X="7" Y="1" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAQAAA=</HashCode>
       <FileName>ModConfig.cs</FileName>
@@ -53,7 +52,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="QM_PityUnlock.GameModesPityState">
-    <Position X="3.5" Y="3.75" Width="1.5" />
+    <Position X="1" Y="3.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>IAAACAAAAAAAAAAAAAAAIAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>GameModesPityState.cs</FileName>
@@ -64,7 +63,7 @@
     </ShowAsAssociation>
   </Class>
   <Enum Name="QM_PityUnlock.PityMode" Collapsed="true">
-    <Position X="11.75" Y="3.5" Width="1.5" />
+    <Position X="9.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAECAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>PityMode.cs</FileName>
