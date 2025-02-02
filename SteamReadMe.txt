@@ -135,6 +135,12 @@ Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 [h1]Change Log[/h1]
 
+[h2]2.2.0[/h2]
+[list]
+[*]Version 0.8.5 Compatibility
+[*]Fixed debug command [i]item[/i] to use the Pity Unlock logic for easier debugging.
+[/list]
+
 [h2]2.1.0[/h2]
 [list]
 [*]Changed debug log to be a config setting.

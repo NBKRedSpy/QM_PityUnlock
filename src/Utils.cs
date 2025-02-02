@@ -36,7 +36,7 @@ namespace QM_PityUnlock
             });
         }
 
-        public static void LogIL(List<CodeInstruction> instructions)
+        public static void LogIL(IEnumerable<CodeInstruction> instructions)
         {
             Debug.Log("------------ Start IL");
 
