@@ -2,6 +2,17 @@
 
 ![thumbnail icon](media/thumbnail.png)
 
+# Important - This version of the mod is only for the opt in beta version of the game!
+
+This is a temporary version that supports the 0.8.6 beta, and not the current game's version.
+For the non beta version of the game, use the mod of the same name without the BETA suffix.
+
+The non beta version *must* be uninstalled.  
+When the 0.8.6 becomes the main version, this mod will be deleted.
+Note that the beta is expected to change many times before release.
+As such, this mod may break on each beta release.
+
+# Docs
 Tired of only getting chips for mercenaries, classes, or production items that have already been unlocked?
 
 This mod adds a "pity" system which increases the chances of getting a chip that has not been unlocked.  The game's existing random chip spawn is still used for non "pity" rolls.
@@ -9,6 +20,7 @@ This mod adds a "pity" system which increases the chances of getting a chip that
 By default, this mod is configured to guarantee a chip that is not already unlocked after every unlocked chip found.
 
 There are multiple pity algorithms and settings available such as "always locked", a "hard cap", and "increasing chance".  See the [Configuration](#configuration) section below for more information.
+
 
 # Credits
 The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
@@ -59,6 +71,9 @@ Thanks!
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 # Change Log
+## 2.3.0
+* Version 0.8.7 compatibility
+
 ## 2.2.0
 * Version 0.8.5 Compatibility
 * Fixed debug command `item` to use the Pity Unlock logic for easier debugging.

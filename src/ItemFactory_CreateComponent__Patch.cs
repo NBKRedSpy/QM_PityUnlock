@@ -34,16 +34,16 @@ namespace QM_PityUnlock
 	            //// if (itemRecord is DatadiskRecord datadiskRecord)
 	            //IL_02c7: ldarg.3
 	            //IL_02c8: isinst MGSC.DatadiskRecord
-	            //IL_02cd: stloc.s 6
+	            //IL_02cd: stloc.s 7
 	            //// DatadiskComponent datadiskComponent = new DatadiskComponent();
-	            //IL_02cf: ldloc.s 6
+	            //IL_02cf: ldloc.s 7
 	            //IL_02d1: brfalse.s IL_030c
                 .MatchEndForward(
                     new CodeMatch(OpCodes.Ldarg_3),
                     new CodeMatch(OpCodes.Isinst, typeof(DatadiskRecord)),
 
-                    Utils.MatchVariable(OpCodes.Stloc_S, 6, typeof(DatadiskRecord)),
-                    Utils.MatchVariable(OpCodes.Ldloc_S, 6, typeof(DatadiskRecord)),
+                    Utils.MatchVariable(OpCodes.Stloc_S, 7, typeof(DatadiskRecord)),
+                    Utils.MatchVariable(OpCodes.Ldloc_S, 7, typeof(DatadiskRecord)),
 
                     new CodeMatch(OpCodes.Brfalse_S)
                 )
@@ -52,18 +52,18 @@ namespace QM_PityUnlock
 
                  //Target:  The random item code.  This mod's UnlockDataDisk creates the component as well.
                  //// DatadiskComponent datadiskComponent = new DatadiskComponent();
-                 //IL_02cf: ldloc.s 6
+                 //IL_02cf: ldloc.s 7
                  //IL_02d1: brfalse.s IL_030c
 
                  //IL_02d3: newobj instance void MGSC.DatadiskComponent::.ctor()
-                 //IL_02d8: stloc.s 18
+                 //IL_02d8: stloc.s 20
 
                  //// datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)]);
-                 //IL_02da: ldloc.s 18
-                 //IL_02dc: ldloc.s 6
+                 //IL_02da: ldloc.s 20
+                 //IL_02dc: ldloc.s 7
                  //IL_02de: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
                  //IL_02e3: ldc.i4.0
-                 //IL_02e4: ldloc.s 6
+                 //IL_02e4: ldloc.s 7
                  //IL_02e6: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
                  //IL_02eb: callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<string>::get_Count()
                  //IL_02f0: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
@@ -73,9 +73,9 @@ namespace QM_PityUnlock
 
                  .ThrowIfNotMatchForward("Did not find original unlock random code",
                     new CodeMatch(OpCodes.Newobj),
-                    Utils.MatchVariable(OpCodes.Stloc_S, 18, typeof(DatadiskComponent)),
-                    Utils.MatchVariable(OpCodes.Ldloc_S, 18, typeof(DatadiskComponent)),
-                    Utils.MatchVariable(OpCodes.Ldloc_S, 6, typeof(DatadiskRecord)),
+                    Utils.MatchVariable(OpCodes.Stloc_S, 20, typeof(DatadiskComponent)),
+                    Utils.MatchVariable(OpCodes.Ldloc_S, 20, typeof(DatadiskComponent)),
+                    Utils.MatchVariable(OpCodes.Ldloc_S, 7, typeof(DatadiskRecord)),
                     new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(DatadiskRecord), nameof(DatadiskRecord.UnlockIds))),
                     new CodeMatch(OpCodes.Ldc_I4_0),
                     new CodeMatch(OpCodes.Ldloc_S),
@@ -84,21 +84,21 @@ namespace QM_PityUnlock
                     new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(UnityEngine.Random), nameof(UnityEngine.Random.Range),
                         new Type[] { typeof(Int32), typeof(Int32) })),
                     new CodeMatch(OpCodes.Callvirt),
-                    new CodeMatch(OpCodes.Callvirt)
+                    new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(DatadiskComponent), nameof(DatadiskComponent.SetUnlockId)))
                 )
 
                 .RemoveInstructions(12)
 
                 //New Code: 
                 //// DatadiskComponent item2 = UnlockDataDisk(datadiskRecord);
-                //IL_033a: ldloc.s 5
+                //IL_033a: ldloc.s 7
                 //IL_033c: call class ['Assembly-CSharp']MGSC.DatadiskComponent QM_PityUnlock.ItemFactory_CreateComponent__Patch::UnlockDataDisk(class ['Assembly-CSharp']MGSC.DatadiskRecord)
-                //IL_0341: stloc.s 16	
+                //IL_0341: stloc.s 20
 
                 .InsertAndAdvance(
-                    new CodeInstruction(OpCodes.Ldloc_S, 6),
+                    new CodeInstruction(OpCodes.Ldloc_S, 7),
                     CodeInstruction.Call(() => PityRollManager.UnlockDataDisk(default)),
-                    new CodeInstruction(OpCodes.Stloc_S, 18)
+                    new CodeInstruction(OpCodes.Stloc_S, 20)
                 )
 
                 .InstructionEnumeration()

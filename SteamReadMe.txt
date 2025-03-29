@@ -1,6 +1,18 @@
 [h1]Quasimorph Pity Unlock[/h1]
 
 
+[h1]Important - This version of the mod is only for the opt in beta version of the game![/h1]
+
+This is a temporary version that supports the 0.8.6 beta, and not the current game's version.
+For the non beta version of the game, use the mod of the same name without the BETA suffix.
+
+The non beta version [i]must[/i] be uninstalled.
+When the 0.8.6 becomes the main version, this mod will be deleted.
+Note that the beta is expected to change many times before release.
+As such, this mod may break on each beta release.
+
+[h1]Docs[/h1]
+
 Tired of only getting chips for mercenaries, classes, or production items that have already been unlocked?
 
 This mod adds a "pity" system which increases the chances of getting a chip that has not been unlocked.  The game's existing random chip spawn is still used for non "pity" rolls.
@@ -134,6 +146,11 @@ Thanks!
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 [h1]Change Log[/h1]
+
+[h2]2.3.0[/h2]
+[list]
+[*]Version 0.8.7 compatibility
+[/list]
 
 [h2]2.2.0[/h2]
 [list]
