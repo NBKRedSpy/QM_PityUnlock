@@ -10,6 +10,7 @@ By default, this mod is configured to guarantee a chip that is not already unloc
 
 There are multiple pity algorithms and settings available such as "always locked", a "hard cap", and "increasing chance".  See the [Configuration](#configuration) section below for more information.
 
+
 # Credits
 The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
 
@@ -59,6 +60,9 @@ Thanks!
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 # Change Log
+## 2.3.0
+* Version 0.8.7 compatibility
+
 ## 2.2.0
 * Version 0.8.5 Compatibility
 * Fixed debug command `item` to use the Pity Unlock logic for easier debugging.

@@ -135,6 +135,11 @@ Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 [h1]Change Log[/h1]
 
+[h2]2.3.0[/h2]
+[list]
+[*]Version 0.8.7 compatibility
+[/list]
+
 [h2]2.2.0[/h2]
 [list]
 [*]Version 0.8.5 Compatibility
