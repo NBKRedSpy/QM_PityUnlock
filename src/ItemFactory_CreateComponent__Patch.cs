@@ -56,10 +56,10 @@ namespace QM_PityUnlock
                  //IL_02d1: brfalse.s IL_030c
 
                  //IL_02d3: newobj instance void MGSC.DatadiskComponent::.ctor()
-                 //IL_02d8: stloc.s 20
+                 //IL_02d8: stloc.s 22
 
                  //// datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)]);
-                 //IL_02da: ldloc.s 20
+                 //IL_02da: ldloc.s 22
                  //IL_02dc: ldloc.s 7
                  //IL_02de: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
                  //IL_02e3: ldc.i4.0
@@ -73,8 +73,8 @@ namespace QM_PityUnlock
 
                  .ThrowIfNotMatchForward("Did not find original unlock random code",
                     new CodeMatch(OpCodes.Newobj),
-                    Utils.MatchVariable(OpCodes.Stloc_S, 20, typeof(DatadiskComponent)),
-                    Utils.MatchVariable(OpCodes.Ldloc_S, 20, typeof(DatadiskComponent)),
+                    Utils.MatchVariable(OpCodes.Stloc_S, 22, typeof(DatadiskComponent)),
+                    Utils.MatchVariable(OpCodes.Ldloc_S, 22, typeof(DatadiskComponent)),
                     Utils.MatchVariable(OpCodes.Ldloc_S, 7, typeof(DatadiskRecord)),
                     new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(DatadiskRecord), nameof(DatadiskRecord.UnlockIds))),
                     new CodeMatch(OpCodes.Ldc_I4_0),
@@ -93,12 +93,12 @@ namespace QM_PityUnlock
                 //// DatadiskComponent item2 = UnlockDataDisk(datadiskRecord);
                 //IL_033a: ldloc.s 7
                 //IL_033c: call class ['Assembly-CSharp']MGSC.DatadiskComponent QM_PityUnlock.ItemFactory_CreateComponent__Patch::UnlockDataDisk(class ['Assembly-CSharp']MGSC.DatadiskRecord)
-                //IL_0341: stloc.s 20
+                //IL_0341: stloc.s 22
 
                 .InsertAndAdvance(
                     new CodeInstruction(OpCodes.Ldloc_S, 7),
                     CodeInstruction.Call(() => PityRollManager.UnlockDataDisk(default)),
-                    new CodeInstruction(OpCodes.Stloc_S, 20)
+                    new CodeInstruction(OpCodes.Stloc_S, 22)
                 )
 
                 .InstructionEnumeration()
