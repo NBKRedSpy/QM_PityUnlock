@@ -1,5 +1,11 @@
-[h1]Quasimorph Pity Unlock[/h1]
+[h1]Quasimorph Pity Unlock - Beta Only![/h1]
 
+
+[h1]Imporant![/h1]
+
+This is for the opt in 0.9.1 beta and does not work for the current release.  Use the version fo the mod without the beta suffix.
+
+[h1]Docs[/h1]
 
 Tired of only getting chips for mercenaries, classes, or production items that have already been unlocked?
 
@@ -135,6 +141,11 @@ Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 [h1]Change Log[/h1]
 
+[h2]2.3.1[/h2]
+[list]
+[*]Version 0.9.1 compatibility
+[/list]
+
 [h2]2.3.0[/h2]
 [list]
 [*]Version 0.8.7 compatibility
@@ -156,12 +167,3 @@ Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 [list]
 [*]Data is now saved per save slot.
 [/list]
-
-[h2]1.2.0[/h2]
-[list]
-[*]Moved config file directory.
-[/list]
-
-[h2]1.1.0[/h2]
-
-Added production item chips.
