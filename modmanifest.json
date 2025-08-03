@@ -1,11 +1,11 @@
 {
-  "UniqueModName": "NBKRedSpy_QM_PityUnlock_beta",
+  "UniqueModName": "NBKRedSpy_QM_PityUnlock",
   "Assemblies": [
     "QM_PityUnlock.dll"
   ],
   "Dependencies": [], 
   "SteamTags": [
-    "0.9.1",
+    "0.9.5",
     "Quality of Life"
   ]
 }

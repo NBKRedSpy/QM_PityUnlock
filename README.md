@@ -2,12 +2,6 @@
 
 ![thumbnail icon](media/thumbnail.png)
 
-
-# Imporant!
-This is for the opt in 0.9.1 beta and does not work for the current release.  Use the version fo the mod without the beta suffix.
-
-# Docs
-
 Tired of only getting chips for mercenaries, classes, or production items that have already been unlocked?
 
 This mod adds a "pity" system which increases the chances of getting a chip that has not been unlocked.  The game's existing random chip spawn is still used for non "pity" rolls.
