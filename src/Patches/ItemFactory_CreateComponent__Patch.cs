@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using static HarmonyLib.Code;
 
-namespace QM_PityUnlock
+namespace QM_PityUnlock.Patches
 {
     [HarmonyPatch(typeof(ItemFactory), nameof(ItemFactory.CreateComponent))]
     internal class ItemFactory_CreateComponent__Patch
@@ -82,7 +82,7 @@ namespace QM_PityUnlock
                     new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(DatadiskRecord), nameof(DatadiskRecord.UnlockIds))),
                     new CodeMatch(OpCodes.Callvirt),
                     new CodeMatch(OpCodes.Call, AccessTools.Method(typeof(UnityEngine.Random), nameof(UnityEngine.Random.Range),
-                        new Type[] { typeof(Int32), typeof(Int32) })),
+                        new Type[] { typeof(int), typeof(int) })),
                     new CodeMatch(OpCodes.Callvirt),
                     new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(DatadiskComponent), nameof(DatadiskComponent.SetUnlockId)))
                 )

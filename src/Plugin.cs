@@ -23,6 +23,9 @@ namespace QM_PityUnlock
 
         public static PityStateRepository PityStateDb { get; private set; } = new PityStateRepository();
 
+        internal static McmConfiguration McmConfiguration { get; private set; }
+
+
         [Hook(ModHookType.AfterConfigsLoaded)]
         public static void AfterConfig(IModContext context)
         {
@@ -40,6 +43,9 @@ namespace QM_PityUnlock
             PityStateDb = new PityStateRepository(pityStateFilePath).LoadConfig();
             PityStateDb.Init(Config.PitySettings, GameState);
             PityStateDb.Save();
+
+            McmConfiguration = new McmConfiguration(Config);
+            McmConfiguration.Configure();
 
             new Harmony("NBKRedSpy_" + ModAssemblyName).PatchAll();
         }

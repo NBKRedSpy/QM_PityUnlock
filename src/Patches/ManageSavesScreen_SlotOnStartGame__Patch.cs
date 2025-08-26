@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using HarmonyLib;
 using MGSC;
 
-namespace QM_PityUnlock
+namespace QM_PityUnlock.Patches
 {
 
     /// <summary>

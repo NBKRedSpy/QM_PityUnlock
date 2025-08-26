@@ -2,6 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
+	  <LangVersion>latest</LangVersion>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 	<PropertyGroup>
@@ -25,6 +26,10 @@
 	  <None Remove="Move To Root\**" />
 	</ItemGroup>
 	<ItemGroup>
+		<Reference Include="MCM">
+			<HintPath>$(GAME_PATH)\..\..\workshop\content\2059170\3469678797\MCM.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="0Harmony">
 		  <HintPath>$(ManagedPath)0Harmony.dll</HintPath>
 		</Reference>

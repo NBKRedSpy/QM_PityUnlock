@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QM_PityUnlock
+namespace QM_PityUnlock.Patches
 {
     [HarmonyPatch(typeof(DungeonBuilder), nameof(DungeonBuilder.Populate))]
     public static class DungeonBuilder_Populate__Patch
