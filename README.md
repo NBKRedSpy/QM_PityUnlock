@@ -1,4 +1,4 @@
-# Quasimorph Pity Unlock - Beta Only!
+# Quasimorph Pity Unlock!
 
 ![thumbnail icon](media/thumbnail.png)
 

@@ -1,4 +1,4 @@
-[h1]Quasimorph Pity Unlock - Beta Only![/h1]
+[h1]Quasimorph Pity Unlock![/h1]
 
 
 Tired of only getting chips for mercenaries, classes, or production items that have already been unlocked?
