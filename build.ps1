@@ -3,7 +3,7 @@
 try {
 
     # Use convention to the project name
-    $projectName = dir .. -Directory | select -Unique parent | %{$_.Parent.Name}
+    #$projectName = dir .. -Directory | select -Unique parent | %{$_.Parent.Name}
 
     mkdir package -ErrorAction SilentlyContinue | Out-Null
     Remove-Item package\* -Recurse -Force -ErrorAction SilentlyContinue
