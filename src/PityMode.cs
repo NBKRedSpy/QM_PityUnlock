@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QM_PityUnlock
+namespace PityUnlock
 {
     public enum PityMode
     {

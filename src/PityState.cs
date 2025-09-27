@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 
-namespace QM_PityUnlock
+namespace PityUnlock
 {
     /// <summary>
     /// Handles the pity processing for every datadisk type.

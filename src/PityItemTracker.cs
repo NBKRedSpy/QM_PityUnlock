@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace QM_PityUnlock
+namespace PityUnlock
 {
     /// <summary>
     /// Handles the pity pull logic for a single DataRecord type.  Ex:  classUSB

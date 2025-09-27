@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="QM_PityUnlock.PityRollManager">
+  <Class Name="PityUnlock.PityRollManager">
     <Position X="9" Y="6.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PityRollManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QM_PityUnlock.PitySettings">
+  <Class Name="PityUnlock.PitySettings">
     <Position X="7" Y="4" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACIAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PitySettings.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QM_PityUnlock.PityState">
+  <Class Name="PityUnlock.PityState">
     <Position X="3.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAAAABAAAAAAAAAgAACAAAAIAg=</HashCode>
@@ -24,7 +24,7 @@
       <Property Name="DiskTrackers" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="QM_PityUnlock.PityStateRepository">
+  <Class Name="PityUnlock.PityStateRepository">
     <Position X="3.5" Y="1" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAQAAABCAAAAIQA=</HashCode>
@@ -34,14 +34,14 @@
       <Field Name="SaveSlotPityStates" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="QM_PityUnlock.PityItemTracker">
+  <Class Name="PityUnlock.PityItemTracker">
     <Position X="6.25" Y="6.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAEAAAAAAAAIAAgAAAARAQAIAACAAAAAAA=</HashCode>
       <FileName>PityItemTracker.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="QM_PityUnlock.ModConfig">
+  <Class Name="PityUnlock.ModConfig">
     <Position X="7" Y="1" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAQAAA=</HashCode>
@@ -51,7 +51,7 @@
       <Property Name="PitySettings" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="QM_PityUnlock.GameModesPityState">
+  <Class Name="PityUnlock.GameModesPityState">
     <Position X="1" Y="3.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>IAAACAAAAAAAAAAAAAAAIAAAAAAAAAAAAAACAAAAAAA=</HashCode>
@@ -62,7 +62,7 @@
       <Property Name="OverworldMode" />
     </ShowAsAssociation>
   </Class>
-  <Enum Name="QM_PityUnlock.PityMode" Collapsed="true">
+  <Enum Name="PityUnlock.PityMode" Collapsed="true">
     <Position X="9.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAECAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAA=</HashCode>

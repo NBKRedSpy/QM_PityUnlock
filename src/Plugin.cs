@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using MGSC;
+using PityUnlock_Bootstrap;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,9 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace QM_PityUnlock
+namespace PityUnlock
 {
-    public static class Plugin
+    public class Plugin : BootstrapMod
     {
         public static string ModAssemblyName => Assembly.GetExecutingAssembly().GetName().Name;
 
@@ -23,7 +24,11 @@ namespace QM_PityUnlock
 
         public static PityStateRepository PityStateDb { get; private set; } = new PityStateRepository();
 
-        [Hook(ModHookType.AfterConfigsLoaded)]
+        public Plugin(HookEvents hookEvents, bool isBeta) : base(hookEvents, isBeta)
+        {
+            hookEvents.AfterConfigsLoaded += AfterConfig;
+        }
+
         public static void AfterConfig(IModContext context)
         {
             GameState = context.State;

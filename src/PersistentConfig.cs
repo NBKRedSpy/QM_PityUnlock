@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using QM_PityUnlock;
+using PityUnlock;
 using System;
 using System.CodeDom;
 using System.IO;
