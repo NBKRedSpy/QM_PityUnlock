@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using UnityEngine;
 
-namespace QM_PityUnlock
+namespace PityUnlock
 {
     public class ModConfig : PersistentConfig<ModConfig>
     {

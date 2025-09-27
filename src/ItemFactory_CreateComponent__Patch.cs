@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using static HarmonyLib.Code;
 
-namespace QM_PityUnlock
+namespace PityUnlock
 {
     [HarmonyPatch(typeof(ItemFactory), nameof(ItemFactory.CreateComponent))]
     internal class ItemFactory_CreateComponent__Patch
@@ -92,7 +92,7 @@ namespace QM_PityUnlock
                 //New Code: 
                 //// DatadiskComponent item2 = UnlockDataDisk(datadiskRecord);
                 //IL_033a: ldloc.s 7
-                //IL_033c: call class ['Assembly-CSharp']MGSC.DatadiskComponent QM_PityUnlock.ItemFactory_CreateComponent__Patch::UnlockDataDisk(class ['Assembly-CSharp']MGSC.DatadiskRecord)
+                //IL_033c: call class ['Assembly-CSharp']MGSC.DatadiskComponent PityUnlock.ItemFactory_CreateComponent__Patch::UnlockDataDisk(class ['Assembly-CSharp']MGSC.DatadiskRecord)
                 //IL_0341: stloc.s 22
 
                 .InsertAndAdvance(

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QM_PityUnlock
+namespace PityUnlock
 {
     /// <summary>
     /// The pity state for each of the game modes.
