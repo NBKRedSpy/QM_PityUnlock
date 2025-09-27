@@ -1,7 +1,7 @@
 {
-  "UniqueModName": "NBKRedSpy_ProduceAsReady",
+  "UniqueModName": "NBKRedSpy_PityUnlock",
   "Assemblies": [
-    "ProduceAsReady_Bootstrap.dll"
+    "PityUnlock_Bootstrap.dll"
   ],
   "Dependencies": [],
   "SteamTags": [

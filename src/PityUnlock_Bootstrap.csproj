@@ -4,7 +4,7 @@
 	  <LangVersion>latest</LangVersion>
     <OutputType>Library</OutputType>
 	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-	  <SteamId>3566496218</SteamId>
+	  <SteamId>3372043917</SteamId>
   </PropertyGroup>
 	<PropertyGroup>
 		<GAME_NAME>Quasimorph</GAME_NAME>
