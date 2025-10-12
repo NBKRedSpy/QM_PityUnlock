@@ -82,7 +82,7 @@ namespace PityUnlock
                     case PityMode.Percentage:
                         int randomValue = RandomGenerator.Next(1, 100);
 
-                        if(Plugin.Config.VerboseDebug) Plugin.Log($"Random Value: {randomValue}");
+                        if(Plugin.Config.VerboseDebug) Plugin.Logger.Log($"Random Value: {randomValue}");
 
                         doFullRandom = ( randomValue >= MissCount * PitySettings.PercentageMultiplier * 100);
                         break;
@@ -107,20 +107,20 @@ namespace PityUnlock
                 if (Plugin.Config.VerboseDebug) 
                 {
                     //Plugin.Log($"Regular Roll.  Miss Count {MissCount}: Not Unlocked: {String.Join(",", notUnlockedIds)}");
-                    Plugin.Log($"====== Regular Roll.  Miss Count {MissCount}: Not Unlocked: {notUnlockedIds.Count()}");
+                    Plugin.Logger.Log($"====== Regular Roll.  Miss Count {MissCount}: Not Unlocked: {notUnlockedIds.Count()}");
 
                 }
 
             }
             else
             {
-                if (Plugin.Config.VerboseDebug) Plugin.LogWarning($"++++++ Pity Roll:  Not Unlocked: {notUnlockedIds.Count()}");
+                if (Plugin.Config.VerboseDebug) Plugin.Logger.LogWarning($"++++++ Pity Roll:  Not Unlocked: {notUnlockedIds.Count()}");
 
                 MissCount = 0;
                 unlockedId = GetRandomItem(notUnlockedIds);
             }
 
-            if (Plugin.Config.VerboseDebug) Plugin.Log($"Item id: {unlockedId}");
+            if (Plugin.Config.VerboseDebug) Plugin.Logger.Log($"Item id: {unlockedId}");
 
             return unlockedId;
 

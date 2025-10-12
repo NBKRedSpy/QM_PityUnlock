@@ -5,6 +5,7 @@
 
 package
 SteamTest/
+*.bak
 *.zip
 # User-specific files
 *.rsuser

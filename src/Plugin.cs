@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using MGSC;
+using PityUnlock.Mcm;
 using PityUnlock_Bootstrap;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,11 @@ namespace PityUnlock
 
         public static ModConfig Config { get; private set; }
 
+        public static Logger Logger { get; private set; } = new Logger(ModAssemblyName);    
+
         public static State GameState { get; private set; }
+
+        internal static McmConfiguration McmConfiguration { get; private set; }
 
         public static PityStateRepository PityStateDb { get; private set; } = new PityStateRepository();
 
@@ -39,6 +44,8 @@ namespace PityUnlock
             Directory.CreateDirectory(ConfigDirectories.ModPersistenceFolder);
 
             Config = new ModConfig(ConfigDirectories.ConfigPath).LoadConfig();
+            McmConfiguration = new McmConfiguration(Config);
+            McmConfiguration.Configure();   
 
             string pityStateFilePath = Path.Combine(ConfigDirectories.ModPersistenceFolder, "PityState.json");
 
@@ -48,31 +55,6 @@ namespace PityUnlock
 
             new Harmony("NBKRedSpy_" + ModAssemblyName).PatchAll();
         }
-
-        #region Logging
-        public static void Log(string message)
-        {
-            Debug.Log($"[{ModAssemblyName}] {message}");
-        }
-
-        public static void LogWarning(string message)
-        {
-            Debug.LogWarning($"[{ModAssemblyName}] {message}");
-        }
-
-        public static void LogError(string message)
-        {
-            Debug.LogError($"[{ModAssemblyName}] {message}");
-        }
-
-        public static void LogException(Exception ex)
-        {
-            Debug.LogError($"[{ModAssemblyName}] Exception Logged:");
-            Debug.LogException(ex);
-        }
-
-        #endregion
-
 
     }
 }
