@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace PityUnlock
 {
-    public class ModConfig : PersistentConfig<ModConfig>
+    public class ModConfig : PersistentConfig<ModConfig> 
     {
         public ModConfig(){}
         public ModConfig(string configPath): base(configPath) { }   

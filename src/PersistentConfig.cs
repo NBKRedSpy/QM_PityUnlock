@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
 using PityUnlock;
+using PityUnlock.Mcm;
 using System;
 using System.CodeDom;
 using System.IO;
 using UnityEngine;
 
-public class PersistentConfig<T> where T: PersistentConfig<T>
+public class PersistentConfig<T> : ISave where T: PersistentConfig<T>
 {
     [JsonIgnore]
     public string ConfigPath { get; private set; }
@@ -44,7 +45,7 @@ public class PersistentConfig<T> where T: PersistentConfig<T>
 
                 if (upgradeConfig != sourceJson)
                 {
-                    Plugin.Log("Updating config with missing elements");
+                    Plugin.Logger.Log("Updating config with missing elements");
                     config.Save();
                     }
 
@@ -53,8 +54,7 @@ public class PersistentConfig<T> where T: PersistentConfig<T>
             }
             catch (Exception ex)
             {
-                Plugin.LogError("Error parsing configuration.  Ignoring config file and using defaults");
-                Plugin.LogException(ex);
+                Plugin.Logger.LogError(ex,"Error parsing configuration.  Ignoring config file and using defaults");
 
                 //Not overwriting in case the user just made a typo.
                 config = (T)Activator.CreateInstance(typeof(T), ConfigPath);
@@ -83,7 +83,7 @@ public class PersistentConfig<T> where T: PersistentConfig<T>
         }
         catch (Exception ex)
         {
-            Plugin.LogException(ex);
+            Plugin.Logger.LogError(ex);
         }
     }
 }

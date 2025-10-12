@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
+	<LangVersion>12</LangVersion>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
@@ -18,14 +19,21 @@
 	<PropertyGroup>
 		<WorkshopPath>$(GAME_PATH)\..\..\workshop\content\2059170\$(SteamId)\</WorkshopPath>
 		<ManagedPath>$(GAME_PATH)\$(GAME_NAME)_Data\Managed\</ManagedPath>
+
+		<!-- Use the stripped version if it exists for multi-version compile purposes.-->
+		<MCM_PATH>$(WorkshopPath)\MCM.dll</MCM_PATH>
+		<MCM_PATH Condition="Exists('./lib-stripped/mcm-stripped.dll')">./lib-stripped/mcm-stripped.dll</MCM_PATH>
 	</PropertyGroup>
 	<PropertyGroup>
 		<!-- Comment this first line out to use the actual version.-->
 		<Assembly-CSharpPath Condition="Exists('lib-stripped\Assembly-CSharp-publicized.dll')">lib-stripped/Assembly-CSharp-publicized.dll</Assembly-CSharpPath>
 		<Assembly-CSharpPath Condition="!Exists('lib-stripped\Assembly-CSharp-publicized.dll')">$(ManagedPath)Assembly-CSharp.dll</Assembly-CSharpPath>
 	</PropertyGroup>
-
 	<ItemGroup>
+		<Reference Include="MCM">
+			<HintPath>$(MCM_Path)</HintPath>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="0Harmony">
 		  <HintPath>$(ManagedPath)0Harmony.dll</HintPath>
 			<Private>false</Private>
