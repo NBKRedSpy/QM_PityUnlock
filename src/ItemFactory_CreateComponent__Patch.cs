@@ -73,8 +73,8 @@ namespace PityUnlock
 
                  .ThrowIfNotMatchForward("Did not find original unlock random code",
                     new CodeMatch(OpCodes.Newobj),
-                    Utils.MatchVariable(OpCodes.Stloc_S, 22, typeof(DatadiskComponent)),
-                    Utils.MatchVariable(OpCodes.Ldloc_S, 22, typeof(DatadiskComponent)),
+                    Utils.MatchVariable(OpCodes.Stloc_S, 23, typeof(DatadiskComponent)),
+                    Utils.MatchVariable(OpCodes.Ldloc_S, 23, typeof(DatadiskComponent)),
                     Utils.MatchVariable(OpCodes.Ldloc_S, 7, typeof(DatadiskRecord)),
                     new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(DatadiskRecord), nameof(DatadiskRecord.UnlockIds))),
                     new CodeMatch(OpCodes.Ldc_I4_0),
@@ -98,7 +98,7 @@ namespace PityUnlock
                 .InsertAndAdvance(
                     new CodeInstruction(OpCodes.Ldloc_S, 7),
                     CodeInstruction.Call(() => PityRollManager.UnlockDataDisk(default)),
-                    new CodeInstruction(OpCodes.Stloc_S, 22)
+                    new CodeInstruction(OpCodes.Stloc_S, 23)
                 )
 
                 .InstructionEnumeration()
