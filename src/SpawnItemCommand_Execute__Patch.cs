@@ -36,12 +36,14 @@ namespace PityUnlock
 
                 //Goal: replace the type check with a false to just bypass the if block.
 
-                //// if (basePickupItem.Is<DatadiskRecord>())
-                //IL_000f: ldloc.0
-                //IL_0010: callvirt instance bool MGSC.BasePickupItem::Is<class MGSC.DatadiskRecord>()
+
+                // if (item.Is<DatadiskRecord>())
+				//IL_0053: ldloc.s 6
+				//IL_0055: callvirt instance bool MGSC.BasePickupItem::Is<class MGSC.DatadiskRecord>()
+				//IL_005a: brfalse.s IL_008f
 
                 .MatchStartForward(
-                    new CodeMatch(OpCodes.Ldloc_0),
+                   new CodeMatch(OpCodes.Ldloc_S),
                     new CodeMatch(OpCodes.Callvirt,
                         AccessTools.Method( typeof(BasePickupItem), "Is", new Type[] { }, new Type[] { typeof(DatadiskRecord) })),
                     new CodeMatch(OpCodes.Brfalse_S)
