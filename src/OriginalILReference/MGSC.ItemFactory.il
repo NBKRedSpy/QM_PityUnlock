@@ -2,7 +2,7 @@
 	extends class MGSC.SingletonMonoBehaviour`1<class MGSC.ItemFactory>
 {
 	// Nested Types
-	.class nested private auto ansi sealed beforefieldinit '<>c__DisplayClass21_0'
+	.class nested private auto ansi sealed beforefieldinit '<>c__DisplayClass34_0'
 		extends [mscorlib]System.ValueType
 	{
 		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
@@ -12,9 +12,9 @@
 		.field public class MGSC.PickupItem initialItem
 		.field public class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> itemComponents
 
-	} // end of class <>c__DisplayClass21_0
+	} // end of class <>c__DisplayClass34_0
 
-	.class nested private auto ansi sealed beforefieldinit '<>c__DisplayClass22_0'
+	.class nested private auto ansi sealed beforefieldinit '<>c__DisplayClass35_0'
 		extends [mscorlib]System.ValueType
 	{
 		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
@@ -24,10 +24,26 @@
 		.field public class MGSC.PickupItem item
 		.field public class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> itemComponents
 
-	} // end of class <>c__DisplayClass22_0
+	} // end of class <>c__DisplayClass35_0
 
 
 	// Fields
+	.field private class [UnityEngine.CoreModule]UnityEngine.Sprite _iconOneSlotPlaceholder
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.SerializeField::.ctor() = (
+		01 00 00 00
+	)
+	.field private class [UnityEngine.CoreModule]UnityEngine.Sprite _iconTwoSlotPlaceholder
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.SerializeField::.ctor() = (
+		01 00 00 00
+	)
+	.field private class [UnityEngine.CoreModule]UnityEngine.Sprite _smallIconPlaceholder
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.SerializeField::.ctor() = (
+		01 00 00 00
+	)
+	.field private class [UnityEngine.CoreModule]UnityEngine.Sprite _shadowPlaceholder
+	.custom instance void [UnityEngine.CoreModule]UnityEngine.SerializeField::.ctor() = (
+		01 00 00 00
+	)
 	.field private class [UnityEngine.CoreModule]UnityEngine.GameObject _itemOnFloorPrefab
 	.custom instance void [UnityEngine.CoreModule]UnityEngine.SerializeField::.ctor() = (
 		01 00 00 00
@@ -45,6 +61,10 @@
 	.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
 		01 00 00 00
 	)
+	.field private float32 '<ArmorDurabilityMult>k__BackingField'
+	.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+		01 00 00 00
+	)
 
 	// Methods
 	.method public hidebysig specialname 
@@ -53,7 +73,7 @@
 		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
 			01 00 00 00
 		)
-		// Method begins at RVA 0x394f5
+		// Method begins at RVA 0x56408
 		// Header size: 1
 		// Code size: 7 (0x7)
 		.maxstack 8
@@ -72,7 +92,7 @@
 		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
 			01 00 00 00
 		)
-		// Method begins at RVA 0x394fd
+		// Method begins at RVA 0x56410
 		// Header size: 1
 		// Code size: 8 (0x8)
 		.maxstack 8
@@ -91,7 +111,7 @@
 		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
 			01 00 00 00
 		)
-		// Method begins at RVA 0x39506
+		// Method begins at RVA 0x56419
 		// Header size: 1
 		// Code size: 7 (0x7)
 		.maxstack 8
@@ -110,7 +130,7 @@
 		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
 			01 00 00 00
 		)
-		// Method begins at RVA 0x3950e
+		// Method begins at RVA 0x56421
 		// Header size: 1
 		// Code size: 8 (0x8)
 		.maxstack 8
@@ -123,12 +143,50 @@
 		IL_0007: ret
 	} // end of method ItemFactory::set_WeaponDurabilityMult
 
+	.method public hidebysig specialname 
+		instance float32 get_ArmorDurabilityMult () cil managed 
+	{
+		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Method begins at RVA 0x5642a
+		// Header size: 1
+		// Code size: 7 (0x7)
+		.maxstack 8
+
+		// return <ArmorDurabilityMult>k__BackingField;
+		IL_0000: ldarg.0
+		IL_0001: ldfld float32 MGSC.ItemFactory::'<ArmorDurabilityMult>k__BackingField'
+		IL_0006: ret
+	} // end of method ItemFactory::get_ArmorDurabilityMult
+
+	.method private hidebysig specialname 
+		instance void set_ArmorDurabilityMult (
+			float32 'value'
+		) cil managed 
+	{
+		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
+			01 00 00 00
+		)
+		// Method begins at RVA 0x56432
+		// Header size: 1
+		// Code size: 8 (0x8)
+		.maxstack 8
+
+		// <ArmorDurabilityMult>k__BackingField = value;
+		IL_0000: ldarg.0
+		IL_0001: ldarg.1
+		IL_0002: stfld float32 MGSC.ItemFactory::'<ArmorDurabilityMult>k__BackingField'
+		// }
+		IL_0007: ret
+	} // end of method ItemFactory::set_ArmorDurabilityMult
+
 	.method public hidebysig 
 		instance void SetConsumablesStackBonus (
 			int32 consumablesStackBonus
 		) cil managed 
 	{
-		// Method begins at RVA 0x39517
+		// Method begins at RVA 0x5643b
 		// Header size: 1
 		// Code size: 9 (0x9)
 		.maxstack 8
@@ -143,9 +201,109 @@
 	} // end of method ItemFactory::SetConsumablesStackBonus
 
 	.method public hidebysig 
+		instance class [UnityEngine.CoreModule]UnityEngine.Sprite ResolveSmallIcon (
+			class MGSC.ItemContentDescriptor desc
+		) cil managed 
+	{
+		// Method begins at RVA 0x56445
+		// Header size: 1
+		// Code size: 28 (0x1c)
+		.maxstack 8
+
+		// if (!(desc.SmallIcon == null))
+		IL_0000: ldarg.1
+		IL_0001: callvirt instance class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemContentDescriptor::get_SmallIcon()
+		IL_0006: ldnull
+		IL_0007: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Equality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_000c: brtrue.s IL_0015
+
+		// return desc.SmallIcon;
+		IL_000e: ldarg.1
+		IL_000f: callvirt instance class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemContentDescriptor::get_SmallIcon()
+		IL_0014: ret
+
+		// return _smallIconPlaceholder;
+		IL_0015: ldarg.0
+		IL_0016: ldfld class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemFactory::_smallIconPlaceholder
+		IL_001b: ret
+	} // end of method ItemFactory::ResolveSmallIcon
+
+	.method public hidebysig 
+		instance class [UnityEngine.CoreModule]UnityEngine.Sprite ResolveIcon (
+			class MGSC.ItemContentDescriptor desc,
+			int32 widthSize
+		) cil managed 
+	{
+		// Method begins at RVA 0x56464
+		// Header size: 12
+		// Code size: 42 (0x2a)
+		.maxstack 2
+		.locals init (
+			[0] class [UnityEngine.CoreModule]UnityEngine.Sprite
+		)
+
+		// Sprite result = ((widthSize > 1) ? _iconTwoSlotPlaceholder : _iconOneSlotPlaceholder);
+		IL_0000: ldarg.2
+		IL_0001: ldc.i4.1
+		IL_0002: bgt.s IL_000c
+
+		IL_0004: ldarg.0
+		IL_0005: ldfld class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemFactory::_iconOneSlotPlaceholder
+		IL_000a: br.s IL_0012
+
+		// if (!(desc.Icon == null))
+		IL_000c: ldarg.0
+		IL_000d: ldfld class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemFactory::_iconTwoSlotPlaceholder
+
+		IL_0012: stloc.0
+		IL_0013: ldarg.1
+		IL_0014: callvirt instance class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemContentDescriptor::get_Icon()
+		IL_0019: ldnull
+		IL_001a: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Equality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_001f: brtrue.s IL_0028
+
+		// return desc.Icon;
+		IL_0021: ldarg.1
+		IL_0022: callvirt instance class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemContentDescriptor::get_Icon()
+		IL_0027: ret
+
+		// return result;
+		IL_0028: ldloc.0
+		IL_0029: ret
+	} // end of method ItemFactory::ResolveIcon
+
+	.method public hidebysig 
+		instance class [UnityEngine.CoreModule]UnityEngine.Sprite ResolveShadowIcon (
+			class MGSC.ItemContentDescriptor desc
+		) cil managed 
+	{
+		// Method begins at RVA 0x5649a
+		// Header size: 1
+		// Code size: 28 (0x1c)
+		.maxstack 8
+
+		// if (!(desc.ShadowOnFloor == null))
+		IL_0000: ldarg.1
+		IL_0001: callvirt instance class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemContentDescriptor::get_ShadowOnFloor()
+		IL_0006: ldnull
+		IL_0007: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Equality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_000c: brtrue.s IL_0015
+
+		// return desc.ShadowOnFloor;
+		IL_000e: ldarg.1
+		IL_000f: callvirt instance class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemContentDescriptor::get_ShadowOnFloor()
+		IL_0014: ret
+
+		// return _shadowPlaceholder;
+		IL_0015: ldarg.0
+		IL_0016: ldfld class [UnityEngine.CoreModule]UnityEngine.Sprite MGSC.ItemFactory::_shadowPlaceholder
+		IL_001b: ret
+	} // end of method ItemFactory::ResolveShadowIcon
+
+	.method public hidebysig 
 		instance class MGSC.SpaceTime GetGameTimeNow () cil managed 
 	{
-		// Method begins at RVA 0x39521
+		// Method begins at RVA 0x564b7
 		// Header size: 1
 		// Code size: 12 (0xc)
 		.maxstack 8
@@ -162,7 +320,7 @@
 			float32 weaponDurabilityMult
 		) cil managed 
 	{
-		// Method begins at RVA 0x3952e
+		// Method begins at RVA 0x564c4
 		// Header size: 1
 		// Code size: 8 (0x8)
 		.maxstack 8
@@ -176,9 +334,99 @@
 	} // end of method ItemFactory::SetWeaponDurabilityMult
 
 	.method public hidebysig 
+		instance int16 GetMaxStackSize (
+			class MGSC.IStackableRecord stackable
+		) cil managed 
+	{
+		// Method begins at RVA 0x564d0
+		// Header size: 12
+		// Code size: 88 (0x58)
+		.maxstack 2
+		.locals init (
+			[0] class MGSC.Difficulty,
+			[1] valuetype MGSC.ItemStacksSize
+		)
+
+		// Difficulty difficulty = _state.Get<Difficulty>();
+		IL_0000: ldarg.0
+		IL_0001: ldfld class MGSC.State MGSC.ItemFactory::_state
+		IL_0006: callvirt instance !!0 MGSC.State::Get<class MGSC.Difficulty>()
+		IL_000b: stloc.0
+		// if (stackable == null)
+		IL_000c: ldarg.1
+		IL_000d: brtrue.s IL_0011
+
+		// return 1;
+		IL_000f: ldc.i4.1
+		IL_0010: ret
+
+		// 	return difficulty.Preset.ItemsStackSize switch
+		// 	{
+		// 		ItemStacksSize.X2 => (short)(stackable.MaxStack * 2), 
+		// 		ItemStacksSize.X3 => (short)(stackable.MaxStack * 3), 
+		// 		ItemStacksSize.X4 => (short)(stackable.MaxStack * 4), 
+		// 		_ => stackable.MaxStack, 
+		// 	};
+		IL_0011: ldloc.0
+		IL_0012: callvirt instance class MGSC.DifficultyPreset MGSC.Difficulty::get_Preset()
+		IL_0017: callvirt instance valuetype MGSC.ItemStacksSize MGSC.DifficultyPreset::get_ItemsStackSize()
+		IL_001c: stloc.1
+		// (no C# code)
+		IL_001d: ldloc.1
+		IL_001e: ldc.i4.1
+		IL_001f: sub
+		IL_0020: switch (IL_0033, IL_003d, IL_0047)
+
+		IL_0031: br.s IL_0051
+
+		IL_0033: ldarg.1
+		IL_0034: callvirt instance int16 MGSC.IStackableRecord::get_MaxStack()
+		IL_0039: ldc.i4.2
+		IL_003a: mul
+		IL_003b: conv.i2
+		IL_003c: ret
+
+		IL_003d: ldarg.1
+		IL_003e: callvirt instance int16 MGSC.IStackableRecord::get_MaxStack()
+		IL_0043: ldc.i4.3
+		IL_0044: mul
+		IL_0045: conv.i2
+		IL_0046: ret
+
+		IL_0047: ldarg.1
+		IL_0048: callvirt instance int16 MGSC.IStackableRecord::get_MaxStack()
+		IL_004d: ldc.i4.4
+		IL_004e: mul
+		IL_004f: conv.i2
+		IL_0050: ret
+
+		IL_0051: ldarg.1
+		IL_0052: callvirt instance int16 MGSC.IStackableRecord::get_MaxStack()
+		IL_0057: ret
+	} // end of method ItemFactory::GetMaxStackSize
+
+	.method public hidebysig 
+		instance void SetArmorDurabilityMult (
+			float32 armorDurabilityMult
+		) cil managed 
+	{
+		// Method begins at RVA 0x56534
+		// Header size: 1
+		// Code size: 8 (0x8)
+		.maxstack 8
+
+		// ArmorDurabilityMult = armorDurabilityMult;
+		IL_0000: ldarg.0
+		IL_0001: ldarg.1
+		IL_0002: call instance void MGSC.ItemFactory::set_ArmorDurabilityMult(float32)
+		// }
+		IL_0007: ret
+	} // end of method ItemFactory::SetArmorDurabilityMult
+
+	.method public hidebysig 
 		instance class MGSC.ItemOnFloor CreateItemOnFloor () cil managed 
 	{
-		// Method begins at RVA 0x39538
+		// Method begins at RVA 0x56540
 		// Header size: 12
 		// Code size: 31 (0x1f)
 		.maxstack 2
@@ -209,7 +457,7 @@
 			float32 visualDelay
 		) cil managed 
 	{
-		// Method begins at RVA 0x39563
+		// Method begins at RVA 0x5656b
 		// Header size: 1
 		// Code size: 16 (0x10)
 		.maxstack 8
@@ -233,9 +481,9 @@
 			class MGSC.MapObstacle mapObstacle
 		) cil managed 
 	{
-		// Method begins at RVA 0x39574
+		// Method begins at RVA 0x5657c
 		// Header size: 12
-		// Code size: 42 (0x2a)
+		// Code size: 43 (0x2b)
 		.maxstack 5
 		.locals init (
 			[0] class MGSC.BasePickupItem
@@ -245,24 +493,25 @@
 		IL_0000: ldarg.0
 		IL_0001: ldarg.1
 		IL_0002: ldc.i4.1
-		IL_0003: call instance class MGSC.BasePickupItem MGSC.ItemFactory::CreateForInventory(string, bool)
-		IL_0008: stloc.0
+		IL_0003: ldc.i4.0
+		IL_0004: call instance class MGSC.BasePickupItem MGSC.ItemFactory::CreateForInventory(string, bool, bool)
+		IL_0009: stloc.0
 		// mapObstacle.Store.storage.TryPutItem(basePickupItem, CellPosition.Zero);
-		IL_0009: ldarg.2
-		IL_000a: callvirt instance class MGSC.Store MGSC.MapObstacle::get_Store()
-		IL_000f: ldfld class MGSC.ItemStorage MGSC.Store::'storage'
-		IL_0014: ldloc.0
-		IL_0015: ldsfld valuetype MGSC.CellPosition MGSC.CellPosition::Zero
-		IL_001a: ldc.i4.0
-		IL_001b: ldc.i4.1
-		IL_001c: callvirt instance bool MGSC.ItemStorage::TryPutItem(class MGSC.BasePickupItem, valuetype MGSC.CellPosition, bool, bool)
-		IL_0021: pop
+		IL_000a: ldarg.2
+		IL_000b: callvirt instance class MGSC.Store MGSC.MapObstacle::get_Store()
+		IL_0010: ldfld class MGSC.ItemStorage MGSC.Store::'storage'
+		IL_0015: ldloc.0
+		IL_0016: ldsfld valuetype MGSC.CellPosition MGSC.CellPosition::Zero
+		IL_001b: ldc.i4.0
+		IL_001c: ldc.i4.1
+		IL_001d: callvirt instance bool MGSC.ItemStorage::TryPutItem(class MGSC.BasePickupItem, valuetype MGSC.CellPosition, bool, bool)
+		IL_0022: pop
 		// mapObstacle.RefreshVisual();
-		IL_0022: ldarg.2
-		IL_0023: callvirt instance void MGSC.MapObstacle::RefreshVisual()
+		IL_0023: ldarg.2
+		IL_0024: callvirt instance void MGSC.MapObstacle::RefreshVisual()
 		// return basePickupItem;
-		IL_0028: ldloc.0
-		IL_0029: ret
+		IL_0029: ldloc.0
+		IL_002a: ret
 	} // end of method ItemFactory::CreateItemForObjectStorage
 
 	.method public hidebysig 
@@ -270,7 +519,7 @@
 			class MGSC.ItemOnFloor view
 		) cil managed 
 	{
-		// Method begins at RVA 0x395aa
+		// Method begins at RVA 0x565b3
 		// Header size: 1
 		// Code size: 12 (0xc)
 		.maxstack 8
@@ -286,11 +535,13 @@
 	.method public hidebysig 
 		instance class MGSC.BasePickupItem CreateForInventory (
 			string itemId,
-			[opt] bool randomizeConditionAndCapacity
+			[opt] bool randomizeConditionAndCapacity,
+			[opt] bool isSingleItem
 		) cil managed 
 	{
 		.param [2] = bool(false)
-		// Method begins at RVA 0x395b8
+		.param [3] = bool(false)
+		// Method begins at RVA 0x565c0
 		// Header size: 12
 		// Code size: 258 (0x102)
 		.maxstack 7
@@ -443,7 +694,7 @@
 			class MGSC.BasePickupItem initialItem
 		) cil managed 
 	{
-		// Method begins at RVA 0x396e4
+		// Method begins at RVA 0x566ec
 		// Header size: 12
 		// Code size: 240 (0xf0)
 		.maxstack 4
@@ -600,7 +851,7 @@
 	.method family hidebysig virtual 
 		instance void Awake () cil managed 
 	{
-		// Method begins at RVA 0x397fc
+		// Method begins at RVA 0x56804
 		// Header size: 1
 		// Code size: 34 (0x22)
 		.maxstack 8
@@ -612,7 +863,7 @@
 		IL_0006: ldtoken MGSC.ItemOnFloor
 		IL_000b: call class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
 		IL_0010: ldarg.0
-		IL_0011: ldftn instance object MGSC.ItemFactory::'<Awake>b__20_0'(class [mscorlib]System.Type, class [SimpleJSON]SimpleJSON.JSONNode)
+		IL_0011: ldftn instance object MGSC.ItemFactory::'<Awake>b__33_0'(class [mscorlib]System.Type, class [SimpleJSON]SimpleJSON.JSONNode)
 		IL_0017: newobj instance void class [mscorlib]System.Func`3<class [mscorlib]System.Type, class [SimpleJSON]SimpleJSON.JSONNode, object>::.ctor(object, native int)
 		// }
 		IL_001c: call void MGSC.LoadFromJSON::AddCustomActivator(class [mscorlib]System.Type, class [mscorlib]System.Func`3<class [mscorlib]System.Type, class [SimpleJSON]SimpleJSON.JSONNode, object>)
@@ -626,12 +877,12 @@
 			class MGSC.PickupItemComponent initialComponent
 		) cil managed 
 	{
-		// Method begins at RVA 0x39820
+		// Method begins at RVA 0x56828
 		// Header size: 12
-		// Code size: 531 (0x213)
+		// Code size: 534 (0x216)
 		.maxstack 4
 		.locals init (
-			[0] valuetype MGSC.ItemFactory/'<>c__DisplayClass21_0',
+			[0] valuetype MGSC.ItemFactory/'<>c__DisplayClass34_0',
 			[1] class MGSC.BreakableItemComponent,
 			[2] class MGSC.UsableItemComponent,
 			[3] class MGSC.ExpireComponent,
@@ -652,14 +903,14 @@
 		// {
 		IL_0000: ldloca.s 0
 		IL_0002: ldarg.1
-		IL_0003: stfld class MGSC.PickupItem MGSC.ItemFactory/'<>c__DisplayClass21_0'::initialItem
+		IL_0003: stfld class MGSC.PickupItem MGSC.ItemFactory/'<>c__DisplayClass34_0'::initialItem
 		// (no C# code)
 		IL_0008: ldloca.s 0
 		IL_000a: ldarg.2
-		IL_000b: stfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass21_0'::itemComponents
+		IL_000b: stfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass34_0'::itemComponents
 		// itemComponents.Clear();
 		IL_0010: ldloc.0
-		IL_0011: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass21_0'::itemComponents
+		IL_0011: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass34_0'::itemComponents
 		IL_0016: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Clear()
 		// if (initialComponent is BreakableItemComponent breakableItemComponent)
 		IL_001b: ldarg.3
@@ -691,7 +942,7 @@
 		IL_0053: stloc.s 7
 		// itemComponents.Add(item);
 		IL_0055: ldloc.0
-		IL_0056: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass21_0'::itemComponents
+		IL_0056: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass34_0'::itemComponents
 		IL_005b: ldloc.s 7
 		IL_005d: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
@@ -699,201 +950,199 @@
 		IL_0062: ldarg.3
 		IL_0063: isinst MGSC.UsableItemComponent
 		IL_0068: stloc.2
-		// 		UsableItemComponent item2 = new UsableItemComponent(new UsableItemRecord
-		// 		{
-		// 			MaxUsage = usableItemComponent.MaxUsageValue,
-		// 			UsageCost = usableItemComponent.UsageCost
-		// 		});
+		// UsableItemComponent item2 = new UsableItemComponent(usableItemComponent.MaxUsageValue, usableItemComponent.UsageCost, usableItemComponent.IsUsable);
 		IL_0069: ldloc.2
-		IL_006a: brfalse.s IL_009d
+		IL_006a: brfalse.s IL_0092
 
-		IL_006c: newobj instance void MGSC.UsableItemRecord::.ctor()
-		IL_0071: dup
+		IL_006c: ldloc.2
+		IL_006d: callvirt instance int32 MGSC.UsableItemComponent::get_MaxUsageValue()
 		IL_0072: ldloc.2
-		IL_0073: callvirt instance int32 MGSC.UsableItemComponent::get_MaxUsageValue()
-		IL_0078: callvirt instance void MGSC.UsableItemRecord::set_MaxUsage(int32)
-		IL_007d: dup
-		IL_007e: ldloc.2
-		IL_007f: callvirt instance int32 MGSC.UsableItemComponent::get_UsageCost()
-		IL_0084: callvirt instance void MGSC.UsableItemRecord::set_UsageCost(int32)
-		IL_0089: newobj instance void MGSC.UsableItemComponent::.ctor(class MGSC.UsableItemRecord)
-		IL_008e: stloc.s 8
+		IL_0073: callvirt instance int32 MGSC.UsableItemComponent::get_UsageCost()
+		IL_0078: ldloc.2
+		IL_0079: callvirt instance bool MGSC.UsableItemComponent::get_IsUsable()
+		IL_007e: newobj instance void MGSC.UsableItemComponent::.ctor(int32, int32, bool)
+		IL_0083: stloc.s 8
 		// itemComponents.Add(item2);
-		IL_0090: ldloc.0
-		IL_0091: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass21_0'::itemComponents
-		IL_0096: ldloc.s 8
-		IL_0098: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_0085: ldloc.0
+		IL_0086: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass34_0'::itemComponents
+		IL_008b: ldloc.s 8
+		IL_008d: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// if (initialComponent is AllowPutInVestItemComp && !HasCompOfType<AllowPutInVestItemComp>())
-		IL_009d: ldarg.3
-		IL_009e: isinst MGSC.AllowPutInVestItemComp
-		IL_00a3: brfalse.s IL_00be
+		IL_0092: ldarg.3
+		IL_0093: isinst MGSC.AllowPutInVestItemComp
+		IL_0098: brfalse.s IL_00b3
 
-		IL_00a5: ldloca.s 0
-		IL_00a7: call bool MGSC.ItemFactory::'<CopyComponent>g__HasCompOfType|21_0'<class MGSC.AllowPutInVestItemComp>(valuetype MGSC.ItemFactory/'<>c__DisplayClass21_0'&)
-		IL_00ac: brtrue.s IL_00be
+		IL_009a: ldloca.s 0
+		IL_009c: call bool MGSC.ItemFactory::'<CopyComponent>g__HasCompOfType|34_0'<class MGSC.AllowPutInVestItemComp>(valuetype MGSC.ItemFactory/'<>c__DisplayClass34_0'&)
+		IL_00a1: brtrue.s IL_00b3
 
 		// itemComponents.Add(new AllowPutInVestItemComp());
-		IL_00ae: ldloc.0
-		IL_00af: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass21_0'::itemComponents
-		IL_00b4: newobj instance void MGSC.AllowPutInVestItemComp::.ctor()
-		IL_00b9: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_00a3: ldloc.0
+		IL_00a4: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass34_0'::itemComponents
+		IL_00a9: newobj instance void MGSC.AllowPutInVestItemComp::.ctor()
+		IL_00ae: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// if (initialComponent is ExpireComponent expireComponent && !HasCompOfType<ExpireComponent>())
-		IL_00be: ldarg.3
-		IL_00bf: isinst MGSC.ExpireComponent
-		IL_00c4: stloc.3
+		IL_00b3: ldarg.3
+		IL_00b4: isinst MGSC.ExpireComponent
+		IL_00b9: stloc.3
 		// (no C# code)
-		IL_00c5: ldloc.3
-		IL_00c6: brfalse.s IL_00ed
+		IL_00ba: ldloc.3
+		IL_00bb: brfalse.s IL_00e2
 
-		IL_00c8: ldloca.s 0
-		IL_00ca: call bool MGSC.ItemFactory::'<CopyComponent>g__HasCompOfType|21_0'<class MGSC.ExpireComponent>(valuetype MGSC.ItemFactory/'<>c__DisplayClass21_0'&)
-		IL_00cf: brtrue.s IL_00ed
+		IL_00bd: ldloca.s 0
+		IL_00bf: call bool MGSC.ItemFactory::'<CopyComponent>g__HasCompOfType|34_0'<class MGSC.ExpireComponent>(valuetype MGSC.ItemFactory/'<>c__DisplayClass34_0'&)
+		IL_00c4: brtrue.s IL_00e2
 
 		// itemComponents.Add(new ExpireComponent(expireComponent.ExpireDate, expireComponent.IsStarted));
-		IL_00d1: ldloc.0
-		IL_00d2: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass21_0'::itemComponents
-		IL_00d7: ldloc.3
-		IL_00d8: callvirt instance valuetype [mscorlib]System.DateTime MGSC.ExpireComponent::get_ExpireDate()
-		IL_00dd: ldloc.3
-		IL_00de: callvirt instance bool MGSC.ExpireComponent::get_IsStarted()
-		IL_00e3: newobj instance void MGSC.ExpireComponent::.ctor(valuetype [mscorlib]System.DateTime, bool)
-		IL_00e8: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_00c6: ldloc.0
+		IL_00c7: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass34_0'::itemComponents
+		IL_00cc: ldloc.3
+		IL_00cd: callvirt instance valuetype [mscorlib]System.DateTime MGSC.ExpireComponent::get_ExpireDate()
+		IL_00d2: ldloc.3
+		IL_00d3: callvirt instance bool MGSC.ExpireComponent::get_IsStarted()
+		IL_00d8: newobj instance void MGSC.ExpireComponent::.ctor(valuetype [mscorlib]System.DateTime, bool)
+		IL_00dd: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// if (initialComponent is StackableItemComponent stackableItemComponent)
-		IL_00ed: ldarg.3
-		IL_00ee: isinst MGSC.StackableItemComponent
-		IL_00f3: stloc.s 4
-		// StackableItemComponent item3 = new StackableItemComponent(stackableItemComponent.Max);
-		IL_00f5: ldloc.s 4
-		IL_00f7: brfalse.s IL_0115
+		IL_00e2: ldarg.3
+		IL_00e3: isinst MGSC.StackableItemComponent
+		IL_00e8: stloc.s 4
+		// StackableItemComponent stackableItemComponent2 = new StackableItemComponent(stackableItemComponent.Max);
+		IL_00ea: ldloc.s 4
+		IL_00ec: brfalse.s IL_0118
 
-		IL_00f9: ldloc.s 4
-		IL_00fb: callvirt instance int16 MGSC.StackableItemComponent::get_Max()
-		IL_0100: newobj instance void MGSC.StackableItemComponent::.ctor(int16)
-		IL_0105: stloc.s 9
-		// itemComponents.Add(item3);
-		IL_0107: ldloc.0
-		IL_0108: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass21_0'::itemComponents
-		IL_010d: ldloc.s 9
-		IL_010f: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_00ee: ldloc.s 4
+		IL_00f0: callvirt instance int16 MGSC.StackableItemComponent::get_Max()
+		IL_00f5: newobj instance void MGSC.StackableItemComponent::.ctor(int16)
+		IL_00fa: stloc.s 9
+		// stackableItemComponent2.Count = stackableItemComponent.Count;
+		IL_00fc: ldloc.s 9
+		IL_00fe: ldloc.s 4
+		IL_0100: callvirt instance int16 MGSC.StackableItemComponent::get_Count()
+		IL_0105: callvirt instance void MGSC.StackableItemComponent::set_Count(int16)
+		// itemComponents.Add(stackableItemComponent2);
+		IL_010a: ldloc.0
+		IL_010b: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass34_0'::itemComponents
+		IL_0110: ldloc.s 9
+		IL_0112: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// if (initialComponent is WeaponComponent { WeaponRecord: var weaponRecord } weaponComponent)
-		IL_0114: ret
+		IL_0117: ret
 
-		IL_0115: ldarg.3
-		IL_0116: isinst MGSC.WeaponComponent
-		IL_011b: stloc.s 5
+		IL_0118: ldarg.3
+		IL_0119: isinst MGSC.WeaponComponent
+		IL_011e: stloc.s 5
 		// (no C# code)
-		IL_011d: ldloc.s 5
-		IL_011f: brfalse IL_01c8
+		IL_0120: ldloc.s 5
+		IL_0122: brfalse IL_01cb
 
 		// WeaponComponent weaponComponent2 = new WeaponComponent(weaponComponent.WeaponRecord);
-		IL_0124: ldloc.s 5
-		IL_0126: callvirt instance class MGSC.WeaponRecord MGSC.WeaponComponent::get_WeaponRecord()
-		IL_012b: stloc.s 10
-		IL_012d: ldloc.s 5
-		IL_012f: callvirt instance class MGSC.WeaponRecord MGSC.WeaponComponent::get_WeaponRecord()
-		IL_0134: newobj instance void MGSC.WeaponComponent::.ctor(class MGSC.BasePickupItemRecord)
-		IL_0139: stloc.s 11
+		IL_0127: ldloc.s 5
+		IL_0129: callvirt instance class MGSC.WeaponRecord MGSC.WeaponComponent::get_WeaponRecord()
+		IL_012e: stloc.s 10
+		IL_0130: ldloc.s 5
+		IL_0132: callvirt instance class MGSC.WeaponRecord MGSC.WeaponComponent::get_WeaponRecord()
+		IL_0137: newobj instance void MGSC.WeaponComponent::.ctor(class MGSC.BasePickupItemRecord)
+		IL_013c: stloc.s 11
 		// weaponComponent2.CurrentAmmoType = Data.Items.GetSimpleRecord<AmmoRecord>(weaponRecord.DefaultAmmoId);
-		IL_013b: ldloc.s 11
-		IL_013d: call class MGSC.ItemsCollection MGSC.Data::get_Items()
-		IL_0142: ldloc.s 10
-		IL_0144: callvirt instance string MGSC.WeaponRecord::get_DefaultAmmoId()
-		IL_0149: ldc.i4.1
-		IL_014a: callvirt instance !!0 MGSC.ItemsCollection::GetSimpleRecord<class MGSC.AmmoRecord>(string, bool)
-		IL_014f: callvirt instance void MGSC.WeaponComponent::set_CurrentAmmoType(class MGSC.AmmoRecord)
+		IL_013e: ldloc.s 11
+		IL_0140: call class MGSC.ItemsCollection MGSC.Data::get_Items()
+		IL_0145: ldloc.s 10
+		IL_0147: callvirt instance string MGSC.WeaponRecord::get_DefaultAmmoId()
+		IL_014c: ldc.i4.1
+		IL_014d: callvirt instance !!0 MGSC.ItemsCollection::GetSimpleRecord<class MGSC.AmmoRecord>(string, bool)
+		IL_0152: callvirt instance void MGSC.WeaponComponent::set_CurrentAmmoType(class MGSC.AmmoRecord)
 		// weaponComponent2.CurrentFireMode = Data.Firemodes.GetRecord(weaponRecord.Firemodes[0]);
-		IL_0154: ldloc.s 11
-		IL_0156: call class MGSC.ConfigRecordCollection`1<class MGSC.FireModeRecord> MGSC.Data::get_Firemodes()
-		IL_015b: ldloc.s 10
-		IL_015d: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.WeaponRecord::get_Firemodes()
-		IL_0162: ldc.i4.0
-		IL_0163: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
-		IL_0168: ldc.i4.1
-		IL_0169: callvirt instance !0 class MGSC.ConfigRecordCollection`1<class MGSC.FireModeRecord>::GetRecord(string, bool)
-		IL_016e: callvirt instance void MGSC.WeaponComponent::set_CurrentFireMode(class MGSC.FireModeRecord)
+		IL_0157: ldloc.s 11
+		IL_0159: call class MGSC.ConfigRecordCollection`1<class MGSC.FireModeRecord> MGSC.Data::get_Firemodes()
+		IL_015e: ldloc.s 10
+		IL_0160: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.WeaponRecord::get_Firemodes()
+		IL_0165: ldc.i4.0
+		IL_0166: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+		IL_016b: ldc.i4.1
+		IL_016c: callvirt instance !0 class MGSC.ConfigRecordCollection`1<class MGSC.FireModeRecord>::GetRecord(string, bool)
+		IL_0171: callvirt instance void MGSC.WeaponComponent::set_CurrentFireMode(class MGSC.FireModeRecord)
 		// _componentsCache.Add(weaponComponent2);
-		IL_0173: ldarg.0
-		IL_0174: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
-		IL_0179: ldloc.s 11
-		IL_017b: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_0176: ldarg.0
+		IL_0177: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+		IL_017c: ldloc.s 11
+		IL_017e: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// if (weaponRecord.WeaponClass == WeaponClass.GrenadeLauncher)
-		IL_0180: ldloc.s 10
-		IL_0182: callvirt instance valuetype MGSC.WeaponClass MGSC.WeaponRecord::get_WeaponClass()
-		IL_0187: ldc.i4.s 31
-		IL_0189: bne.un.s IL_01c8
+		IL_0183: ldloc.s 10
+		IL_0185: callvirt instance valuetype MGSC.WeaponClass MGSC.WeaponRecord::get_WeaponClass()
+		IL_018a: ldc.i4.s 31
+		IL_018c: bne.un.s IL_01cb
 
 		// LauncherComponent launcherComponent = new LauncherComponent();
-		IL_018b: newobj instance void MGSC.LauncherComponent::.ctor()
-		IL_0190: stloc.s 12
+		IL_018e: newobj instance void MGSC.LauncherComponent::.ctor()
+		IL_0193: stloc.s 12
 		// _componentsCache.Add(launcherComponent);
-		IL_0192: ldarg.0
-		IL_0193: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
-		IL_0198: ldloc.s 12
-		IL_019a: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_0195: ldarg.0
+		IL_0196: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+		IL_019b: ldloc.s 12
+		IL_019d: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// for (int i = 0; i < weaponComponent2.CurrentAmmo; i++)
-		IL_019f: ldc.i4.0
-		IL_01a0: stloc.s 13
+		IL_01a2: ldc.i4.0
+		IL_01a3: stloc.s 13
 		// launcherComponent.LoadedGrenadesIds.Add(weaponRecord.DefaultGrenadeId);
-		IL_01a2: br.s IL_01bd
-		// loop start (head: IL_01bd)
-			IL_01a4: ldloc.s 12
-			IL_01a6: ldfld class [mscorlib]System.Collections.Generic.List`1<string> MGSC.LauncherComponent::LoadedGrenadesIds
-			IL_01ab: ldloc.s 10
-			IL_01ad: callvirt instance string MGSC.WeaponRecord::get_DefaultGrenadeId()
-			IL_01b2: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<string>::Add(!0)
+		IL_01a5: br.s IL_01c0
+		// loop start (head: IL_01c0)
+			IL_01a7: ldloc.s 12
+			IL_01a9: ldfld class [mscorlib]System.Collections.Generic.List`1<string> MGSC.LauncherComponent::LoadedGrenadesIds
+			IL_01ae: ldloc.s 10
+			IL_01b0: callvirt instance string MGSC.WeaponRecord::get_DefaultGrenadeId()
+			IL_01b5: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<string>::Add(!0)
 			// for (int i = 0; i < weaponComponent2.CurrentAmmo; i++)
-			IL_01b7: ldloc.s 13
-			IL_01b9: ldc.i4.1
-			IL_01ba: add
-			IL_01bb: stloc.s 13
+			IL_01ba: ldloc.s 13
+			IL_01bc: ldc.i4.1
+			IL_01bd: add
+			IL_01be: stloc.s 13
 
 			// for (int i = 0; i < weaponComponent2.CurrentAmmo; i++)
-			IL_01bd: ldloc.s 13
-			IL_01bf: ldloc.s 11
-			IL_01c1: callvirt instance int16 MGSC.WeaponComponent::get_CurrentAmmo()
-			IL_01c6: blt.s IL_01a4
+			IL_01c0: ldloc.s 13
+			IL_01c2: ldloc.s 11
+			IL_01c4: callvirt instance int16 MGSC.WeaponComponent::get_CurrentAmmo()
+			IL_01c9: blt.s IL_01a7
 		// end loop
 
 		// if (initialComponent is DatadiskComponent datadiskComponent)
-		IL_01c8: ldarg.3
-		IL_01c9: isinst MGSC.DatadiskComponent
-		IL_01ce: stloc.s 6
+		IL_01cb: ldarg.3
+		IL_01cc: isinst MGSC.DatadiskComponent
+		IL_01d1: stloc.s 6
 		// DatadiskComponent datadiskComponent2 = new DatadiskComponent();
-		IL_01d0: ldloc.s 6
-		IL_01d2: brfalse.s IL_01f6
+		IL_01d3: ldloc.s 6
+		IL_01d5: brfalse.s IL_01f9
 
-		IL_01d4: newobj instance void MGSC.DatadiskComponent::.ctor()
-		IL_01d9: stloc.s 14
+		IL_01d7: newobj instance void MGSC.DatadiskComponent::.ctor()
+		IL_01dc: stloc.s 14
 		// datadiskComponent2.SetUnlockId(datadiskComponent.UnlockId);
-		IL_01db: ldloc.s 14
-		IL_01dd: ldloc.s 6
-		IL_01df: callvirt instance string MGSC.DatadiskComponent::get_UnlockId()
-		IL_01e4: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
+		IL_01de: ldloc.s 14
+		IL_01e0: ldloc.s 6
+		IL_01e2: callvirt instance string MGSC.DatadiskComponent::get_UnlockId()
+		IL_01e7: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
 		// _componentsCache.Add(datadiskComponent2);
-		IL_01e9: ldarg.0
-		IL_01ea: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
-		IL_01ef: ldloc.s 14
-		IL_01f1: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_01ec: ldarg.0
+		IL_01ed: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+		IL_01f2: ldloc.s 14
+		IL_01f4: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// if (initialComponent is SkullComponent)
-		IL_01f6: ldarg.3
-		IL_01f7: isinst MGSC.SkullComponent
-		IL_01fc: brfalse.s IL_0212
+		IL_01f9: ldarg.3
+		IL_01fa: isinst MGSC.SkullComponent
+		IL_01ff: brfalse.s IL_0215
 
-		// SkullComponent item4 = new SkullComponent();
-		IL_01fe: newobj instance void MGSC.SkullComponent::.ctor()
-		IL_0203: stloc.s 15
-		// _componentsCache.Add(item4);
-		IL_0205: ldarg.0
-		IL_0206: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
-		IL_020b: ldloc.s 15
-		IL_020d: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		// SkullComponent item3 = new SkullComponent();
+		IL_0201: newobj instance void MGSC.SkullComponent::.ctor()
+		IL_0206: stloc.s 15
+		// _componentsCache.Add(item3);
+		IL_0208: ldarg.0
+		IL_0209: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+		IL_020e: ldloc.s 15
+		IL_0210: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// }
-		IL_0212: ret
+		IL_0215: ret
 	} // end of method ItemFactory::CopyComponent
 
 	.method private hidebysig 
@@ -905,48 +1154,53 @@
 			bool isPrimary
 		) cil managed 
 	{
-		// Method begins at RVA 0x39a40
+		// Method begins at RVA 0x56a4c
 		// Header size: 12
-		// Code size: 868 (0x364)
+		// Code size: 1047 (0x417)
 		.maxstack 4
 		.locals init (
-			[0] valuetype MGSC.ItemFactory/'<>c__DisplayClass22_0',
+			[0] valuetype MGSC.ItemFactory/'<>c__DisplayClass35_0',
 			[1] class MGSC.BreakableItemRecord,
 			[2] class MGSC.UsableItemRecord,
 			[3] class MGSC.AugmentationRecord,
-			[4] class MGSC.AmmoRecord,
-			[5] class MGSC.IStackableRecord,
-			[6] class MGSC.WeaponRecord,
-			[7] class MGSC.DatadiskRecord,
-			[8] class MGSC.BreakableItemComponent,
-			[9] class MGSC.UsableItemComponent,
-			[10] class MGSC.AugmentationComponent,
-			[11] class MGSC.ItemExpireRecord,
-			[12] valuetype [mscorlib]System.DateTime,
-			[13] int32,
-			[14] class MGSC.StackableItemComponent,
-			[15] int16,
+			[4] class MGSC.ItemRecord,
+			[5] class MGSC.AmmoRecord,
+			[6] class MGSC.IStackableRecord,
+			[7] class MGSC.WeaponRecord,
+			[8] class MGSC.DatadiskRecord,
+			[9] class MGSC.BackpackRecord,
+			[10] class MGSC.BreakableItemComponent,
+			[11] class MGSC.UsableItemComponent,
+			[12] class MGSC.AugmentationComponent,
+			[13] class MGSC.ItemExpireRecord,
+			[14] valuetype [mscorlib]System.DateTime,
+			[15] int32,
 			[16] class MGSC.StackableItemComponent,
-			[17] class MGSC.WeaponComponent,
-			[18] valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<string>,
-			[19] class MGSC.ItemTrait,
-			[20] class MGSC.LauncherComponent,
-			[21] int32,
-			[22] class MGSC.DatadiskComponent,
-			[23] class MGSC.SkullComponent
+			[17] int16,
+			[18] class MGSC.StackableItemComponent,
+			[19] class MGSC.WeaponComponent,
+			[20] valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<string>,
+			[21] class MGSC.ItemTrait,
+			[22] class MGSC.LauncherComponent,
+			[23] int32,
+			[24] class MGSC.DatadiskComponent,
+			[25] class MGSC.SkullComponent,
+			[26] int32,
+			[27] class MGSC.ExtendedHeightComp,
+			[28] valuetype MGSC.BackpackSize
 		)
 
 		// {
 		IL_0000: ldloca.s 0
 		IL_0002: ldarg.1
-		IL_0003: stfld class MGSC.PickupItem MGSC.ItemFactory/'<>c__DisplayClass22_0'::item
+		IL_0003: stfld class MGSC.PickupItem MGSC.ItemFactory/'<>c__DisplayClass35_0'::item
 		// (no C# code)
 		IL_0008: ldloca.s 0
 		IL_000a: ldarg.2
-		IL_000b: stfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
+		IL_000b: stfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
 		// itemComponents.Clear();
 		IL_0010: ldloc.0
-		IL_0011: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
+		IL_0011: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
 		IL_0016: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Clear()
 		// if (itemRecord is BreakableItemRecord record)
 		IL_001b: ldarg.3
@@ -954,15 +1208,15 @@
 		IL_0021: stloc.1
 		// BreakableItemComponent breakableItemComponent = new BreakableItemComponent(record);
 		IL_0022: ldloc.1
-		IL_0023: brfalse.s IL_006d
+		IL_0023: brfalse.s IL_0091
 
 		IL_0025: ldloc.1
 		IL_0026: newobj instance void MGSC.BreakableItemComponent::.ctor(class MGSC.BreakableItemRecord)
-		IL_002b: stloc.s 8
+		IL_002b: stloc.s 10
 		// itemComponents.Add(breakableItemComponent);
 		IL_002d: ldloc.0
-		IL_002e: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
-		IL_0033: ldloc.s 8
+		IL_002e: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
+		IL_0033: ldloc.s 10
 		IL_0035: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// if (itemRecord is WeaponRecord)
 		IL_003a: ldarg.3
@@ -970,8 +1224,8 @@
 		IL_0040: brfalse.s IL_005e
 
 		// breakableItemComponent.SetMaxDurability(Mathf.RoundToInt((float)breakableItemComponent.MaxDurability * WeaponDurabilityMult), restoreDurability: true);
-		IL_0042: ldloc.s 8
-		IL_0044: ldloc.s 8
+		IL_0042: ldloc.s 10
+		IL_0044: ldloc.s 10
 		IL_0046: callvirt instance int32 MGSC.BreakableItemComponent::get_MaxDurability()
 		IL_004b: conv.r4
 		IL_004c: ldarg.0
@@ -981,410 +1235,502 @@
 		IL_0058: ldc.i4.1
 		IL_0059: callvirt instance void MGSC.BreakableItemComponent::SetMaxDurability(int32, bool)
 
+		// if (itemRecord is IArmorRecord)
+		IL_005e: ldarg.3
+		IL_005f: isinst MGSC.IArmorRecord
+		IL_0064: brfalse.s IL_0082
+
+		// breakableItemComponent.SetMaxDurability(Mathf.RoundToInt((float)breakableItemComponent.MaxDurability * ArmorDurabilityMult), restoreDurability: true);
+		IL_0066: ldloc.s 10
+		IL_0068: ldloc.s 10
+		IL_006a: callvirt instance int32 MGSC.BreakableItemComponent::get_MaxDurability()
+		IL_006f: conv.r4
+		IL_0070: ldarg.0
+		IL_0071: call instance float32 MGSC.ItemFactory::get_ArmorDurabilityMult()
+		IL_0076: mul
+		IL_0077: call int32 [UnityEngine.CoreModule]UnityEngine.Mathf::RoundToInt(float32)
+		IL_007c: ldc.i4.1
+		IL_007d: callvirt instance void MGSC.BreakableItemComponent::SetMaxDurability(int32, bool)
+
 		// if (randomizeConditionAndCapacity)
-		IL_005e: ldarg.s randomizeConditionAndCapacity
-		IL_0060: brfalse.s IL_006d
+		IL_0082: ldarg.s randomizeConditionAndCapacity
+		IL_0084: brfalse.s IL_0091
 
 		// breakableItemComponent.RandomizeCondition(40);
-		IL_0062: ldloc.s 8
-		IL_0064: ldc.i4.s 40
-		IL_0066: ldc.i4.s 100
-		IL_0068: callvirt instance void MGSC.BreakableItemComponent::RandomizeCondition(int32, int32)
+		IL_0086: ldloc.s 10
+		IL_0088: ldc.i4.s 40
+		IL_008a: ldc.i4.s 100
+		IL_008c: callvirt instance void MGSC.BreakableItemComponent::RandomizeCondition(int32, int32)
 
 		// if (itemRecord is UsableItemRecord usableItemRecord)
-		IL_006d: ldarg.3
-		IL_006e: isinst MGSC.UsableItemRecord
-		IL_0073: stloc.2
-		// UsableItemComponent usableItemComponent = new UsableItemComponent(usableItemRecord);
-		IL_0074: ldloc.2
-		IL_0075: brfalse.s IL_00a3
+		IL_0091: ldarg.3
+		IL_0092: isinst MGSC.UsableItemRecord
+		IL_0097: stloc.2
+		// UsableItemComponent usableItemComponent = new UsableItemComponent(usableItemRecord.MaxUsage, usableItemRecord.UsageCost, usableItemRecord.IsUsable);
+		IL_0098: ldloc.2
+		IL_0099: brfalse.s IL_00d8
 
-		IL_0077: ldloc.2
-		IL_0078: newobj instance void MGSC.UsableItemComponent::.ctor(class MGSC.UsableItemRecord)
-		IL_007d: stloc.s 9
+		IL_009b: ldloc.2
+		IL_009c: callvirt instance int32 MGSC.UsableItemRecord::get_MaxUsage()
+		IL_00a1: ldloc.2
+		IL_00a2: callvirt instance int32 MGSC.UsableItemRecord::get_UsageCost()
+		IL_00a7: ldloc.2
+		IL_00a8: callvirt instance bool MGSC.UsableItemRecord::get_IsUsable()
+		IL_00ad: newobj instance void MGSC.UsableItemComponent::.ctor(int32, int32, bool)
+		IL_00b2: stloc.s 11
 		// itemComponents.Add(usableItemComponent);
-		IL_007f: ldloc.0
-		IL_0080: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
-		IL_0085: ldloc.s 9
-		IL_0087: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_00b4: ldloc.0
+		IL_00b5: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
+		IL_00ba: ldloc.s 11
+		IL_00bc: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// if (randomizeConditionAndCapacity)
-		IL_008c: ldarg.s randomizeConditionAndCapacity
-		IL_008e: brfalse.s IL_00a3
+		IL_00c1: ldarg.s randomizeConditionAndCapacity
+		IL_00c3: brfalse.s IL_00d8
 
 		// usableItemComponent.RandomizeCapacity(usableItemRecord.UsageCost, usableItemRecord.MaxUsage);
-		IL_0090: ldloc.s 9
-		IL_0092: ldloc.2
-		IL_0093: callvirt instance int32 MGSC.UsableItemRecord::get_UsageCost()
-		IL_0098: ldloc.2
-		IL_0099: callvirt instance int32 MGSC.UsableItemRecord::get_MaxUsage()
-		IL_009e: callvirt instance void MGSC.UsableItemComponent::RandomizeCapacity(int32, int32)
+		IL_00c5: ldloc.s 11
+		IL_00c7: ldloc.2
+		IL_00c8: callvirt instance int32 MGSC.UsableItemRecord::get_UsageCost()
+		IL_00cd: ldloc.2
+		IL_00ce: callvirt instance int32 MGSC.UsableItemRecord::get_MaxUsage()
+		IL_00d3: callvirt instance void MGSC.UsableItemComponent::RandomizeCapacity(int32, int32)
 
 		// if (itemRecord is AugmentationRecord record2)
-		IL_00a3: ldarg.3
-		IL_00a4: isinst MGSC.AugmentationRecord
-		IL_00a9: stloc.3
+		IL_00d8: ldarg.3
+		IL_00d9: isinst MGSC.AugmentationRecord
+		IL_00de: stloc.3
 		// AugmentationComponent augmentationComponent = new AugmentationComponent(record2);
-		IL_00aa: ldloc.3
-		IL_00ab: brfalse.s IL_00cb
+		IL_00df: ldloc.3
+		IL_00e0: brfalse.s IL_0100
 
-		IL_00ad: ldloc.3
-		IL_00ae: newobj instance void MGSC.AugmentationComponent::.ctor(class MGSC.BasePickupItemRecord)
-		IL_00b3: stloc.s 10
+		IL_00e2: ldloc.3
+		IL_00e3: newobj instance void MGSC.AugmentationComponent::.ctor(class MGSC.BasePickupItemRecord)
+		IL_00e8: stloc.s 12
 		// itemComponents.Add(augmentationComponent);
-		IL_00b5: ldloc.0
-		IL_00b6: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
-		IL_00bb: ldloc.s 10
-		IL_00bd: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_00ea: ldloc.0
+		IL_00eb: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
+		IL_00f0: ldloc.s 12
+		IL_00f2: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// augmentationComponent.SetImplantSockets(randomizeConditionAndCapacity);
-		IL_00c2: ldloc.s 10
-		IL_00c4: ldarg.s randomizeConditionAndCapacity
-		IL_00c6: callvirt instance void MGSC.AugmentationComponent::SetImplantSockets(bool)
+		IL_00f7: ldloc.s 12
+		IL_00f9: ldarg.s randomizeConditionAndCapacity
+		IL_00fb: callvirt instance void MGSC.AugmentationComponent::SetImplantSockets(bool)
 
-		// if (itemRecord is IAllowInVestRecord && !HasCompOfType<AllowPutInVestItemComp>())
-		IL_00cb: ldarg.3
-		IL_00cc: isinst MGSC.IAllowInVestRecord
-		IL_00d1: brfalse.s IL_00ec
+		// if (itemRecord is ItemRecord { CanPutInVest: not false } && !HasCompOfType<AllowPutInVestItemComp>())
+		IL_0100: ldarg.3
+		IL_0101: isinst MGSC.ItemRecord
+		IL_0106: stloc.s 4
+		// (no C# code)
+		IL_0108: ldloc.s 4
+		IL_010a: brfalse.s IL_012e
 
-		IL_00d3: ldloca.s 0
-		IL_00d5: call bool MGSC.ItemFactory::'<CreateComponent>g__HasCompOfType|22_0'<class MGSC.AllowPutInVestItemComp>(valuetype MGSC.ItemFactory/'<>c__DisplayClass22_0'&)
-		IL_00da: brtrue.s IL_00ec
+		IL_010c: ldloc.s 4
+		IL_010e: callvirt instance bool MGSC.ItemRecord::get_CanPutInVest()
+		IL_0113: brfalse.s IL_012e
+
+		IL_0115: ldloca.s 0
+		IL_0117: call bool MGSC.ItemFactory::'<CreateComponent>g__HasCompOfType|35_0'<class MGSC.AllowPutInVestItemComp>(valuetype MGSC.ItemFactory/'<>c__DisplayClass35_0'&)
+		IL_011c: brtrue.s IL_012e
 
 		// itemComponents.Add(new AllowPutInVestItemComp());
-		IL_00dc: ldloc.0
-		IL_00dd: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
-		IL_00e2: newobj instance void MGSC.AllowPutInVestItemComp::.ctor()
-		IL_00e7: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_011e: ldloc.0
+		IL_011f: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
+		IL_0124: newobj instance void MGSC.AllowPutInVestItemComp::.ctor()
+		IL_0129: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// if (itemRecord is IExpirableRecord && !HasCompOfType<ExpireComponent>())
-		IL_00ec: ldarg.3
-		IL_00ed: isinst MGSC.IExpirableRecord
-		IL_00f2: brfalse.s IL_015b
+		IL_012e: ldarg.3
+		IL_012f: isinst MGSC.IExpirableRecord
+		IL_0134: brfalse.s IL_019d
 
-		IL_00f4: ldloca.s 0
-		IL_00f6: call bool MGSC.ItemFactory::'<CreateComponent>g__HasCompOfType|22_0'<class MGSC.ExpireComponent>(valuetype MGSC.ItemFactory/'<>c__DisplayClass22_0'&)
-		IL_00fb: brtrue.s IL_015b
+		IL_0136: ldloca.s 0
+		IL_0138: call bool MGSC.ItemFactory::'<CreateComponent>g__HasCompOfType|35_0'<class MGSC.ExpireComponent>(valuetype MGSC.ItemFactory/'<>c__DisplayClass35_0'&)
+		IL_013d: brtrue.s IL_019d
 
 		// ItemExpireRecord record3 = Data.ItemExpire.GetRecord(itemRecord.Id);
-		IL_00fd: call class MGSC.ConfigRecordCollection`1<class MGSC.ItemExpireRecord> MGSC.Data::get_ItemExpire()
-		IL_0102: ldarg.3
-		IL_0103: callvirt instance string MGSC.ConfigTableRecord::get_Id()
-		IL_0108: ldc.i4.1
-		IL_0109: callvirt instance !0 class MGSC.ConfigRecordCollection`1<class MGSC.ItemExpireRecord>::GetRecord(string, bool)
-		IL_010e: stloc.s 11
+		IL_013f: call class MGSC.ConfigRecordCollection`1<class MGSC.ItemExpireRecord> MGSC.Data::get_ItemExpire()
+		IL_0144: ldarg.3
+		IL_0145: callvirt instance string MGSC.ConfigTableRecord::get_Id()
+		IL_014a: ldc.i4.1
+		IL_014b: callvirt instance !0 class MGSC.ConfigRecordCollection`1<class MGSC.ItemExpireRecord>::GetRecord(string, bool)
+		IL_0150: stloc.s 13
 		// DateTime time = _state.Get<SpaceTime>().Time;
-		IL_0110: ldarg.0
-		IL_0111: ldfld class MGSC.State MGSC.ItemFactory::_state
-		IL_0116: callvirt instance !!0 MGSC.State::Get<class MGSC.SpaceTime>()
-		IL_011b: ldfld valuetype [mscorlib]System.DateTime MGSC.SpaceTime::Time
-		IL_0120: stloc.s 12
+		IL_0152: ldarg.0
+		IL_0153: ldfld class MGSC.State MGSC.ItemFactory::_state
+		IL_0158: callvirt instance !!0 MGSC.State::Get<class MGSC.SpaceTime>()
+		IL_015d: ldfld valuetype [mscorlib]System.DateTime MGSC.SpaceTime::Time
+		IL_0162: stloc.s 14
 		// if (record3 != null)
-		IL_0122: ldloc.s 11
-		IL_0124: brfalse.s IL_0148
+		IL_0164: ldloc.s 13
+		IL_0166: brfalse.s IL_018a
 
 		// itemComponents.Add(new ExpireComponent(time.AddHours(record3.ExpiresAfterHours), isStarted: true));
-		IL_0126: ldloc.0
-		IL_0127: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
-		IL_012c: ldloca.s 12
-		IL_012e: ldloc.s 11
-		IL_0130: callvirt instance float32 MGSC.ItemExpireRecord::get_ExpiresAfterHours()
-		IL_0135: conv.r8
-		IL_0136: call instance valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::AddHours(float64)
-		IL_013b: ldc.i4.1
-		IL_013c: newobj instance void MGSC.ExpireComponent::.ctor(valuetype [mscorlib]System.DateTime, bool)
-		IL_0141: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_0168: ldloc.0
+		IL_0169: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
+		IL_016e: ldloca.s 14
+		IL_0170: ldloc.s 13
+		IL_0172: callvirt instance float32 MGSC.ItemExpireRecord::get_ExpiresAfterHours()
+		IL_0177: conv.r8
+		IL_0178: call instance valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::AddHours(float64)
+		IL_017d: ldc.i4.1
+		IL_017e: newobj instance void MGSC.ExpireComponent::.ctor(valuetype [mscorlib]System.DateTime, bool)
+		IL_0183: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// (no C# code)
-		IL_0146: br.s IL_015b
+		IL_0188: br.s IL_019d
 
 		// itemComponents.Add(new ExpireComponent(time, isStarted: false));
-		IL_0148: ldloc.0
-		IL_0149: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
-		IL_014e: ldloc.s 12
-		IL_0150: ldc.i4.0
-		IL_0151: newobj instance void MGSC.ExpireComponent::.ctor(valuetype [mscorlib]System.DateTime, bool)
-		IL_0156: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_018a: ldloc.0
+		IL_018b: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
+		IL_0190: ldloc.s 14
+		IL_0192: ldc.i4.0
+		IL_0193: newobj instance void MGSC.ExpireComponent::.ctor(valuetype [mscorlib]System.DateTime, bool)
+		IL_0198: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// if (itemRecord is AmmoRecord ammoRecord)
-		IL_015b: ldarg.3
-		IL_015c: isinst MGSC.AmmoRecord
-		IL_0161: stloc.s 4
+		IL_019d: ldarg.3
+		IL_019e: isinst MGSC.AmmoRecord
+		IL_01a3: stloc.s 5
 		// int num = UnityEngine.Random.Range(ammoRecord.MinAmmoAmount, ammoRecord.MaxAmmoAmount + 1);
-		IL_0163: ldloc.s 4
-		IL_0165: brfalse.s IL_01a8
+		IL_01a5: ldloc.s 5
+		IL_01a7: brfalse.s IL_01eb
 
-		IL_0167: ldloc.s 4
-		IL_0169: callvirt instance int32 MGSC.AmmoRecord::get_MinAmmoAmount()
-		IL_016e: ldloc.s 4
-		IL_0170: callvirt instance int32 MGSC.AmmoRecord::get_MaxAmmoAmount()
-		IL_0175: ldc.i4.1
-		IL_0176: add
-		IL_0177: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
-		IL_017c: stloc.s 13
-		// StackableItemComponent stackableItemComponent = new StackableItemComponent(ammoRecord.MaxStack);
-		IL_017e: ldloc.s 4
-		IL_0180: callvirt instance int16 MGSC.AmmoRecord::get_MaxStack()
-		IL_0185: newobj instance void MGSC.StackableItemComponent::.ctor(int16)
-		IL_018a: stloc.s 14
+		IL_01a9: ldloc.s 5
+		IL_01ab: callvirt instance int32 MGSC.AmmoRecord::get_MinAmmoAmount()
+		IL_01b0: ldloc.s 5
+		IL_01b2: callvirt instance int32 MGSC.AmmoRecord::get_MaxAmmoAmount()
+		IL_01b7: ldc.i4.1
+		IL_01b8: add
+		IL_01b9: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
+		IL_01be: stloc.s 15
+		// StackableItemComponent stackableItemComponent = new StackableItemComponent(GetMaxStackSize(ammoRecord));
+		IL_01c0: ldarg.0
+		IL_01c1: ldloc.s 5
+		IL_01c3: call instance int16 MGSC.ItemFactory::GetMaxStackSize(class MGSC.IStackableRecord)
+		IL_01c8: newobj instance void MGSC.StackableItemComponent::.ctor(int16)
+		IL_01cd: stloc.s 16
 		// if (randomizeConditionAndCapacity)
-		IL_018c: ldarg.s randomizeConditionAndCapacity
-		IL_018e: brfalse.s IL_019a
+		IL_01cf: ldarg.s randomizeConditionAndCapacity
+		IL_01d1: brfalse.s IL_01dd
 
 		// stackableItemComponent.Count = (short)num;
-		IL_0190: ldloc.s 14
-		IL_0192: ldloc.s 13
-		IL_0194: conv.i2
-		IL_0195: callvirt instance void MGSC.StackableItemComponent::set_Count(int16)
+		IL_01d3: ldloc.s 16
+		IL_01d5: ldloc.s 15
+		IL_01d7: conv.i2
+		IL_01d8: callvirt instance void MGSC.StackableItemComponent::set_Count(int16)
 
 		// itemComponents.Add(stackableItemComponent);
-		IL_019a: ldloc.0
-		IL_019b: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
-		IL_01a0: ldloc.s 14
-		IL_01a2: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_01dd: ldloc.0
+		IL_01de: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
+		IL_01e3: ldloc.s 16
+		IL_01e5: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// IStackableRecord stackableRecord = itemRecord as IStackableRecord;
-		IL_01a7: ret
+		IL_01ea: ret
 
-		IL_01a8: ldarg.3
-		IL_01a9: isinst MGSC.IStackableRecord
-		IL_01ae: stloc.s 5
+		IL_01eb: ldarg.3
+		IL_01ec: isinst MGSC.IStackableRecord
+		IL_01f1: stloc.s 6
 		// if (stackableRecord != null && isPrimary)
-		IL_01b0: ldloc.s 5
-		IL_01b2: ldnull
-		IL_01b3: cgt.un
-		IL_01b5: ldarg.s isPrimary
-		IL_01b7: and
-		IL_01b8: brfalse.s IL_020d
+		IL_01f3: ldloc.s 6
+		IL_01f5: ldnull
+		IL_01f6: cgt.un
+		IL_01f8: ldarg.s isPrimary
+		IL_01fa: and
+		IL_01fb: brfalse.s IL_0251
 
-		// short num2 = stackableRecord.MaxStack;
-		IL_01ba: ldloc.s 5
-		IL_01bc: callvirt instance int16 MGSC.IStackableRecord::get_MaxStack()
-		IL_01c1: stloc.s 15
+		// short num2 = GetMaxStackSize(stackableRecord);
+		IL_01fd: ldarg.0
+		IL_01fe: ldloc.s 6
+		IL_0200: call instance int16 MGSC.ItemFactory::GetMaxStackSize(class MGSC.IStackableRecord)
+		IL_0205: stloc.s 17
 		// if (itemRecord is ConsumableRecord || itemRecord is FixationMedicineRecord || itemRecord is RepairRecord || itemRecord is PlaceableDeviceRecord)
-		IL_01c3: ldarg.3
-		IL_01c4: isinst MGSC.ConsumableRecord
-		IL_01c9: brtrue.s IL_01e3
+		IL_0207: ldarg.3
+		IL_0208: isinst MGSC.ConsumableRecord
+		IL_020d: brtrue.s IL_0227
 
-		IL_01cb: ldarg.3
-		IL_01cc: isinst MGSC.FixationMedicineRecord
-		IL_01d1: brtrue.s IL_01e3
+		IL_020f: ldarg.3
+		IL_0210: isinst MGSC.FixationMedicineRecord
+		IL_0215: brtrue.s IL_0227
 
 		// (no C# code)
-		IL_01d3: ldarg.3
-		IL_01d4: isinst MGSC.RepairRecord
-		IL_01d9: brtrue.s IL_01e3
+		IL_0217: ldarg.3
+		IL_0218: isinst MGSC.RepairRecord
+		IL_021d: brtrue.s IL_0227
 
 		// num2 += ConsumablesStackBonus;
-		IL_01db: ldarg.3
-		IL_01dc: isinst MGSC.PlaceableDeviceRecord
-		IL_01e1: brfalse.s IL_01ef
+		IL_021f: ldarg.3
+		IL_0220: isinst MGSC.PlaceableDeviceRecord
+		IL_0225: brfalse.s IL_0233
 
-		IL_01e3: ldloc.s 15
-		IL_01e5: ldarg.0
-		IL_01e6: call instance int16 MGSC.ItemFactory::get_ConsumablesStackBonus()
-		IL_01eb: add
-		IL_01ec: conv.i2
-		IL_01ed: stloc.s 15
+		IL_0227: ldloc.s 17
+		IL_0229: ldarg.0
+		IL_022a: call instance int16 MGSC.ItemFactory::get_ConsumablesStackBonus()
+		IL_022f: add
+		IL_0230: conv.i2
+		IL_0231: stloc.s 17
 
 		// StackableItemComponent stackableItemComponent2 = new StackableItemComponent(num2);
-		IL_01ef: ldloc.s 15
-		IL_01f1: newobj instance void MGSC.StackableItemComponent::.ctor(int16)
-		IL_01f6: stloc.s 16
+		IL_0233: ldloc.s 17
+		IL_0235: newobj instance void MGSC.StackableItemComponent::.ctor(int16)
+		IL_023a: stloc.s 18
 		// stackableItemComponent2.Count = 1;
-		IL_01f8: ldloc.s 16
-		IL_01fa: ldc.i4.1
-		IL_01fb: callvirt instance void MGSC.StackableItemComponent::set_Count(int16)
+		IL_023c: ldloc.s 18
+		IL_023e: ldc.i4.1
+		IL_023f: callvirt instance void MGSC.StackableItemComponent::set_Count(int16)
 		// itemComponents.Add(stackableItemComponent2);
-		IL_0200: ldloc.0
-		IL_0201: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
-		IL_0206: ldloc.s 16
-		IL_0208: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_0244: ldloc.0
+		IL_0245: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
+		IL_024a: ldloc.s 18
+		IL_024c: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// if (itemRecord is WeaponRecord weaponRecord)
-		IL_020d: ldarg.3
-		IL_020e: isinst MGSC.WeaponRecord
-		IL_0213: stloc.s 6
+		IL_0251: ldarg.3
+		IL_0252: isinst MGSC.WeaponRecord
+		IL_0257: stloc.s 7
 		// WeaponComponent weaponComponent = new WeaponComponent(weaponRecord);
-		IL_0215: ldloc.s 6
-		IL_0217: brfalse IL_0302
+		IL_0259: ldloc.s 7
+		IL_025b: brfalse IL_0346
 
-		IL_021c: ldloc.s 6
-		IL_021e: newobj instance void MGSC.WeaponComponent::.ctor(class MGSC.BasePickupItemRecord)
-		IL_0223: stloc.s 17
+		IL_0260: ldloc.s 7
+		IL_0262: newobj instance void MGSC.WeaponComponent::.ctor(class MGSC.BasePickupItemRecord)
+		IL_0267: stloc.s 19
 		// weaponComponent.CurrentAmmoType = Data.Items.GetSimpleRecord<AmmoRecord>(weaponRecord.DefaultAmmoId);
-		IL_0225: ldloc.s 17
-		IL_0227: call class MGSC.ItemsCollection MGSC.Data::get_Items()
-		IL_022c: ldloc.s 6
-		IL_022e: callvirt instance string MGSC.WeaponRecord::get_DefaultAmmoId()
-		IL_0233: ldc.i4.1
-		IL_0234: callvirt instance !!0 MGSC.ItemsCollection::GetSimpleRecord<class MGSC.AmmoRecord>(string, bool)
-		IL_0239: callvirt instance void MGSC.WeaponComponent::set_CurrentAmmoType(class MGSC.AmmoRecord)
+		IL_0269: ldloc.s 19
+		IL_026b: call class MGSC.ItemsCollection MGSC.Data::get_Items()
+		IL_0270: ldloc.s 7
+		IL_0272: callvirt instance string MGSC.WeaponRecord::get_DefaultAmmoId()
+		IL_0277: ldc.i4.1
+		IL_0278: callvirt instance !!0 MGSC.ItemsCollection::GetSimpleRecord<class MGSC.AmmoRecord>(string, bool)
+		IL_027d: callvirt instance void MGSC.WeaponComponent::set_CurrentAmmoType(class MGSC.AmmoRecord)
 		// weaponComponent.CurrentFireMode = Data.Firemodes.GetRecord(weaponRecord.Firemodes[0]);
-		IL_023e: ldloc.s 17
-		IL_0240: call class MGSC.ConfigRecordCollection`1<class MGSC.FireModeRecord> MGSC.Data::get_Firemodes()
-		IL_0245: ldloc.s 6
-		IL_0247: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.WeaponRecord::get_Firemodes()
-		IL_024c: ldc.i4.0
-		IL_024d: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
-		IL_0252: ldc.i4.1
-		IL_0253: callvirt instance !0 class MGSC.ConfigRecordCollection`1<class MGSC.FireModeRecord>::GetRecord(string, bool)
-		IL_0258: callvirt instance void MGSC.WeaponComponent::set_CurrentFireMode(class MGSC.FireModeRecord)
+		IL_0282: ldloc.s 19
+		IL_0284: call class MGSC.ConfigRecordCollection`1<class MGSC.FireModeRecord> MGSC.Data::get_Firemodes()
+		IL_0289: ldloc.s 7
+		IL_028b: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.WeaponRecord::get_Firemodes()
+		IL_0290: ldc.i4.0
+		IL_0291: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+		IL_0296: ldc.i4.1
+		IL_0297: callvirt instance !0 class MGSC.ConfigRecordCollection`1<class MGSC.FireModeRecord>::GetRecord(string, bool)
+		IL_029c: callvirt instance void MGSC.WeaponComponent::set_CurrentFireMode(class MGSC.FireModeRecord)
 		// foreach (string trait in weaponRecord.Traits)
-		IL_025d: ldloc.s 6
-		IL_025f: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.WeaponRecord::get_Traits()
-		IL_0264: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<string>::GetEnumerator()
-		IL_0269: stloc.s 18
+		IL_02a1: ldloc.s 7
+		IL_02a3: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.WeaponRecord::get_Traits()
+		IL_02a8: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<string>::GetEnumerator()
+		IL_02ad: stloc.s 20
 		.try
 		{
 			// foreach (string trait in weaponRecord.Traits)
-			IL_026b: br.s IL_0289
-			// loop start (head: IL_0289)
-				IL_026d: ldloca.s 18
-				IL_026f: call instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<string>::get_Current()
+			IL_02af: br.s IL_02cd
+			// loop start (head: IL_02cd)
+				IL_02b1: ldloca.s 20
+				IL_02b3: call instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<string>::get_Current()
 				// ItemTrait item2 = ItemTraitSystem.CreateItemTrait(trait);
-				IL_0274: call class MGSC.ItemTrait MGSC.ItemTraitSystem::CreateItemTrait(string)
-				IL_0279: stloc.s 19
+				IL_02b8: call class MGSC.ItemTrait MGSC.ItemTraitSystem::CreateItemTrait(string)
+				IL_02bd: stloc.s 21
 				// weaponComponent.Traits.Add(item2);
-				IL_027b: ldloc.s 17
-				IL_027d: callvirt instance class [mscorlib]System.Collections.Generic.List`1<class MGSC.ItemTrait> MGSC.WeaponComponent::get_Traits()
-				IL_0282: ldloc.s 19
-				IL_0284: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.ItemTrait>::Add(!0)
+				IL_02bf: ldloc.s 19
+				IL_02c1: callvirt instance class [mscorlib]System.Collections.Generic.List`1<class MGSC.ItemTrait> MGSC.WeaponComponent::get_Traits()
+				IL_02c6: ldloc.s 21
+				IL_02c8: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.ItemTrait>::Add(!0)
 
 				// foreach (string trait in weaponRecord.Traits)
-				IL_0289: ldloca.s 18
-				IL_028b: call instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<string>::MoveNext()
-				IL_0290: brtrue.s IL_026d
+				IL_02cd: ldloca.s 20
+				IL_02cf: call instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<string>::MoveNext()
+				IL_02d4: brtrue.s IL_02b1
 			// end loop
 
 			// (no C# code)
-			IL_0292: leave.s IL_02a2
+			IL_02d6: leave.s IL_02e6
 		} // end .try
 		finally
 		{
-			IL_0294: ldloca.s 18
-			IL_0296: constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<string>
-			IL_029c: callvirt instance void [mscorlib]System.IDisposable::Dispose()
+			IL_02d8: ldloca.s 20
+			IL_02da: constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<string>
+			IL_02e0: callvirt instance void [mscorlib]System.IDisposable::Dispose()
 			// if (randomizeConditionAndCapacity)
-			IL_02a1: endfinally
+			IL_02e5: endfinally
 		} // end handler
 
-		IL_02a2: ldarg.s randomizeConditionAndCapacity
-		IL_02a4: brfalse.s IL_02ad
+		IL_02e6: ldarg.s randomizeConditionAndCapacity
+		IL_02e8: brfalse.s IL_02f1
 
 		// weaponComponent.RandomizeCapacity();
-		IL_02a6: ldloc.s 17
-		IL_02a8: callvirt instance void MGSC.WeaponComponent::RandomizeCapacity()
+		IL_02ea: ldloc.s 19
+		IL_02ec: callvirt instance void MGSC.WeaponComponent::RandomizeCapacity()
 
 		// _componentsCache.Add(weaponComponent);
-		IL_02ad: ldarg.0
-		IL_02ae: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
-		IL_02b3: ldloc.s 17
-		IL_02b5: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_02f1: ldarg.0
+		IL_02f2: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+		IL_02f7: ldloc.s 19
+		IL_02f9: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// if (weaponRecord.WeaponClass == WeaponClass.GrenadeLauncher)
-		IL_02ba: ldloc.s 6
-		IL_02bc: callvirt instance valuetype MGSC.WeaponClass MGSC.WeaponRecord::get_WeaponClass()
-		IL_02c1: ldc.i4.s 31
-		IL_02c3: bne.un.s IL_0302
+		IL_02fe: ldloc.s 7
+		IL_0300: callvirt instance valuetype MGSC.WeaponClass MGSC.WeaponRecord::get_WeaponClass()
+		IL_0305: ldc.i4.s 31
+		IL_0307: bne.un.s IL_0346
 
 		// LauncherComponent launcherComponent = new LauncherComponent();
-		IL_02c5: newobj instance void MGSC.LauncherComponent::.ctor()
-		IL_02ca: stloc.s 20
+		IL_0309: newobj instance void MGSC.LauncherComponent::.ctor()
+		IL_030e: stloc.s 22
 		// _componentsCache.Add(launcherComponent);
-		IL_02cc: ldarg.0
-		IL_02cd: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
-		IL_02d2: ldloc.s 20
-		IL_02d4: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_0310: ldarg.0
+		IL_0311: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+		IL_0316: ldloc.s 22
+		IL_0318: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 		// for (int i = 0; i < weaponComponent.CurrentAmmo; i++)
-		IL_02d9: ldc.i4.0
-		IL_02da: stloc.s 21
+		IL_031d: ldc.i4.0
+		IL_031e: stloc.s 23
 		// launcherComponent.LoadedGrenadesIds.Add(weaponRecord.DefaultGrenadeId);
-		IL_02dc: br.s IL_02f7
-		// loop start (head: IL_02f7)
-			IL_02de: ldloc.s 20
-			IL_02e0: ldfld class [mscorlib]System.Collections.Generic.List`1<string> MGSC.LauncherComponent::LoadedGrenadesIds
-			IL_02e5: ldloc.s 6
-			IL_02e7: callvirt instance string MGSC.WeaponRecord::get_DefaultGrenadeId()
-			IL_02ec: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<string>::Add(!0)
+		IL_0320: br.s IL_033b
+		// loop start (head: IL_033b)
+			IL_0322: ldloc.s 22
+			IL_0324: ldfld class [mscorlib]System.Collections.Generic.List`1<string> MGSC.LauncherComponent::LoadedGrenadesIds
+			IL_0329: ldloc.s 7
+			IL_032b: callvirt instance string MGSC.WeaponRecord::get_DefaultGrenadeId()
+			IL_0330: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<string>::Add(!0)
 			// for (int i = 0; i < weaponComponent.CurrentAmmo; i++)
-			IL_02f1: ldloc.s 21
-			IL_02f3: ldc.i4.1
-			IL_02f4: add
-			IL_02f5: stloc.s 21
+			IL_0335: ldloc.s 23
+			IL_0337: ldc.i4.1
+			IL_0338: add
+			IL_0339: stloc.s 23
 
 			// for (int i = 0; i < weaponComponent.CurrentAmmo; i++)
-			IL_02f7: ldloc.s 21
-			IL_02f9: ldloc.s 17
-			IL_02fb: callvirt instance int16 MGSC.WeaponComponent::get_CurrentAmmo()
-			IL_0300: blt.s IL_02de
+			IL_033b: ldloc.s 23
+			IL_033d: ldloc.s 19
+			IL_033f: callvirt instance int16 MGSC.WeaponComponent::get_CurrentAmmo()
+			IL_0344: blt.s IL_0322
 		// end loop
 
 		// if (itemRecord is DatadiskRecord datadiskRecord)
-		IL_0302: ldarg.3
-		IL_0303: isinst MGSC.DatadiskRecord
-		IL_0308: stloc.s 7
+		IL_0346: ldarg.3
+		IL_0347: isinst MGSC.DatadiskRecord
+		IL_034c: stloc.s 8
 		// DatadiskComponent datadiskComponent = new DatadiskComponent();
-		IL_030a: ldloc.s 7
-		IL_030c: brfalse.s IL_0347
+		IL_034e: ldloc.s 8
+		IL_0350: brfalse.s IL_038b
 
-		IL_030e: newobj instance void MGSC.DatadiskComponent::.ctor()
-		IL_0313: stloc.s 22
+		IL_0352: newobj instance void MGSC.DatadiskComponent::.ctor()
+		IL_0357: stloc.s 24
 		// datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)]);
-		IL_0315: ldloc.s 22
-		IL_0317: ldloc.s 7
-		IL_0319: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
-		IL_031e: ldc.i4.0
-		IL_031f: ldloc.s 7
-		IL_0321: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
-		IL_0326: callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<string>::get_Count()
-		IL_032b: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
-		IL_0330: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
-		IL_0335: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
+		IL_0359: ldloc.s 24
+		IL_035b: ldloc.s 8
+		IL_035d: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
+		IL_0362: ldc.i4.0
+		IL_0363: ldloc.s 8
+		IL_0365: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
+		IL_036a: callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<string>::get_Count()
+		IL_036f: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
+		IL_0374: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+		IL_0379: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
 		// _componentsCache.Add(datadiskComponent);
-		IL_033a: ldarg.0
-		IL_033b: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
-		IL_0340: ldloc.s 22
-		IL_0342: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_037e: ldarg.0
+		IL_037f: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+		IL_0384: ldloc.s 24
+		IL_0386: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// if (itemRecord is SkullRecord)
-		IL_0347: ldarg.3
-		IL_0348: isinst MGSC.SkullRecord
-		IL_034d: brfalse.s IL_0363
+		IL_038b: ldarg.3
+		IL_038c: isinst MGSC.SkullRecord
+		IL_0391: brfalse.s IL_03a7
 
 		// SkullComponent item3 = new SkullComponent();
-		IL_034f: newobj instance void MGSC.SkullComponent::.ctor()
-		IL_0354: stloc.s 23
+		IL_0393: newobj instance void MGSC.SkullComponent::.ctor()
+		IL_0398: stloc.s 25
 		// _componentsCache.Add(item3);
-		IL_0356: ldarg.0
-		IL_0357: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
-		IL_035c: ldloc.s 23
-		IL_035e: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+		IL_039a: ldarg.0
+		IL_039b: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+		IL_03a0: ldloc.s 25
+		IL_03a2: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
+
+		// if (itemRecord is BackpackRecord backpackRecord)
+		IL_03a7: ldarg.3
+		IL_03a8: isinst MGSC.BackpackRecord
+		IL_03ad: stloc.s 9
+		// Difficulty difficulty = _state.Get<Difficulty>();
+		IL_03af: ldloc.s 9
+		IL_03b1: brfalse.s IL_0416
+
+		IL_03b3: ldarg.0
+		IL_03b4: ldfld class MGSC.State MGSC.ItemFactory::_state
+		IL_03b9: callvirt instance !!0 MGSC.State::Get<class MGSC.Difficulty>()
+		// int num3 = backpackRecord.Height;
+		IL_03be: ldloc.s 9
+		IL_03c0: callvirt instance int32 MGSC.BackpackRecord::get_Height()
+		IL_03c5: stloc.s 26
+		// switch (difficulty.Preset.BackpacksSize)
+		IL_03c7: callvirt instance class MGSC.DifficultyPreset MGSC.Difficulty::get_Preset()
+		IL_03cc: callvirt instance valuetype MGSC.BackpackSize MGSC.DifficultyPreset::get_BackpacksSize()
+		IL_03d1: stloc.s 28
+		// (no C# code)
+		IL_03d3: ldloc.s 28
+		IL_03d5: ldc.i4.1
+		IL_03d6: sub
+		IL_03d7: switch (IL_03ea, IL_03f2, IL_03fa)
+
+		// num3 *= 2;
+		IL_03e8: br.s IL_0400
+
+		IL_03ea: ldloc.s 26
+		IL_03ec: ldc.i4.2
+		IL_03ed: mul
+		IL_03ee: stloc.s 26
+		// break;
+		IL_03f0: br.s IL_0400
+
+		// num3 *= 3;
+		IL_03f2: ldloc.s 26
+		IL_03f4: ldc.i4.3
+		IL_03f5: mul
+		IL_03f6: stloc.s 26
+		// break;
+		IL_03f8: br.s IL_0400
+
+		// num3 *= 4;
+		IL_03fa: ldloc.s 26
+		IL_03fc: ldc.i4.4
+		IL_03fd: mul
+		IL_03fe: stloc.s 26
+
+		// ExtendedHeightComp item4 = new ExtendedHeightComp(num3);
+		IL_0400: ldloc.s 26
+		IL_0402: newobj instance void MGSC.ExtendedHeightComp::.ctor(int32)
+		IL_0407: stloc.s 27
+		// _componentsCache.Add(item4);
+		IL_0409: ldarg.0
+		IL_040a: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+		IL_040f: ldloc.s 27
+		IL_0411: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
 		// }
-		IL_0363: ret
+		IL_0416: ret
 	} // end of method ItemFactory::CreateComponent
 
 	.method public hidebysig specialname rtspecialname 
 		instance void .ctor () cil managed 
 	{
-		// Method begins at RVA 0x39dc0
+		// Method begins at RVA 0x56e80
 		// Header size: 1
-		// Code size: 29 (0x1d)
+		// Code size: 40 (0x28)
 		.maxstack 8
 
-		// _componentsCache = new List<PickupItemComponent>();
+		// {
 		IL_0000: ldarg.0
 		IL_0001: newobj instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::.ctor()
 		IL_0006: stfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
-		// WeaponDurabilityMult = 1f;
+		// (no C# code)
 		IL_000b: ldarg.0
 		IL_000c: ldc.r4 1
 		IL_0011: stfld float32 MGSC.ItemFactory::'<WeaponDurabilityMult>k__BackingField'
-		// base..ctor();
 		IL_0016: ldarg.0
-		IL_0017: call instance void class MGSC.SingletonMonoBehaviour`1<class MGSC.ItemFactory>::.ctor()
+		IL_0017: ldc.r4 1
+		IL_001c: stfld float32 MGSC.ItemFactory::'<ArmorDurabilityMult>k__BackingField'
+		IL_0021: ldarg.0
 		// }
-		IL_001c: ret
+		IL_0022: call instance void class MGSC.SingletonMonoBehaviour`1<class MGSC.ItemFactory>::.ctor()
+		IL_0027: ret
 	} // end of method ItemFactory::.ctor
 
 	.method private hidebysig 
-		instance object '<Awake>b__20_0' (
+		instance object '<Awake>b__33_0' (
 			class [mscorlib]System.Type t,
 			class [SimpleJSON]SimpleJSON.JSONNode n
 		) cil managed 
@@ -1392,7 +1738,7 @@
 		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
 			01 00 00 00
 		)
-		// Method begins at RVA 0x39dde
+		// Method begins at RVA 0x56ea9
 		// Header size: 1
 		// Code size: 7 (0x7)
 		.maxstack 8
@@ -1401,17 +1747,17 @@
 		IL_0000: ldarg.0
 		IL_0001: call instance class MGSC.ItemOnFloor MGSC.ItemFactory::CreateItemOnFloor()
 		IL_0006: ret
-	} // end of method ItemFactory::'<Awake>b__20_0'
+	} // end of method ItemFactory::'<Awake>b__33_0'
 
 	.method assembly hidebysig static 
-		bool '<CopyComponent>g__HasCompOfType|21_0'<(MGSC.PickupItemComponent) T> (
-			valuetype MGSC.ItemFactory/'<>c__DisplayClass21_0'& ''
+		bool '<CopyComponent>g__HasCompOfType|34_0'<(MGSC.PickupItemComponent) T> (
+			valuetype MGSC.ItemFactory/'<>c__DisplayClass34_0'& ''
 		) cil managed 
 	{
 		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
 			01 00 00 00
 		)
-		// Method begins at RVA 0x39de8
+		// Method begins at RVA 0x56eb4
 		// Header size: 12
 		// Code size: 81 (0x51)
 		.maxstack 1
@@ -1422,7 +1768,7 @@
 
 		// if (P_0.initialItem.Comp<T>() != null)
 		IL_0000: ldarg.0
-		IL_0001: ldfld class MGSC.PickupItem MGSC.ItemFactory/'<>c__DisplayClass21_0'::initialItem
+		IL_0001: ldfld class MGSC.PickupItem MGSC.ItemFactory/'<>c__DisplayClass34_0'::initialItem
 		IL_0006: callvirt instance !!0 MGSC.PickupItem::Comp<!!T>()
 		IL_000b: box !!T
 		IL_0010: brfalse.s IL_0014
@@ -1433,7 +1779,7 @@
 
 		// foreach (PickupItemComponent item in P_0.itemComponents)
 		IL_0014: ldarg.0
-		IL_0015: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass21_0'::itemComponents
+		IL_0015: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass34_0'::itemComponents
 		IL_001a: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::GetEnumerator()
 		IL_001f: stloc.0
 		.try
@@ -1476,17 +1822,17 @@
 		// (no C# code)
 		IL_004f: ldloc.1
 		IL_0050: ret
-	} // end of method ItemFactory::'<CopyComponent>g__HasCompOfType|21_0'
+	} // end of method ItemFactory::'<CopyComponent>g__HasCompOfType|34_0'
 
 	.method assembly hidebysig static 
-		bool '<CreateComponent>g__HasCompOfType|22_0'<(MGSC.PickupItemComponent) T> (
-			valuetype MGSC.ItemFactory/'<>c__DisplayClass22_0'& ''
+		bool '<CreateComponent>g__HasCompOfType|35_0'<(MGSC.PickupItemComponent) T> (
+			valuetype MGSC.ItemFactory/'<>c__DisplayClass35_0'& ''
 		) cil managed 
 	{
 		.custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = (
 			01 00 00 00
 		)
-		// Method begins at RVA 0x39e58
+		// Method begins at RVA 0x56f24
 		// Header size: 12
 		// Code size: 81 (0x51)
 		.maxstack 1
@@ -1497,7 +1843,7 @@
 
 		// if (P_0.item.Comp<T>() != null)
 		IL_0000: ldarg.0
-		IL_0001: ldfld class MGSC.PickupItem MGSC.ItemFactory/'<>c__DisplayClass22_0'::item
+		IL_0001: ldfld class MGSC.PickupItem MGSC.ItemFactory/'<>c__DisplayClass35_0'::item
 		IL_0006: callvirt instance !!0 MGSC.PickupItem::Comp<!!T>()
 		IL_000b: box !!T
 		IL_0010: brfalse.s IL_0014
@@ -1508,7 +1854,7 @@
 
 		// foreach (PickupItemComponent item in P_0.itemComponents)
 		IL_0014: ldarg.0
-		IL_0015: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass22_0'::itemComponents
+		IL_0015: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory/'<>c__DisplayClass35_0'::itemComponents
 		IL_001a: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::GetEnumerator()
 		IL_001f: stloc.0
 		.try
@@ -1551,7 +1897,7 @@
 		// (no C# code)
 		IL_004f: ldloc.1
 		IL_0050: ret
-	} // end of method ItemFactory::'<CreateComponent>g__HasCompOfType|22_0'
+	} // end of method ItemFactory::'<CreateComponent>g__HasCompOfType|35_0'
 
 	// Properties
 	.property instance int16 ConsumablesStackBonus()
@@ -1563,6 +1909,11 @@
 	{
 		.get instance float32 MGSC.ItemFactory::get_WeaponDurabilityMult()
 		.set instance void MGSC.ItemFactory::set_WeaponDurabilityMult(float32)
+	}
+	.property instance float32 ArmorDurabilityMult()
+	{
+		.get instance float32 MGSC.ItemFactory::get_ArmorDurabilityMult()
+		.set instance void MGSC.ItemFactory::set_ArmorDurabilityMult(float32)
 	}
 
 } // end of class MGSC.ItemFactory
