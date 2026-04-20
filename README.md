@@ -60,6 +60,9 @@ Thanks!
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 # Change Log
+## 2.4.4
+* UNSTABLE BETA.501 compatibility
+
 ## 2.4.3
 * 0.9.8.2 compatibility. 
 
@@ -71,20 +74,3 @@ Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 ## 2.4.0
 * Version 0.9.6 compatibility
-
-## 2.3.1
-* Version 0.9.1 compatibility
-
-## 2.3.0
-* Version 0.8.7 compatibility
-
-## 2.2.0
-* Version 0.8.5 Compatibility
-* Fixed debug command `item` to use the Pity Unlock logic for easier debugging.
-
-## 2.1.0
-* Changed debug log to be a config setting.
-* Changed debug log text to a count instead of an "unlocked" list
-
-## 2.0.0
-* Data is now saved per save slot.
