@@ -5,6 +5,7 @@
 
 package
 SteamTest/
+*.lscache
 *.bak
 *.zip
 # User-specific files
