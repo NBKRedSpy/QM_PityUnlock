@@ -1,15 +1,17 @@
 [h1]Quasimorph Pity Unlock![/h1]
 
 
-Tired of only getting chips for mercenaries, classes, or production items that have already been unlocked?
+Tired of only getting chips for mercenaries, classes, or production items that have already been unlocked?  This mod adds a "pity" system where the user has an increased chance to get a chip that will unlock something new.
 
-This mod adds a "pity" system which increases the chances of getting a chip that has not been unlocked.  The game's existing random chip spawn is still used for non "pity" rolls.
+The default config of this mod will always roll a "locked" chip after each already "unlocked" chip of that type was found.
 
-By default, this mod is configured to guarantee a chip that is not already unlocked after every unlocked chip found.
+There are multiple options to tailor the pity roll conditions to taste.  The settings are found in the Main Menu -> Mods -> Pity Unlock.  Hover over the setting name on the left to see the setting's description.
 
-There are multiple pity algorithms and settings available such as "always locked", a "hard cap", and "increasing chance".  See the Configuration section below for more information.
+See the Configuration section below for more information on the settings.
 
 [h1]Credits[/h1]
+
+Huge thanks to Crynano for their Mod Configuration Menu which adds the mod configuration screen.
 
 The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
 
