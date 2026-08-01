@@ -23,7 +23,7 @@ namespace PityUnlock
         /// <param name="type"></param>
         /// <returns></returns>
         public static CodeMatch MatchVariable(OpCode opcode,
-            int index, Type type)
+            Type type, int? index = null)
         {
             return new CodeMatch((x) => 
             {
@@ -32,7 +32,7 @@ namespace PityUnlock
 
                 return x.opcode == opcode &&
                     localBuilder.LocalType == type &&
-                    localBuilder.LocalIndex == index;
+                    (index == null || localBuilder.LocalIndex == index);
             });
         }
 

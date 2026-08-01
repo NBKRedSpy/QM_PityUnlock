@@ -45,7 +45,7 @@ namespace PityUnlock
 
             Config = new ModConfig(ConfigDirectories.ConfigPath).LoadConfig();
             McmConfiguration = new McmConfiguration(Config);
-            McmConfiguration.Configure();   
+            McmConfiguration.TryConfigure();   
 
             string pityStateFilePath = Path.Combine(ConfigDirectories.ModPersistenceFolder, "PityState.json");
 

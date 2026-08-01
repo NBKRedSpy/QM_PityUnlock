@@ -32,13 +32,13 @@
 			bool verbose
 		) cil managed 
 	{
-		// Method begins at RVA 0x67ae2
+		// Method begins at RVA 0x6eb9d
 		// Header size: 1
 		// Code size: 6 (0x6)
 		.maxstack 8
 
-		// return "Spawn item on floor or in ship cargo. Syntax: item <itemId>";
-		IL_0000: ldstr "Spawn item on floor or in ship cargo. Syntax: item <itemId>"
+		// return "Spawn item on floor or in ship cargo. Syntax: item <itemId> <count (optional)>";
+		IL_0000: ldstr "Spawn item on floor or in ship cargo. Syntax: item <itemId> <count (optional)>"
 		IL_0005: ret
 	} // end of method SpawnItemCommand::Help
 
@@ -47,22 +47,22 @@
 			string[] tokens
 		) cil managed 
 	{
-		// Method begins at RVA 0x67aec
+		// Method begins at RVA 0x6eba4
 		// Header size: 12
-		// Code size: 356 (0x164)
+		// Code size: 357 (0x165)
 		.maxstack 5
 		.locals init (
-			[0] int32 num,
-			[1] int32 result,
-			[2] class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem> list,
-			[3] class MGSC.Player player,
-			[4] int32 i,
-			[5] valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem> enumerator,
-			[6] class MGSC.BasePickupItem item,
-			[7] class MGSC.DatadiskRecord datadiskRecord,
-			[8] class MGSC.ItemStorage itemStorage,
-			[9] class MGSC.BasePickupItem item2,
-			[10] class MGSC.BasePickupItem item3
+			[0] int32,
+			[1] int32,
+			[2] class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem>,
+			[3] class MGSC.Player,
+			[4] int32,
+			[5] valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>,
+			[6] class MGSC.BasePickupItem,
+			[7] class MGSC.DatadiskRecord,
+			[8] class MGSC.ItemStorage,
+			[9] class MGSC.BasePickupItem,
+			[10] class MGSC.BasePickupItem
 		)
 
 		// int num = 1;
@@ -93,180 +93,181 @@
 		IL_001c: ldc.i4.0
 		IL_001d: stloc.s 4
 		// list.Add(SingletonMonoBehaviour<ItemFactory>.Instance.CreateForInventory(tokens[0]));
-		IL_001f: br.s IL_003b
-		// loop start (head: IL_003b)
+		IL_001f: br.s IL_003c
+		// loop start (head: IL_003c)
 			IL_0021: ldloc.2
 			IL_0022: call !0 class MGSC.SingletonMonoBehaviour`1<class MGSC.ItemFactory>::get_Instance()
 			IL_0027: ldarg.1
 			IL_0028: ldc.i4.0
 			IL_0029: ldelem.ref
 			IL_002a: ldc.i4.0
-			IL_002b: callvirt instance class MGSC.BasePickupItem MGSC.ItemFactory::CreateForInventory(string, bool)
-			IL_0030: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem>::Add(!0)
+			IL_002b: ldc.i4.0
+			IL_002c: callvirt instance class MGSC.BasePickupItem MGSC.ItemFactory::CreateForInventory(string, bool, bool)
+			IL_0031: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem>::Add(!0)
 			// for (int i = 0; i < num; i++)
-			IL_0035: ldloc.s 4
-			IL_0037: ldc.i4.1
-			IL_0038: add
-			IL_0039: stloc.s 4
+			IL_0036: ldloc.s 4
+			IL_0038: ldc.i4.1
+			IL_0039: add
+			IL_003a: stloc.s 4
 
 			// for (int i = 0; i < num; i++)
-			IL_003b: ldloc.s 4
-			IL_003d: ldloc.0
-			IL_003e: blt.s IL_0021
+			IL_003c: ldloc.s 4
+			IL_003e: ldloc.0
+			IL_003f: blt.s IL_0021
 		// end loop
 
 		// foreach (BasePickupItem item in list)
-		IL_0040: ldloc.2
-		IL_0041: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem>::GetEnumerator()
-		IL_0046: stloc.s 5
+		IL_0041: ldloc.2
+		IL_0042: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem>::GetEnumerator()
+		IL_0047: stloc.s 5
 		.try
 		{
 			// foreach (BasePickupItem item in list)
-			IL_0048: br.s IL_008f
-			// loop start (head: IL_008f)
-				IL_004a: ldloca.s 5
-				IL_004c: call instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::get_Current()
-				IL_0051: stloc.s 6
+			IL_0049: br.s IL_0090
+			// loop start (head: IL_0090)
+				IL_004b: ldloca.s 5
+				IL_004d: call instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::get_Current()
+				IL_0052: stloc.s 6
 				// if (item.Is<DatadiskRecord>())
-				IL_0053: ldloc.s 6
-				IL_0055: callvirt instance bool MGSC.BasePickupItem::Is<class MGSC.DatadiskRecord>()
-				IL_005a: brfalse.s IL_008f
+				IL_0054: ldloc.s 6
+				IL_0056: callvirt instance bool MGSC.BasePickupItem::Is<class MGSC.DatadiskRecord>()
+				IL_005b: brfalse.s IL_0090
 
 				// DatadiskComponent datadiskComponent = item.Comp<DatadiskComponent>();
-				IL_005c: ldloc.s 6
-				IL_005e: callvirt instance !!0 MGSC.BasePickupItem::Comp<class MGSC.DatadiskComponent>()
+				IL_005d: ldloc.s 6
+				IL_005f: callvirt instance !!0 MGSC.BasePickupItem::Comp<class MGSC.DatadiskComponent>()
 				// DatadiskRecord datadiskRecord = item.Record<DatadiskRecord>();
-				IL_0063: ldloc.s 6
-				IL_0065: callvirt instance !!0 MGSC.BasePickupItem::Record<class MGSC.DatadiskRecord>()
-				IL_006a: stloc.s 7
+				IL_0064: ldloc.s 6
+				IL_0066: callvirt instance !!0 MGSC.BasePickupItem::Record<class MGSC.DatadiskRecord>()
+				IL_006b: stloc.s 7
 				// datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[Random.Range(0, datadiskRecord.UnlockIds.Count)]);
-				IL_006c: ldloc.s 7
-				IL_006e: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
-				IL_0073: ldc.i4.0
-				IL_0074: ldloc.s 7
-				IL_0076: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
-				IL_007b: callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<string>::get_Count()
-				IL_0080: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
-				IL_0085: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
-				IL_008a: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
+				IL_006d: ldloc.s 7
+				IL_006f: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
+				IL_0074: ldc.i4.0
+				IL_0075: ldloc.s 7
+				IL_0077: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
+				IL_007c: callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<string>::get_Count()
+				IL_0081: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
+				IL_0086: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+				IL_008b: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
 
 				// foreach (BasePickupItem item in list)
-				IL_008f: ldloca.s 5
-				IL_0091: call instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::MoveNext()
-				IL_0096: brtrue.s IL_004a
+				IL_0090: ldloca.s 5
+				IL_0092: call instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::MoveNext()
+				IL_0097: brtrue.s IL_004b
 			// end loop
 
 			// (no C# code)
-			IL_0098: leave.s IL_00a8
+			IL_0099: leave.s IL_00a9
 		} // end .try
 		finally
 		{
-			IL_009a: ldloca.s 5
-			IL_009c: constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>
-			IL_00a2: callvirt instance void [mscorlib]System.IDisposable::Dispose()
+			IL_009b: ldloca.s 5
+			IL_009d: constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>
+			IL_00a3: callvirt instance void [mscorlib]System.IDisposable::Dispose()
 			// if (SingletonMonoBehaviour<DungeonGameMode>.Instance == null)
-			IL_00a7: endfinally
+			IL_00a8: endfinally
 		} // end handler
 
-		IL_00a8: call !0 class MGSC.SingletonMonoBehaviour`1<class MGSC.DungeonGameMode>::get_Instance()
-		IL_00ad: ldnull
-		IL_00ae: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Equality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
-		IL_00b3: brfalse.s IL_0103
+		IL_00a9: call !0 class MGSC.SingletonMonoBehaviour`1<class MGSC.DungeonGameMode>::get_Instance()
+		IL_00ae: ldnull
+		IL_00af: call bool [UnityEngine.CoreModule]UnityEngine.Object::op_Equality(class [UnityEngine.CoreModule]UnityEngine.Object, class [UnityEngine.CoreModule]UnityEngine.Object)
+		IL_00b4: brfalse.s IL_0104
 
 		// ItemStorage itemStorage = _magnumCargo.ShipCargo[0];
-		IL_00b5: ldarg.0
-		IL_00b6: ldfld class MGSC.MagnumCargo MGSC.SpawnItemCommand::_magnumCargo
-		IL_00bb: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.ItemStorage> MGSC.MagnumCargo::ShipCargo
-		IL_00c0: ldc.i4.0
-		IL_00c1: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class MGSC.ItemStorage>::get_Item(int32)
-		IL_00c6: stloc.s 8
+		IL_00b6: ldarg.0
+		IL_00b7: ldfld class MGSC.MagnumCargo MGSC.SpawnItemCommand::_magnumCargo
+		IL_00bc: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.ItemStorage> MGSC.MagnumCargo::ShipCargo
+		IL_00c1: ldc.i4.0
+		IL_00c2: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<class MGSC.ItemStorage>::get_Item(int32)
+		IL_00c7: stloc.s 8
 		// foreach (BasePickupItem item2 in list)
-		IL_00c8: ldloc.2
-		IL_00c9: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem>::GetEnumerator()
-		IL_00ce: stloc.s 5
+		IL_00c9: ldloc.2
+		IL_00ca: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem>::GetEnumerator()
+		IL_00cf: stloc.s 5
 		.try
 		{
 			// foreach (BasePickupItem item2 in list)
-			IL_00d0: br.s IL_00e4
-			// loop start (head: IL_00e4)
-				IL_00d2: ldloca.s 5
-				IL_00d4: call instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::get_Current()
-				IL_00d9: stloc.s 9
+			IL_00d1: br.s IL_00e5
+			// loop start (head: IL_00e5)
+				IL_00d3: ldloca.s 5
+				IL_00d5: call instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::get_Current()
+				IL_00da: stloc.s 9
 				// itemStorage.AddItemAndReshuffleOptional(item2);
-				IL_00db: ldloc.s 8
-				IL_00dd: ldloc.s 9
-				IL_00df: callvirt instance void MGSC.ItemStorage::AddItemAndReshuffleOptional(class MGSC.BasePickupItem)
+				IL_00dc: ldloc.s 8
+				IL_00de: ldloc.s 9
+				IL_00e0: callvirt instance void MGSC.ItemStorage::AddItemAndReshuffleOptional(class MGSC.BasePickupItem)
 
 				// foreach (BasePickupItem item2 in list)
-				IL_00e4: ldloca.s 5
-				IL_00e6: call instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::MoveNext()
-				IL_00eb: brtrue.s IL_00d2
+				IL_00e5: ldloca.s 5
+				IL_00e7: call instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::MoveNext()
+				IL_00ec: brtrue.s IL_00d3
 			// end loop
 
 			// (no C# code)
-			IL_00ed: leave.s IL_00fd
+			IL_00ee: leave.s IL_00fe
 		} // end .try
 		finally
 		{
-			IL_00ef: ldloca.s 5
-			IL_00f1: constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>
-			IL_00f7: callvirt instance void [mscorlib]System.IDisposable::Dispose()
+			IL_00f0: ldloca.s 5
+			IL_00f2: constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>
+			IL_00f8: callvirt instance void [mscorlib]System.IDisposable::Dispose()
 			// return "done!";
-			IL_00fc: endfinally
+			IL_00fd: endfinally
 		} // end handler
 
-		IL_00fd: ldstr "done!"
-		IL_0102: ret
+		IL_00fe: ldstr "done!"
+		IL_0103: ret
 
 		// Player player = _creatures.Player;
-		IL_0103: ldarg.0
-		IL_0104: ldfld class MGSC.Creatures MGSC.SpawnItemCommand::_creatures
-		IL_0109: ldfld class MGSC.Player MGSC.Creatures::Player
-		IL_010e: stloc.3
+		IL_0104: ldarg.0
+		IL_0105: ldfld class MGSC.Creatures MGSC.SpawnItemCommand::_creatures
+		IL_010a: ldfld class MGSC.Player MGSC.Creatures::Player
+		IL_010f: stloc.3
 		// foreach (BasePickupItem item3 in list)
-		IL_010f: ldloc.2
-		IL_0110: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem>::GetEnumerator()
-		IL_0115: stloc.s 5
+		IL_0110: ldloc.2
+		IL_0111: callvirt instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class MGSC.BasePickupItem>::GetEnumerator()
+		IL_0116: stloc.s 5
 		.try
 		{
 			// foreach (BasePickupItem item3 in list)
-			IL_0117: br.s IL_0145
-			// loop start (head: IL_0145)
-				IL_0119: ldloca.s 5
-				IL_011b: call instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::get_Current()
-				IL_0120: stloc.s 10
+			IL_0118: br.s IL_0146
+			// loop start (head: IL_0146)
+				IL_011a: ldloca.s 5
+				IL_011c: call instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::get_Current()
+				IL_0121: stloc.s 10
 				// ItemOnFloorSystem.SpawnItem(_itemsOnFloor, _mapGrid, item3, player.CreatureData.Position);
-				IL_0122: ldarg.0
-				IL_0123: ldfld class MGSC.ItemsOnFloor MGSC.SpawnItemCommand::_itemsOnFloor
-				IL_0128: ldarg.0
-				IL_0129: ldfld class MGSC.MapGrid MGSC.SpawnItemCommand::_mapGrid
-				IL_012e: ldloc.s 10
-				IL_0130: ldloc.3
-				IL_0131: ldfld class MGSC.CreatureData MGSC.Creature::CreatureData
-				IL_0136: ldfld valuetype MGSC.CellPosition MGSC.CreatureData::Position
-				IL_013b: ldc.r4 0.0
-				IL_0140: call void MGSC.ItemOnFloorSystem::SpawnItem(class MGSC.ItemsOnFloor, class MGSC.MapGrid, class MGSC.BasePickupItem, valuetype MGSC.CellPosition, float32)
+				IL_0123: ldarg.0
+				IL_0124: ldfld class MGSC.ItemsOnFloor MGSC.SpawnItemCommand::_itemsOnFloor
+				IL_0129: ldarg.0
+				IL_012a: ldfld class MGSC.MapGrid MGSC.SpawnItemCommand::_mapGrid
+				IL_012f: ldloc.s 10
+				IL_0131: ldloc.3
+				IL_0132: ldfld class MGSC.CreatureData MGSC.Creature::CreatureData
+				IL_0137: ldfld valuetype MGSC.CellPosition MGSC.CreatureData::Position
+				IL_013c: ldc.r4 0.0
+				IL_0141: call void MGSC.ItemOnFloorSystem::SpawnItem(class MGSC.ItemsOnFloor, class MGSC.MapGrid, class MGSC.BasePickupItem, valuetype MGSC.CellPosition, float32)
 
 				// foreach (BasePickupItem item3 in list)
-				IL_0145: ldloca.s 5
-				IL_0147: call instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::MoveNext()
-				IL_014c: brtrue.s IL_0119
+				IL_0146: ldloca.s 5
+				IL_0148: call instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>::MoveNext()
+				IL_014d: brtrue.s IL_011a
 			// end loop
 
 			// (no C# code)
-			IL_014e: leave.s IL_015e
+			IL_014f: leave.s IL_015f
 		} // end .try
 		finally
 		{
-			IL_0150: ldloca.s 5
-			IL_0152: constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>
-			IL_0158: callvirt instance void [mscorlib]System.IDisposable::Dispose()
+			IL_0151: ldloca.s 5
+			IL_0153: constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class MGSC.BasePickupItem>
+			IL_0159: callvirt instance void [mscorlib]System.IDisposable::Dispose()
 			// return "done!";
-			IL_015d: endfinally
+			IL_015e: endfinally
 		} // end handler
 
-		IL_015e: ldstr "done!"
-		IL_0163: ret
+		IL_015f: ldstr "done!"
+		IL_0164: ret
 	} // end of method SpawnItemCommand::Execute
 
 	.method public hidebysig static 
@@ -275,7 +276,7 @@
 			string[] tokens
 		) cil managed 
 	{
-		// Method begins at RVA 0x67c84
+		// Method begins at RVA 0x6ed40
 		// Header size: 1
 		// Code size: 2 (0x2)
 		.maxstack 8
@@ -288,7 +289,7 @@
 	.method public hidebysig static 
 		bool IsAvailable () cil managed 
 	{
-		// Method begins at RVA 0x67c87
+		// Method begins at RVA 0x6ed43
 		// Header size: 1
 		// Code size: 2 (0x2)
 		.maxstack 8
@@ -301,7 +302,7 @@
 	.method public hidebysig static 
 		bool ShowInHelpAndAutocomplete () cil managed 
 	{
-		// Method begins at RVA 0x67c8a
+		// Method begins at RVA 0x6ed46
 		// Header size: 1
 		// Code size: 2 (0x2)
 		.maxstack 8
@@ -314,7 +315,7 @@
 	.method public hidebysig specialname rtspecialname 
 		instance void .ctor () cil managed 
 	{
-		// Method begins at RVA 0x67c8d
+		// Method begins at RVA 0x6ed49
 		// Header size: 1
 		// Code size: 7 (0x7)
 		.maxstack 8

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using static HarmonyLib.Code;
+using static MGSC.Localization;
 
 namespace PityUnlock
 {
@@ -28,54 +29,62 @@ namespace PityUnlock
             //Debugging
             //Utils.LogIL(original);
 
+            LocalVariableInstruction datadiskRecordVariable = new LocalVariableInstruction();
+            LocalVariableInstruction datadiskComponentVariable = new LocalVariableInstruction();
+
             List<CodeInstruction> result = new CodeMatcher(original)
 
                 // Target: Match the DatadiskRecord type check
-	            //// if (itemRecord is DatadiskRecord datadiskRecord)
-	            //IL_02c7: ldarg.3
-	            //IL_02c8: isinst MGSC.DatadiskRecord
-	            //IL_02cd: stloc.s 7
-	            //// DatadiskComponent datadiskComponent = new DatadiskComponent();
-	            //IL_02cf: ldloc.s 7
-	            //IL_02d1: brfalse.s IL_030c
+                //  There is only one ldarg_3 with an DatadiskRecord check.
+                //
+                // if (itemRecord is DatadiskRecord datadiskRecord)
+                //IL_0346: ldarg.3
+                //IL_0347: isinst MGSC.DatadiskRecord
+                //IL_034c: stloc.s 8
+                //// DatadiskComponent datadiskComponent = new DatadiskComponent();
+                //IL_034e: ldloc.s 8
+                //IL_0350: brfalse.s IL_038b
+
                 .MatchEndForward(
                     new CodeMatch(OpCodes.Ldarg_3),
                     new CodeMatch(OpCodes.Isinst, typeof(DatadiskRecord)),
-
-                    Utils.MatchVariable(OpCodes.Stloc_S, 7, typeof(DatadiskRecord)),
-                    Utils.MatchVariable(OpCodes.Ldloc_S, 7, typeof(DatadiskRecord)),
-
+                    datadiskRecordVariable.MatchAndInit(true, typeof(DatadiskRecord)),
+                    CodeMatch.IsLdloc(),
                     new CodeMatch(OpCodes.Brfalse_S)
                 )
                 .ThrowIfNotMatch("Did not find 'if (itemRecord is DatadiskRecord datadiskRecord)'")
                 .Advance(1)
 
-                 //Target:  The random item code.  This mod's UnlockDataDisk creates the component as well.
-                 //// DatadiskComponent datadiskComponent = new DatadiskComponent();
-                 //IL_02cf: ldloc.s 7
-                 //IL_02d1: brfalse.s IL_030c
+                //Target:  The random item code.  This mod's UnlockDataDisk creates the component as well.
 
-                 //IL_02d3: newobj instance void MGSC.DatadiskComponent::.ctor()
-                 //IL_02d8: stloc.s 22
+                // DatadiskComponent datadiskComponent = new DatadiskComponent();
+                //IL_034e: ldloc.s 8
+                //IL_0350: brfalse.s IL_038b
+                //IL_0352: newobj instance void MGSC.DatadiskComponent::.ctor()
+                //IL_0357: stloc.s 24
+                //// datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)]);
+                //IL_0359: ldloc.s 24
+                //IL_035b: ldloc.s 8
+                //IL_035d: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
+                //IL_0362: ldc.i4.0
+                //IL_0363: ldloc.s 8
+                //IL_0365: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
+                //IL_036a: callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<string>::get_Count()
+                //IL_036f: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
+                //IL_0374: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+                //IL_0379: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
+                //// _componentsCache.Add(datadiskComponent);
+                //IL_037e: ldarg.0
+                //IL_037f: ldfld class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent> MGSC.ItemFactory::_componentsCache
+                //IL_0384: ldloc.s 24
+                //IL_0386: callvirt instance void class [mscorlib]System.Collections.Generic.List`1<class MGSC.PickupItemComponent>::Add(!0)
 
-                 //// datadiskComponent.SetUnlockId(datadiskRecord.UnlockIds[UnityEngine.Random.Range(0, datadiskRecord.UnlockIds.Count)]);
-                 //IL_02da: ldloc.s 22
-                 //IL_02dc: ldloc.s 7
-                 //IL_02de: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
-                 //IL_02e3: ldc.i4.0
-                 //IL_02e4: ldloc.s 7
-                 //IL_02e6: callvirt instance class [mscorlib]System.Collections.Generic.List`1<string> MGSC.DatadiskRecord::get_UnlockIds()
-                 //IL_02eb: callvirt instance int32 class [mscorlib]System.Collections.Generic.List`1<string>::get_Count()
-                 //IL_02f0: call int32 [UnityEngine.CoreModule]UnityEngine.Random::Range(int32, int32)
-                 //IL_02f5: callvirt instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
-                 //IL_02fa: callvirt instance void MGSC.DatadiskComponent::SetUnlockId(string)
-
-
-                 .ThrowIfNotMatchForward("Did not find original unlock random code",
+                .ThrowIfNotMatch("Did not find DatadiskComponent creation and unlock id assignment code.",
                     new CodeMatch(OpCodes.Newobj),
-                    Utils.MatchVariable(OpCodes.Stloc_S, 23, typeof(DatadiskComponent)),
-                    Utils.MatchVariable(OpCodes.Ldloc_S, 23, typeof(DatadiskComponent)),
-                    Utils.MatchVariable(OpCodes.Ldloc_S, 7, typeof(DatadiskRecord)),
+                    datadiskComponentVariable.MatchAndInit(true, typeof(DatadiskComponent)),
+                    datadiskComponentVariable.MatchLoad(),
+                    datadiskRecordVariable.MatchLoad(),
+
                     new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(DatadiskRecord), nameof(DatadiskRecord.UnlockIds))),
                     new CodeMatch(OpCodes.Ldc_I4_0),
                     new CodeMatch(OpCodes.Ldloc_S),
@@ -86,19 +95,18 @@ namespace PityUnlock
                     new CodeMatch(OpCodes.Callvirt),
                     new CodeMatch(OpCodes.Callvirt, AccessTools.Method(typeof(DatadiskComponent), nameof(DatadiskComponent.SetUnlockId)))
                 )
-
                 .RemoveInstructions(12)
 
-                //New Code: 
-                //// DatadiskComponent item2 = UnlockDataDisk(datadiskRecord);
-                //IL_033a: ldloc.s 7
-                //IL_033c: call class ['Assembly-CSharp']MGSC.DatadiskComponent PityUnlock.ItemFactory_CreateComponent__Patch::UnlockDataDisk(class ['Assembly-CSharp']MGSC.DatadiskRecord)
-                //IL_0341: stloc.s 22
+                ////New Code: 
+                ////// DatadiskComponent item2 = UnlockDataDisk(datadiskRecord);
+                ////IL_033a: ldloc.s 7
+                ////IL_033c: call class ['Assembly-CSharp']MGSC.DatadiskComponent PityUnlock.ItemFactory_CreateComponent__Patch::UnlockDataDisk(class ['Assembly-CSharp']MGSC.DatadiskRecord)
+                ////IL_0341: stloc.s 22
 
                 .InsertAndAdvance(
-                    new CodeInstruction(OpCodes.Ldloc_S, 7),
+                    datadiskRecordVariable.Load,
                     CodeInstruction.Call(() => PityRollManager.UnlockDataDisk(default)),
-                    new CodeInstruction(OpCodes.Stloc_S, 23)
+                    datadiskComponentVariable.Store
                 )
 
                 .InstructionEnumeration()
