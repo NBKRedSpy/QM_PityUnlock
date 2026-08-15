@@ -11,7 +11,10 @@ There are multiple options to tailor the pity roll conditions to taste.  The set
 See the [Configuration](#configuration) section below for more information on the settings.
 
 # Diagnostics
-If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md
+
+As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip twice will be found twice in a raid or at a station.
+
+If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md .
 
 # Credits
 

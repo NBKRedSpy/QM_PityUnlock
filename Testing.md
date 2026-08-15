@@ -7,7 +7,7 @@ Since chip spawns are random and there is no feedback to the user, testing this 
 
 As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip twice will be found twice in a raid or at a station.
 
-If it appears the mod is not working, try doing a Steam Verification to force all mods to update.  Then try removing all other mods.  Then follow the testing steps below if not already fixed from a previous step.
+If it appears the mod is not working, try doing a Steam Verification to force all mods to update.  Then follow the testing steps below if not already fixed from a previous step.
 
 # Quick Overview
 
