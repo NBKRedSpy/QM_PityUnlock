@@ -9,6 +9,10 @@ There are multiple options to tailor the pity roll conditions to taste.  The set
 
 See the Configuration section below for more information on the settings.
 
+[h1]Diagnostics[/h1]
+
+If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md
+
 [h1]Credits[/h1]
 
 Huge thanks to Crynano for their Mod Configuration Menu which adds the mod configuration screen.
