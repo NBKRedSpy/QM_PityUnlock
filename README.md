@@ -14,6 +14,8 @@ See the [Configuration](#configuration) section below for more information on th
 
 As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip twice will be found twice in a raid or at a station.
 
+The first step is to do a Steam File Verification to force the mods to update.  
+
 If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md .
 
 # Credits
