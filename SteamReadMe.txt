@@ -11,7 +11,7 @@ See the Configuration section below for more information on the settings.
 
 [h1]Diagnostics[/h1]
 
-As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip twice will be found twice in a raid or at a station.
+As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip will be found twice in a raid or at stations.
 
 The first step is to do a Steam File Verification to force the mods to update.
 
