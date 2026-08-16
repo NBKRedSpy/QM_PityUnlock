@@ -9,20 +9,6 @@ There are multiple options to tailor the pity roll conditions to taste.  The set
 
 See the Configuration section below for more information on the settings.
 
-[h1]Diagnostics[/h1]
-
-As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip will be found twice in a raid or at stations.
-
-The first step is to do a Steam File Verification to force the mods to update.
-
-If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md .
-
-[h1]Credits[/h1]
-
-Huge thanks to Crynano for their Mod Configuration Menu which adds the mod configuration screen.
-
-The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
-
 [h1]Glossary[/h1]
 [table]
 [tr]
@@ -133,6 +119,20 @@ The configuration file will be created on the first game run and can be found at
 [/td]
 [/tr]
 [/table]
+
+[h1]Diagnostics[/h1]
+
+As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip will be found twice in a raid or at stations.
+
+The first step is to do a Steam File Verification to force the mods to update.
+
+If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md .
+
+[h1]Credits[/h1]
+
+Huge thanks to Crynano for their Mod Configuration Menu which adds the mod configuration screen.
+
+The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
 
 [h1]Support[/h1]
 
