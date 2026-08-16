@@ -9,19 +9,21 @@ There are multiple options to tailor the pity roll conditions to taste.  The set
 
 See the Configuration section below for more information on the settings.
 
-[h1]Diagnostics[/h1]
+[h1]I See Dupe Chips Even With Always Mode![/h1]
 
-As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip will be found twice in a raid or at stations.
+One part that can be confusing is that it is possible to see duplicate chips in certain cases.
+What a chip will unlock is set when the game creates new chips.  The pity rolls are against what the player has not yet discovered [i]at that time[/i].  This is especially noticeable in existing saves where the player has to wait until new chips are rolled.
 
-The first step is to do a Steam File Verification to force the mods to update.
+Chips are created at these times:
+[list]
+[*]When a mission is started, all chips are generated for that mission.
+[*]When stations refresh their inventory.
+[*]When a user buys more than one chip of the same type at the same station, the chips beyond the first are generated.
+[/list]
 
-If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md .
+Therefore, multiple stations and the current raid can have the same chip unlocks.
 
-[h1]Credits[/h1]
-
-Huge thanks to Crynano for their Mod Configuration Menu which adds the mod configuration screen.
-
-The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
+I would like to change the pity rolls to apply when a user picks up or buys a chip, but is a low priority for now.  There is a GitHub link to the source below if you wish to contribute to the mod.
 
 [h1]Glossary[/h1]
 [table]
@@ -133,6 +135,20 @@ The configuration file will be created on the first game run and can be found at
 [/td]
 [/tr]
 [/table]
+
+[h1]Diagnostics[/h1]
+
+As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip will be found twice in a raid or at stations.
+
+The first step is to do a Steam File Verification to force the mods to update.
+
+If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md .
+
+[h1]Credits[/h1]
+
+Huge thanks to Crynano for their Mod Configuration Menu which adds the mod configuration screen.
+
+The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
 
 [h1]Support[/h1]
 
