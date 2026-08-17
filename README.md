@@ -77,6 +77,21 @@ Huge thanks to Crynano for their Mod Configuration Menu which adds the mod confi
 
 The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
 
+
+# Diagnostics
+
+As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip will be found twice in a raid or at stations.
+
+The first step is to do a Steam File Verification to force the mods to update.  
+
+If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md .
+
+# Credits
+
+Huge thanks to Crynano for their Mod Configuration Menu which adds the mod configuration screen.
+
+The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
+
 # Support
 If you enjoy my mods and want to buy me a coffee, check out my [Ko-Fi](https://ko-fi.com/nbkredspy71915) page.
 Thanks!
