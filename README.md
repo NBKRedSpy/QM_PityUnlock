@@ -62,22 +62,6 @@ The configuration file will be created on the first game run and can be found at
 |Hard|Every X times in a row that an already discovered item is spawned, the next spawn is guaranteed to be undiscovered.|
 |Percentage|An increasing chance of a pity roll per discovered chip roll.  For example, if set to .10, three discovered chip rolls in a row would cause the next roll to have a 30% chance to spawn an item that is not discovered.|
 
-
-# Diagnostics
-
-As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip will be found twice in a raid or at stations.
-
-The first step is to do a Steam File Verification to force the mods to update.  
-
-If the mod appears to not be working, the testing steps can be found at https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/Testing.md .
-
-# Credits
-
-Huge thanks to Crynano for their Mod Configuration Menu which adds the mod configuration screen.
-
-The "Always" mode is similar to functionality that is part of WarStalkeR's "Fight For Universe: Phase Shift" mod. The ability to change the outcome of spawn rolls is his idea and replicated with permission.
-
-
 # Diagnostics
 
 As per the mod's documentation, the chip is chosen when the chip is created, not when the user finds or unlocks the chip. It is expected that sometimes  exact same unlocked chip will be found twice in a raid or at stations.
