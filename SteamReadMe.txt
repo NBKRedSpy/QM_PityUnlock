@@ -11,8 +11,7 @@ See the Configuration section below for more information on the settings.
 
 [h1]I See Dupe Chips Even With Always Mode![/h1]
 
-One part that can be confusing is that it is possible to see duplicate chips in certain cases.
-What a chip will unlock is set when the game creates new chips.  The pity rolls are against what the player has not yet discovered [i]at that time[/i].  This is especially noticeable in existing saves where the player has to wait until new chips are rolled.
+This mod works by changing the results of the game's rolls for chip unlocks.  The rolls occur when the chips are [i]created[/i] by the game, not when bought or picked up.  This can cause the player to possibly get the same locked chips since they didn't have them when the chips were rolled.
 
 Chips are created at these times:
 [list]
@@ -21,9 +20,7 @@ Chips are created at these times:
 [*]When a user buys more than one chip of the same type at the same station, the chips beyond the first are generated.
 [/list]
 
-Therefore, multiple stations and the current raid can have the same chip unlocks.
-
-I would like to change the pity rolls to apply when a user picks up or buys a chip, but is a low priority for now.  There is a GitHub link to the source below if you wish to contribute to the mod.
+I would like to change this to be at purchase or pickup, but this is currently a low priority.  The GitHub source is linked below if anyone would like to contribute.
 
 [h1]Glossary[/h1]
 [table]
