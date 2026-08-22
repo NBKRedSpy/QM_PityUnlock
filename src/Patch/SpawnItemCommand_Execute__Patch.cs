@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using HarmonyLib;
 using MGSC;
 
-namespace PityUnlock
+namespace PityUnlock.Patch
 {
 
     /// <summary>

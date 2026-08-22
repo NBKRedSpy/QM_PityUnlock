@@ -10,7 +10,7 @@ using UnityEngine;
 using static HarmonyLib.Code;
 using static MGSC.Localization;
 
-namespace PityUnlock
+namespace PityUnlock.Patch
 {
     [HarmonyPatch(typeof(ItemFactory), nameof(ItemFactory.CreateComponent))]
     internal class ItemFactory_CreateComponent__Patch

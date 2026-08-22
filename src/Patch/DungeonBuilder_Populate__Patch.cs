@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PityUnlock
+namespace PityUnlock.Patch
 {
     [HarmonyPatch(typeof(DungeonBuilder), nameof(DungeonBuilder.Populate))]
     public static class DungeonBuilder_Populate__Patch

@@ -32,6 +32,13 @@ namespace PityUnlock
         public Plugin(HookEvents hookEvents, bool isBeta) : base(hookEvents, isBeta)
         {
             hookEvents.AfterConfigsLoaded += AfterConfig;
+            HookEvents.MainMenuStarted += MainMenuStarted;
+        }
+
+        public static void MainMenuStarted(IModContext context)
+        {
+            //Reset the pity state every time the main menu is started.
+            PityStateDb.UnloadPityState();
         }
 
         public static void AfterConfig(IModContext context)

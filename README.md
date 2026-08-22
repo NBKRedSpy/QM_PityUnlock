@@ -10,6 +10,8 @@ There are multiple options to tailor the pity roll conditions to taste.  The set
 
 See the [Configuration](#configuration) section below for more information on the settings.
 
+# Mod Compatibility
+If a mod doesn't use saves (such as "The Dive"), then the Pity rolls will be disabled.  When a normal save is loaded, functionality will resume.
 
 # I See Dupe Chips Even With Always Mode!
 This mod works by changing the results of the game's rolls for chip unlocks.  The rolls occur when the chips are *created* by the game, not when bought or picked up.  This can cause the player to possibly get the same locked chips since they didn't have them when the chips were rolled.
@@ -81,23 +83,5 @@ Thanks!
 Source code is available on GitHub at https://github.com/NBKRedSpy/QM_PityUnlock
 
 # Change Log
-## 2.4.6
-* Updated to support 1.0 version number
+https://github.com/NBKRedSpy/QM_PityUnlock/blob/main/CHANGELOG.md
 
-## 2.4.5
-* Fixed MCM being required
-
-## 2.4.4
-* UNSTABLE BETA.501 compatibility
-
-## 2.4.3
-* 0.9.8.2 compatibility. 
-
-## 2.4.2
-* MCM Integration
-
-## 2.4.1
-* Multiple version support.
-
-## 2.4.0
-* Version 0.9.6 compatibility

@@ -43,6 +43,24 @@ namespace PityUnlock
         [JsonIgnore]
         public GameModesPityState CurrentPityState { get; set; } = null;
 
+
+        /// <summary>
+        /// Unloads the current pity state.  Use LoadCurrent to init again.
+        /// </summary>
+        /// <remarks>
+        /// There is a mod called "The Dive - Roguelike Mode" that bypasses the game's normal load.
+        /// The Pity State needs to be unloaded to prevent the "The Dive" from modifying a save's pity state.  
+        /// The scenario: 
+        /// * User loads a regular game.
+        /// * User then exits the save and runs a "dive"
+        /// Result: Since "The Dive" bypasses the game's normal load, the pity state is still set to the last 
+        /// loaded save's state.  This means that "The Dive" will incorrectly modify the last loaded save's pity state.
+        /// </remarks>
+        public void UnloadPityState()
+        {
+            CurrentPityState = null;
+        }
+
         /// <summary>
         /// Sets the CurrentPityState for the slot specified.
         /// </summary>
