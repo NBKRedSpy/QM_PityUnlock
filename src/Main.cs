@@ -59,6 +59,9 @@ namespace PityUnlock_Bootstrap
             }
         }
 
+        [Hook(ModHookType.MainMenuStarted)]
+        public static void MainMenuStartedCallback(IModContext context) => HookEvents.MainMenuStarted?.Invoke(context);
+
         [Hook(ModHookType.AfterConfigsLoaded)]
         public static void AfterConfigsLoadedCallback(IModContext context) => HookEvents.AfterConfigsLoaded?.Invoke(context);
 
