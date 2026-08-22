@@ -15,5 +15,7 @@ namespace PityUnlock_Bootstrap
 
         public Action<IModContext> BeforeBootstrap;
         public Action<IModContext> AfterConfigsLoaded;
+
+        public Action<IModContext> MainMenuStarted;
     }
 }
