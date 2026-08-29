@@ -1,3 +1,7 @@
+## 2.5.1
+* Fixed random number generation.  
+    * Thank you to Steam user "Huh? Dice?" for reporting this.
+
 ## 2.5.0
 * Added bypass if a mod doesn't use a save.
     * For example, the mod "The Dive" is an infinite run mod which does not load a save.  Since this mod is save based, it would cause issues.
