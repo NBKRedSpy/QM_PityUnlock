@@ -1,3 +1,6 @@
+## 2.5.3
+* Changed log to include the chip/disk's type to make it easier to find.  Ex: low_chip
+
 ## 2.5.2
 * Fixed stable version deploying extra files.  This should not have caused any issues.  It is just cleanup.
 

@@ -104,23 +104,22 @@ namespace PityUnlock
                 //Check if the user received a new unlock.
                 MissCount = (allUnlocked || notUnlockedIds.Contains(unlockedId)) ? 0 : MissCount + 1;
 
-                if (Plugin.Config.VerboseDebug) 
-                {
-                    //Plugin.Log($"Regular Roll.  Miss Count {MissCount}: Not Unlocked: {String.Join(",", notUnlockedIds)}");
-                    Plugin.Logger.Log($"====== Regular Roll.  Miss Count {MissCount}: Not Unlocked: {notUnlockedIds.Count()}");
-
-                }
-
             }
             else
             {
-                if (Plugin.Config.VerboseDebug) Plugin.Logger.LogWarning($"++++++ Pity Roll:  Not Unlocked: {notUnlockedIds.Count()}");
 
                 MissCount = 0;
                 unlockedId = GetRandomItem(notUnlockedIds);
+
+
             }
 
-            if (Plugin.Config.VerboseDebug) Plugin.Logger.Log($"Item id: {unlockedId}");
+
+            if (Plugin.Config.VerboseDebug)
+            {
+                string prefix = doFullRandom ?  "------" : "++++++";
+                Plugin.Logger.LogWarning($"{prefix} Pity Roll:  Type: {record.Id} Unlocked {unlockedId} Not Unlocked: {notUnlockedIds.Count()}");
+            }
 
             return unlockedId;
 
