@@ -1,3 +1,6 @@
+## 2.5.2
+* Fixed stable version deploying extra files.  This should not have caused any issues.  It is just cleanup.
+
 ## 2.5.1
 * Fixed random number generation.  
     * Thank you to Steam user "Huh? Dice?" for reporting this.

@@ -86,7 +86,7 @@
 	<Target Name="SteamWorkshopDeploy" Condition="'$(SteamId)'!=''" AfterTargets="PostBuildEvent">
 		<PropertyGroup>
 			<VersionWorkshopPath Condition="$(ProjectDir.Contains('beta'))">$(WorkshopPath)beta</VersionWorkshopPath>
-			<VersionWorkshopPath Condition="$(VersionWorkshopPath)==''">$(WorkshopPath)stable</VersionWorkshopPath>
+			<VersionWorkshopPath Condition="$(ProjectDir.Contains('main-repo'))">$(WorkshopPath)stable</VersionWorkshopPath>
 		</PropertyGroup>
 		<ItemGroup>
 			<FilesToDelete Include="$(VersionWorkshopPath)/*" />
