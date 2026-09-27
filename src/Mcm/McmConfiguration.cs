@@ -63,7 +63,10 @@ namespace PityUnlock.Mcm
                     For example, if set to 10, the fourth attempt after three failed attempts will have a 30% chance to guarantee a new unlock.
                     """, "Increasing Chance Percent", min: 1f, max: 100f),
 
-                CreateConfigProperty(nameof(ModConfig.VerboseDebug), "Enables verbose debug logging.")
+                CreateConfigProperty(nameof(ModConfig.VerboseDebug), "Enables verbose debug logging."),
+
+                CreateConfigProperty(nameof(ModConfig.DedicatedPityLog),
+                    "Logs pity roll details to a dedicated 'pity-rolls.log' file in the mod's persistence folder.")
             }, OnSave);
         }
 
@@ -85,6 +88,9 @@ namespace PityUnlock.Mcm
                 {
                     case nameof(ModConfig.VerboseDebug):
                         config.VerboseDebug = (bool)entry.Value;
+                        break;
+                    case nameof(ModConfig.DedicatedPityLog):
+                        config.DedicatedPityLog = (bool)entry.Value;
                         break;
                     case nameof(pitySettings.Mode):
                         pitySettings.Mode = (PityMode)Enum.Parse(typeof(PityMode), (string)entry.Value);

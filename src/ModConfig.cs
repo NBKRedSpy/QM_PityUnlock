@@ -19,5 +19,11 @@ namespace PityUnlock
         public PitySettings PitySettings { get; set; } = new PitySettings();
 
         public bool VerboseDebug { get; set; } = false;
+
+        /// <summary>
+        /// When enabled, logs pity roll details to a dedicated "pity-rolls.log" file in the
+        /// mod's persistence folder, separate from the regular mod logging.
+        /// </summary>
+        public bool DedicatedPityLog { get; set; } = false;
     }
 }
