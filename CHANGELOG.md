@@ -1,3 +1,6 @@
+## 2.6.0
+* Added an optional dedicated `pity-rolls.log` file for pity roll details. Enable it in the mod settings; the file is cleared when the mod starts.
+
 ## 2.5.3
 * Changed log to include the chip/disk's type to make it easier to find.  Ex: low_chip
 

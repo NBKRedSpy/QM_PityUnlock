@@ -52,6 +52,7 @@ The configuration file will be created on the first game run and can be found at
 |Mode|Hard|Determines the pity algorithm to use. See the [Pity Modes](#pity-modes) section below.|
 |HardPityCount|1|Hard mode only setting.  The number of discovered rolls in a row before next roll is a pity roll.|
 |PercentageMultiplier|.1|Percentage mode only setting.  The multiplier for the increased chance of a pity roll.  Ex: .1 is +10% per discovered roll.|
+|DedicatedPityLog|false|When enabled, writes pity roll details to `pity-rolls.log` in the mod's persistence folder. The file is cleared when the game starts.|
 
 ## Pity Modes
 
