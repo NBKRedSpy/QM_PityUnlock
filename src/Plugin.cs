@@ -23,6 +23,8 @@ namespace PityUnlock
 
         public static Logger Logger { get; private set; } = new Logger(ModAssemblyName);    
 
+        public static PityFileLogger PityLogger { get; private set; }
+
         public static State GameState { get; private set; }
 
         internal static McmConfiguration McmConfiguration { get; private set; }
@@ -53,6 +55,12 @@ namespace PityUnlock
             Config = new ModConfig(ConfigDirectories.ConfigPath).LoadConfig();
             McmConfiguration = new McmConfiguration(Config);
             McmConfiguration.TryConfigure();   
+
+            PityLogger = new PityFileLogger(Path.Combine(ConfigDirectories.ModPersistenceFolder, "pity-rolls.log"));
+            if (Config.DedicatedPityLog)
+            {
+                PityLogger.Reset();
+            }
 
             string pityStateFilePath = Path.Combine(ConfigDirectories.ModPersistenceFolder, "PityState.json");
 

@@ -115,10 +115,21 @@ namespace PityUnlock
             }
 
 
-            if (Plugin.Config.VerboseDebug)
+            if (Plugin.Config.VerboseDebug || Plugin.Config.DedicatedPityLog)
             {
                 string prefix = doFullRandom ?  "------" : "++++++";
-                Plugin.Logger.LogWarning($"{prefix} Pity Roll:  Type: {record.Id} Unlocked {unlockedId} Not Unlocked: {notUnlockedIds.Count()}");
+                string pityRollMessage = $"{prefix} Pity Roll:  Type: {record.Id} Unlocked {unlockedId} " +
+                    $"Not Unlocked: {notUnlockedIds.Count()} {string.Join(", ", notUnlockedIds)}";
+
+                if (Plugin.Config.VerboseDebug)
+                {
+                    Plugin.Logger.LogWarning(pityRollMessage);
+                }
+
+                if (Plugin.Config.DedicatedPityLog)
+                {
+                    Plugin.PityLogger.Log(pityRollMessage);
+                }
             }
 
             return unlockedId;
